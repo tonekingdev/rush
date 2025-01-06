@@ -1,101 +1,280 @@
-import Image from "next/image";
+import Link from 'next/link'
+import Image from 'next/image'
+import { FaSearch } from 'react-icons/fa'
+import { TbUserHeart } from 'react-icons/tb'
+import { RiCoinsLine, RiHomeHeartLine, RiMoneyDollarCircleLine, RiSecurePaymentLine } from 'react-icons/ri'
+import { IoTimeOutline } from 'react-icons/io5'
+import { LuCalendarCheck, LuShieldCheck } from 'react-icons/lu'
+import { FadeInView } from './components/FadeInView'
+import { SlideInView } from './components/SlideInView'
+import { DropInView } from './components/DropInView'
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+    <main>
+      <section id='hero' className="bg-gray-100 py-16">
+        <div className="grid md:grid-cols-2 grid-cols-1 max-w-5xl mx-auto items-center gap-3">
+          <div className="max-w-5xl mx-auto px-4">
+            <FadeInView>
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-800 font-poppins">On-Demand Healthcare, Right to Your Doorstep</h1>
+            </FadeInView>
+            <FadeInView>
+              <p className="mt-4 text-lg text-gray-600">Connecting you with certified healthcare professionals for in-home care - fast, safe, and convenient.</p>
+              <div className="mt-6 flex justify-center space-x-4">
+                <Link 
+                  href="/comingsoon" 
+                  className="px-4 py-2 bg-[#1586D6] text-white rounded-full text-base font-semibold relative overflow-hidden group whitespace-nowrap"
+                >
+                  <span className="relative z-10 transition-transform duration-650 ease-in-out group-hover:-translate-y-full block">
+                    Get Immediate Care
+                  </span>
+                  <span className="absolute inset-0 bg-blue-600 flex items-center justify-center transition-transform duration-650 ease-in-out translate-y-full group-hover:translate-y-0">
+                    Get Started →
+                  </span>
+                </Link>
+                <Link 
+                  href="/survey/provider"
+                  className='px-4 py-2 bg-white text-[#1586D6] border border-[#1586D6] rounded-full text-base font-semibold relative overflow-hidden group whitespace-nowrap'
+                >
+                  <span className="relative z-10 transition-transform duration-650 ease-in-out group-hover:-translate-y-full block">
+                    Become a Provider
+                  </span>
+                  <span className="absolute inset-0 bg-gray-200 flex items-center justify-center transition-transform duration-650 ease-in-out translate-y-full group-hover:translate-y-0">
+                    Sign Up
+                  </span>
+                </Link>
+              </div>
+            </FadeInView>
+          </div>
+          <SlideInView>
+            <Image 
+              src="/img/landing.jpg" 
+              alt="Healthcare professional" 
+              width={500} 
+              height={500} 
+              className="rounded-lg shadow-lg"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </SlideInView>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </section>
+      
+      {/* How it works section */}
+      <section id="how-it-works" className="bg-white py-16">
+        <div className="max-w-5xl mx-auto px-4 text-center">
+          <DropInView>
+            <h2 className='text-3xl font-bold font-poppins text-gray-800'>How RUSH Works</h2>
+          </DropInView>
+          <FadeInView>
+            <p className='mt-2 text-gray-600'>Getting quality healthcare at home is just a few clicks away.</p>
+          </FadeInView>
+          <FadeInView>
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Step 1 */}
+              <div className="flex flex-col items-center">
+                <div className="p-4 bg-blue-100 rounded-full">
+                  <FaSearch 
+                    className='text-4xl text-[#1586D6]'
+                  />
+                </div>
+                <h3 className="mt-4 text-xl font-semibold">Search for Care</h3>
+                <p className="text-gray-600 mt-2">
+                  Browse available services tailored to your health needs.
+                </p>
+              </div>
+              {/* Step 2 */}
+              <div className="flex flex-col items-center">
+                <div className="p-4 bg-green-100 rounded-full">
+                  <TbUserHeart 
+                    className='text-4xl text-green-600'
+                  />
+                </div>
+                <h3 className="mt-4 text-xl font-semibold">Select a Professional</h3>
+                <p className="text-gray-600 mt-2">
+                  Choose from verified and certified healthcare providers.
+                </p>
+              </div>
+              {/* Step 3 */}
+              <div className="flex flex-col items-center">
+                <div className="p-4 bg-yellow-100 rounded-full">
+                  <RiHomeHeartLine 
+                    className='text-4xl text-yellow-500'
+                  />
+                </div>
+                <h3 className="mt-4 text-xl font-semibold">Receive Care at Home</h3>
+                <p className="text-gray-600 mt-2">
+                  Enjoy quality healthcare right at your doorstep.
+                </p>
+              </div>
+            </div>
+          </FadeInView>
+        </div>
+      </section>
+
+      {/* Benefits section */}
+      <section id="benefits" className="bg-gray-100 py-16">
+        <div className="max-w-5xl mx-auto px-4 text-center">
+          <DropInView>
+            <h2 className='text-3xl font-bold font-poppins text-gray-800'>Why Choose RUSH</h2>
+          </DropInView>
+          <FadeInView>
+            <p className='mt-2 text-gray-600'>
+              Experience healthcare that&apos;s convenient, reliable, and affordable.
+            </p>
+            <div className='mt-12 grid grid-cols-1 md:grid-cols-3 gap-8'>
+              {/* Benefit 1 */}
+              <div className="flex flex-col items-center">
+                <div className="p-4 bg-blue-100 rounded-full">
+                  <IoTimeOutline 
+                    className='text-4xl text-[#1586D6]'
+                  />
+                </div>
+                <h3 className="mt-4 text-xl font-semibold">Convenience</h3>
+                <p className="text-gray-600 mt-2">
+                  Get non-emergency healthcare services from the comfort of your home.
+                </p>
+              </div>
+              {/* Benefit 2 */}
+              <div className="flex flex-col items-center">
+                <div className="p-4 bg-green-100 rounded-full">
+                  <LuShieldCheck 
+                    className='text-4xl text-green-600'
+                  />
+                </div>
+                <h3 className="mt-4 text-xl font-semibold">
+                  Quality Care
+                </h3>
+                <p className="text-gray-600 mt-2">
+                  Certified and trusted healthcare professionals to ensure your well-being.
+                </p>
+              </div>
+              {/* Benefit 3 */}
+              <div className="flex flex-col items-center">
+                <div className="p-4 bg-yellow-100 rounded-full">
+                  <RiMoneyDollarCircleLine 
+                    className='text-4xl text-yellow-500'
+                  />
+                </div>
+                <h3 className="mt-4 text-xl font-semibold">
+                  Flexible Payment
+                </h3>
+                <p className="text-gray-600 mt-2">
+                  Affordable options with or without insurance.
+                </p>
+              </div>
+            </div>
+          </FadeInView>
+        </div>
+      </section>
+      
+      {/* For Professionals section */}
+      <section id="for-professionals" className="bg-white py-16">
+        <div className="max-w-5xl mx-auto px-4 text-center">
+          <DropInView>
+            <h2 className='text-3xl font-bold font-poppins text-gray-800'>
+              For Healthcare Professionals
+            </h2>
+          </DropInView>
+          <FadeInView>
+            <p className='mt-2 text-gray-600'>
+              Empowering you to provide care on your own terms.
+            </p>
+          </FadeInView>
+          <FadeInView>
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Feature 1 */}
+              <div className="flex flex-col items-center">
+                <div className="p-4 bg-blue-100 rounded-full">
+                  <LuCalendarCheck 
+                    className='text-4xl text-[#1586D6]'
+                  />
+                </div>
+                <h3 className="mt-4 text-xl font-semibold">
+                  Flexible Scheduling
+                </h3>
+                <p className="text-gray-600 mt-2">
+                  Work when and where you want, on your own terms.
+                </p>
+              </div>
+              {/* Feature 2 */}
+              <div className="flex flex-col items-center">
+                <div className="p-4 bg-green-100 rounded-full">
+                  <RiCoinsLine 
+                    className='text-4xl text-green-600'
+                  />
+                </div>
+                <h3 className="mt-4 text-xl font-semibold">
+                  Extra Income
+                </h3>
+                <p className="text-gray-600 mt-2">
+                  Earn more by providing quality at-home healthcare services.
+                </p>
+              </div>
+              {/* Feature 3 */}
+              <div className="flex flex-col items-center">
+                <div className="p-4 bg-yellow-100 rounded-full">
+                  <RiSecurePaymentLine 
+                    className='text-4xl text-yellow-500'
+                  />
+                </div>
+                <h3 className="mt-4 text-xl font-semibold">
+                  Quick Payouts
+                </h3>
+                <p className="text-gray-600 mt-2">
+                  Fast and secure payouts for your services.
+                </p>
+              </div>
+            </div>
+          </FadeInView>
+        </div>
+      </section>
+
+      {/* Compliance section */}
+      <section id="compliance" className="bg-gray-100 py-16">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <DropInView>
+            <h2 className='text-2xl font-bold font-poppins text-gray-800'>Regulatory Compliance and Security</h2>
+          </DropInView>
+          <FadeInView>
+            <p className='mt-4 text-gray-600'>
+              We prioritize your privacy and data security. RUSH is fully HIPAA compliant, ensuring your personal information is protected.
+            </p>
+          </FadeInView>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-[#1586D6]">
+        <div className="max-w-5xl mx-auto px-4 text-center">
+          <DropInView>
+            <h2 className='text-3xl font-bold text-white font-poppins'>
+              Get Started with RUSH Today
+            </h2>
+          </DropInView>
+          <FadeInView>
+            <p className='mt-2 text-blue-200'>
+              Revolutionize your healthcare experience. Join RUSH for on-demand care at your doorstep.
+            </p>
+          </FadeInView>
+          <div className="mt-6">
+            <FadeInView>
+              <div className="space-x-4 space-y-4 md:space-y-0 flex flex-col md:flex-row justify-center">
+                <Link
+                  href='/comingsoon'
+                  className='px-6 py-3 bg-white text-[#1586d6] rounded-full font-semibold hover:bg-blue-50 duration-500'
+                >
+                  Download on App Store
+                </Link>
+                <Link
+                  href='/comingsoon'
+                  className='px-6 py-3 bg-white text-[#1586d6] rounded-full font-semibold hover:bg-blue-50 duration-500'
+                >
+                  Get it on Google Play
+                </Link>
+              </div>
+            </FadeInView>
+          </div>
+        </div>
+      </section>
+    </main>
+  )
 }
