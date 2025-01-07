@@ -7,7 +7,7 @@ header("Content-Type: application/json");
 // Database connection
 $servername = "localhost";
 $username = "u382076499_serviceadmin";
-$password = "Ru$hdb0106!";
+$password = "Ru$h0105!";
 $dbname = "rush_healthcare";
 
 // Create connection

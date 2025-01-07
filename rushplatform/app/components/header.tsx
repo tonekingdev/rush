@@ -8,6 +8,22 @@ import Image from "next/image";
 export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
+    const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        e.preventDefault();
+        const href = e.currentTarget.href;
+        const targetId = href.replace(/.*\#/, "");
+        const elem = document.getElementById(targetId);
+        if (elem) {
+            const offsetTop = elem.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({
+                top: offsetTop,
+                behavior: "smooth"
+            });
+        }
+        // Close mobile menu after clicking
+        setIsMobileMenuOpen(false);
+    };
+
     return (
         <header className="bg-white shadow-lg">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,17 +51,17 @@ export default function Header() {
                         </button>
                     </div>
                     <nav className="hidden md:flex space-x-10">
-                        <Link href="#how-it-works" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                        How It Works
+                        <Link href="#how-it-works" className="text-base font-medium text-gray-500 hover:text-gray-900" onClick={handleScroll}>
+                            How It Works
                         </Link>
-                        <Link href="#benefits" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                        Benefits
+                        <Link href="#benefits" className="text-base font-medium text-gray-500 hover:text-gray-900" onClick={handleScroll}>
+                            Benefits
                         </Link>
-                        <Link href="#for-professionals" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                        For Professionals
+                        <Link href="#for-professionals" className="text-base font-medium text-gray-500 hover:text-gray-900" onClick={handleScroll}>
+                            For Professionals
                         </Link>
-                        <Link href="#compliance" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                        Compliance
+                        <Link href="#compliance" className="text-base font-medium text-gray-500 hover:text-gray-900" onClick={handleScroll}>
+                            Compliance
                         </Link>
                     </nav>
                     <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
@@ -59,16 +75,16 @@ export default function Header() {
             {/* Mobile Menu */}
             <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden`}>
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    <Link href="#how-it-works" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                    <Link href="#how-it-works" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" onClick={handleScroll}>
                         How It Works
                     </Link>
-                    <Link href="#benefits" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                    <Link href="#benefits" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" onClick={handleScroll}>
                         Benefits
                     </Link>
-                    <Link href="#for-professionals" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                    <Link href="#for-professionals" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" onClick={handleScroll}>
                         For Professionals
                     </Link>
-                    <Link href="#compliance" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                    <Link href="#compliance" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" onClick={handleScroll}>
                         Compliance
                     </Link>
                     <Link href="/survey" className="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white bg-[#1586D6] hover:bg-blue-500">
