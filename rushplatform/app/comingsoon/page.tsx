@@ -8,7 +8,6 @@ import Modal from '../components/Modal'
 export default function ComingSoon() {
     const [message, setMessage] = useState('')
     const [isModalOpen, setIsModalOpen] = useState(false)
-    const [isError, setIsError] = useState(false)
     const [isSubmitted, setIsSubmitted] = useState(false)
     const emailInputRef = useRef<HTMLInputElement>(null)
 
@@ -35,7 +34,6 @@ export default function ComingSoon() {
             }
 
             setMessage(data.message || 'Submission successful')
-            setIsError(false)
             setIsSubmitted(true)
             if (emailInputRef.current) {
                 emailInputRef.current.value = ''
@@ -43,7 +41,6 @@ export default function ComingSoon() {
         } catch (error) {
             const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred'
             setMessage(errorMessage)
-            setIsError(true)
             setIsModalOpen(true)
             console.error('Error:', error)
         }
