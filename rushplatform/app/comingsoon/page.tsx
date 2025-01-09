@@ -9,6 +9,7 @@ export default function ComingSoon() {
     const [message, setMessage] = useState('')
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [isError, setIsError] = useState(false)
+    const [isSubmitted, setIsSubmitted] = useState(false)
     const emailInputRef = useRef<HTMLInputElement>(null)
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -35,6 +36,7 @@ export default function ComingSoon() {
 
             setMessage(data.message || 'Submission successful')
             setIsError(false)
+            setIsSubmitted(true)
             if (emailInputRef.current) {
                 emailInputRef.current.value = ''
             }
@@ -70,42 +72,53 @@ export default function ComingSoon() {
 
             <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
                 <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-                    <motion.form
-                        className='space-y-6'
-                        onSubmit={handleSubmit}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                    >
-                        <div>
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                                Email address
-                            </label>
-                            <div className="mt-1">
-                                <input 
-                                    id='email'
-                                    name='email'
-                                    type='email'
-                                    autoComplete='email'
-                                    required
-                                    ref={emailInputRef}
-                                    className='appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm'
-                                />
+                    {!isSubmitted ? (
+                        <motion.form
+                            className='space-y-6'
+                            onSubmit={handleSubmit}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.4 }}
+                        >
+                            <div>
+                                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                                    Email address
+                                </label>
+                                <div className="mt-1">
+                                    <input 
+                                        id='email'
+                                        name='email'
+                                        type='email'
+                                        autoComplete='email'
+                                        required
+                                        ref={emailInputRef}
+                                        className='appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm'
+                                    />
+                                </div>
                             </div>
-                        </div>
 
-                        <div>
-                            <button
-                                type='submit'
-                                className='w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#1586D6] hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
-                            >
-                                Notify me when RUSH launches
-                            </button>
-                        </div>
-                        {message && !isError && (
+                            <div>
+                                <button
+                                    type='submit'
+                                    className='w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#1586D6] hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
+                                >
+                                    Notify me when RUSH launches
+                                </button>
+                            </div>
+                        </motion.form>
+                    ) : (
+                        <motion.div
+                            className='space-y-6'
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
+                        >
                             <p className="text-center text-sm text-gray-600">{message}</p>
-                        )}
-                    </motion.form>
+                            <Link href="/" className='w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#1586D6] hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'>
+                                Go Back Home
+                            </Link>
+                        </motion.div>
+                    )}
                 </div>
             </div>
 
