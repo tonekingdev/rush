@@ -2,8 +2,51 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { useState, useRef } from 'react'
+import Modal from '../components/Modal'
 
 export default function ComingSoon() {
+    const [message, setMessage] = useState('')
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [isError, setIsError] = useState(false)
+    const emailInputRef = useRef<HTMLInputElement>(null)
+
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault()
+        const form = e.currentTarget
+        const emailInput = form.elements.namedItem('email') as HTMLInputElement
+        const email = emailInput.value
+        setMessage('Submitting...')
+
+        try {
+            const formData = new FormData()
+            formData.append('email', email)
+
+            const response = await fetch('/comingsoon_submit.php', {
+                method: 'POST',
+                body: formData,
+            })
+
+            const data = await response.json()
+
+            if (!response.ok) {
+                throw new Error(data.error || 'An error occurred')
+            }
+
+            setMessage(data.message || 'Submission successful')
+            setIsError(false)
+            if (emailInputRef.current) {
+                emailInputRef.current.value = ''
+            }
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred'
+            setMessage(errorMessage)
+            setIsError(true)
+            setIsModalOpen(true)
+            console.error('Error:', error)
+        }
+    }
+
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -29,6 +72,7 @@ export default function ComingSoon() {
                 <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
                     <motion.form
                         className='space-y-6'
+                        onSubmit={handleSubmit}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.4 }}
@@ -44,7 +88,8 @@ export default function ComingSoon() {
                                     type='email'
                                     autoComplete='email'
                                     required
-                                    className='appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 sm:text-sm'
+                                    ref={emailInputRef}
+                                    className='appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm'
                                 />
                             </div>
                         </div>
@@ -57,6 +102,9 @@ export default function ComingSoon() {
                                 Notify me when RUSH launches
                             </button>
                         </div>
+                        {message && !isError && (
+                            <p className="text-center text-sm text-gray-600">{message}</p>
+                        )}
                     </motion.form>
                 </div>
             </div>
@@ -67,10 +115,15 @@ export default function ComingSoon() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
             >
-                <Link href="/survey" className='text-[#1586D6] hover:text-blue-500'>
-                    Sign up as a healthcare professionals
+                <Link href="/survey/provider" className='text-[#1586D6] hover:text-blue-500'>
+                    Sign up as a healthcare professional
                 </Link>
             </motion.div>
+
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+                <h3 className="text-lg font-medium text-gray-900 mb-2">Error</h3>
+                <p className="text-sm text-gray-500">{message}</p>
+            </Modal>
         </div>
     )
 }

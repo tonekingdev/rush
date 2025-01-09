@@ -38,7 +38,7 @@ const PatientSurvey = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch('/api/submit-survey.php', {
+      const response = await fetch('/submit-survey.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

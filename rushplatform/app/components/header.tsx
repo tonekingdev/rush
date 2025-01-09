@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { SlMenu } from "react-icons/sl";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 export default function Header() {
@@ -23,6 +23,18 @@ export default function Header() {
         // Close mobile menu after clicking
         setIsMobileMenuOpen(false);
     };
+
+    // Close mobile menu when window is resized to larger screen
+    useEffect(() => {
+        const handleResize = () => {
+        if (window.innerWidth >= 768) { // md breakpoint
+            setIsMobileMenuOpen(false);
+        }
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     return (
         <header className="bg-white shadow-lg">
@@ -87,7 +99,7 @@ export default function Header() {
                     <Link href="#compliance" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" onClick={handleScroll}>
                         Compliance
                     </Link>
-                    <Link href="/survey" className="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white bg-[#1586D6] hover:bg-blue-500">
+                    <Link href="/survey" className="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white bg-[#1586D6] hover:bg-blue-500" onClick={() => setIsMobileMenuOpen(false)}>
                         Sign Up
                     </Link>
                 </div>
