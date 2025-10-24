@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Stripe Configuration
+/public/includes/config.php
+
+echo "r.u.s.h.fullStackApp/" >> .gitignore
