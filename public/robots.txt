@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /complete-application/
+Disallow: /api/
+Disallow: /admin/
+
+Sitemap: https://www.rushhealthc.com/sitemap.xml

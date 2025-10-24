@@ -1,0 +1,3 @@
+# Rate limiting file for completion attempts
+# Format: IP_ADDRESS COUNT
+# This file will be automatically managed by the system

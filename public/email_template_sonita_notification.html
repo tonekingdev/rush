@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Email Connection Request - RUSH Healthcare</title>
+</head>
+<body style="font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; margin: 0; padding: 0;">
+    <div style="width: 100%; max-width: 600px; margin: 0 auto; background-color: #ffffff;">
+        <div style="background-color: #1586D6; color: #ffffff; padding: 20px; text-align: center;">
+            <h1 style="margin: 0; font-size: 24px; font-weight: 600;">New Email Connection Request</h1>
+        </div>
+        <div style="padding: 20px;">
+            <div style="background-color: #e9f5ff; padding: 20px; margin-bottom: 20px; border-radius: 5px;">
+                <p style="margin-top: 0; font-size: 16px;"><strong>New Connection Request</strong></p>
+                <p style="margin-bottom: 10px;"><strong>Submitted on:</strong> {SUBMISSION_DATE}</p>
+                <p style="margin-bottom: 0;"><strong>Status:</strong> <span style="color: #ff9900; font-weight: bold;">Awaiting Your Response</span></p>
+            </div>
+            
+            <div style="background-color: #ffffff; border: 1px solid #e0e0e0; padding: 20px; margin-bottom: 20px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <h2 style="color: #1586D6; margin-top: 0; font-size: 18px; font-weight: 600;">Visitor Information</h2>
+                <div style="margin-bottom: 8px;"><strong>Full Name:</strong> {VISITOR_NAME}</div>
+                <div style="margin-bottom: 8px;"><strong>Occupation:</strong> {VISITOR_OCCUPATION}</div>
+                <div style="margin-bottom: 8px;"><strong>Email Address:</strong> <a href="mailto:{VISITOR_EMAIL}" style="color: #1586D6; text-decoration: none;">{VISITOR_EMAIL}</a></div>
+            </div>
+            
+            <div style="background-color: #f9f9f9; padding: 15px; border-left: 4px solid #1586D6; margin-bottom: 20px;">
+                <p style="margin-top: 0; font-weight: bold;">Next Steps:</p>
+                <ol style="margin-bottom: 0; padding-left: 20px;">
+                    <li>Review the visitor's information above</li>
+                    <li>Reply directly to their email address: <a href="mailto:{VISITOR_EMAIL}" style="color: #1586D6; text-decoration: none;">{VISITOR_EMAIL}</a></li>
+                    <li>The visitor has been notified to expect your response within 2-5 business days</li>
+                </ol>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="mailto:{VISITOR_EMAIL}?subject=Re: Your Connection Request - RUSH Healthcare" 
+                   style="background-color: #1586D6; color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">
+                    Reply to {VISITOR_NAME}
+                </a>
+            </div>
+        </div>
+        <div style="background-color: #333333; color: #ffffff; text-align: center; padding: 15px; font-size: 12px;">
+            &copy; {YEAR} RUSH Healthcare. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>
