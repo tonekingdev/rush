@@ -257,6 +257,15 @@ export default function Home() {
                   >
                     Get it on Google Play
                   </Link>
+                  <div className="mx-auto mt-6">
+                    <Image 
+                      src="/img/for-screen/nvidia-inception-program-badge-rgb-for-screen.png"
+                      alt="Nvidia Inception Program"
+                      height={217}
+                      width={500}
+                      className="rounded-lg shadow-lg"
+                    />
+                  </div>
                 </div>
               </FadeInView>
             </div>
