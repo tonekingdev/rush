@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { FaSearch, FaPhone } from "react-icons/fa"
+import { FaSearch, FaPhone, FaUserMd } from "react-icons/fa"
 import { TbUserHeart } from "react-icons/tb"
 import { RiCoinsLine, RiHomeHeartLine, RiMoneyDollarCircleLine, RiSecurePaymentLine } from "react-icons/ri"
 import { IoTimeOutline } from "react-icons/io5"
@@ -51,6 +51,16 @@ export default function Home() {
                       Sign Up
                     </span>
                   </Link>
+                </div>
+                {/* Link to NP Intake Portal */}
+                <div className="mt-4 flex justify-center items-center text-gray-700">
+                  <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                    <FaUserMd className="mr-2 text-[#1586D6]" />
+                    <span className="mr-2">Nurse Practitioner Intake:</span>
+                    <a href="/portal/np-intake" className="font-medium text-sm text-[#1586D6] hover:underline">
+                      Click Here
+                    </a>
+                  </div>
                 </div>
                 {/* Improved phone number presentation */}
                 <div className="mt-4 flex justify-center items-center text-gray-700">
@@ -257,15 +267,15 @@ export default function Home() {
                   >
                     Get it on Google Play
                   </Link>
-                  <div className="mx-auto mt-6">
+                  </div>
+                  <div className="flex items-center justify-center mt-6">
                     <Image 
                       src="/img/for-screen/nvidia-inception-program-badge-rgb-for-screen.png"
                       alt="Nvidia Inception Program"
-                      height={217}
-                      width={500}
+                      height={136}
+                      width={250}
                       className="rounded-lg shadow-lg"
                     />
-                  </div>
                 </div>
               </FadeInView>
             </div>

@@ -46,6 +46,11 @@ export function AdminSidebar() {
       icon: FaClipboardList,
     },
     {
+      name: "NP Intakes",
+      href: "/admin/dashboard/in-takes",
+      icon: FaUserMd
+    },
+    {
       name: "Providers",
       href: "/admin/dashboard/providers",
       icon: FaUserMd,
