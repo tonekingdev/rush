@@ -4,6 +4,10 @@ import { FadeInView } from '@/app/components/FadeInView';
 import { useParams, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
+export async function generateStaticParams() {
+  return [{ mode: 'test' }, { mode: 'live' }];
+}
+
 export default function StripeCallback() {
   const params = useParams();
   const searchParams = useSearchParams();
