@@ -14,13 +14,26 @@ export default function StripeCallbackClient() {
   const [message, setMessage] = useState(
     'Processing your Stripe connection...',
   );
+  const [debugInfo, setDebugInfo] = useState<string[]>([]);
+
+  const addDebug = (info: string) => {
+    console.log('[TK Development]', info);
+    setDebugInfo((prev) => [...prev, info]);
+  };
 
   useEffect(() => {
+    addDebug('CallbackClient mounted');
+    addDebug(`Mode: ${mode}`);
+
     const handleCallback = async () => {
       try {
         const code = searchParams.get('code');
         const state = searchParams.get('state');
         const error = searchParams.get('error');
+
+        addDebug(`Code: ${code ? 'present' : 'missing'}`);
+        addDebug(`State: ${state ? 'present' : 'missing'}`);
+        addDebug(`Error: ${error || 'none'}`);
 
         // Check if Stripe returned an error
         if (error) {
@@ -31,12 +44,15 @@ export default function StripeCallbackClient() {
 
         // Verify required params are received
         if (!code || !state) {
+          addDebug('Missing code or state');
           throw new Error('Missing required OAuth parameters');
         }
 
         setMessage('Exchanging authorization code...');
+        addDebug('Making fetch to backend...');
 
-        const apiUrl = `https://api.rushhealthc.com/api/v1/payments/stripe/oauth/callback`;
+        const apiUrl = `https://api.rushhealthc.com/api/v1/payments/stripe/oauth-callback`;
+        addDebug(`Fetch URL: ${apiUrl}`);
 
         // Send the code to the backend to exchange for tokens
         const response = await fetch(apiUrl, {
@@ -47,7 +63,10 @@ export default function StripeCallbackClient() {
           body: JSON.stringify({ code, state }),
         });
 
+        addDebug(`Response status: ${response.status}`);
+
         const data = await response.json();
+        addDebug(`Response data: ${JSON.stringify(data)}`);
 
         if (!response.ok) {
           throw new Error(
@@ -55,6 +74,7 @@ export default function StripeCallbackClient() {
           );
         }
 
+        addDebug('Success! Redirecting...');
         setStatus('success');
         setMessage('Connection successful! Redirecting...');
 
@@ -63,6 +83,9 @@ export default function StripeCallbackClient() {
           window.location.href = `/stripe/${mode}/success?account_id=${data.account_id}`;
         }, 1000);
       } catch (err) {
+        addDebug(
+          `Error: ${err instanceof Error ? err.message : 'connection_failed'}`,
+        );
         console.error('[TK Development] Error in OAuth callback:', err);
         setStatus('error');
         const errorMessage =
@@ -118,6 +141,18 @@ export default function StripeCallbackClient() {
               </div>
 
               <p className="mt-3 text-base text-gray-600">{message}</p>
+
+              {/* 🔍 ADD DEBUG VISUALIZATION */}
+              <div className="mt-4 p-4 bg-gray-100 rounded-lg text-left">
+                <p className="text-sm font-bold text-gray-700 mb-2">
+                  Debug Info:
+                </p>
+                {debugInfo.map((info, i) => (
+                  <p key={i} className="text-xs text-gray-600 font-mono">
+                    {info}
+                  </p>
+                ))}
+              </div>
 
               <div className="mt-8 p-5 bg-[#d6dbdc]/20 rounded-xl border border-[#d6dbdc]">
                 <p className="text-sm text-[#5d6d7a] font-semibold uppercase tracking-wider">
