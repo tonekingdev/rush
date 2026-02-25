@@ -36,7 +36,7 @@ export default function StripeCallbackClient() {
 
         setMessage('Exchanging authorization code...');
 
-        const apiUrl = `https://api.rushhealthc.com/api/v1/stripe/oauth/callback`;
+        const apiUrl = `https://api.rushhealthc.com/api/v1/payments/stripe/oauth/callback`;
 
         // Send the code to the backend to exchange for tokens
         const response = await fetch(apiUrl, {
