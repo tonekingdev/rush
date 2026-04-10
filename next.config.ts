@@ -2,7 +2,6 @@ import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  output: "export",
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -16,8 +15,7 @@ const nextConfig: NextConfig = {
   env: {
     NEXT_PUBLIC_API_URL: "https://rushhealthc.com/api",
   },
-  // Optimize static export
-  trailingSlash: true,
+  // Optimize deployment
   poweredByHeader: false,
 }
 
