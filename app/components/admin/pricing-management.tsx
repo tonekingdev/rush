@@ -137,7 +137,7 @@ export function PricingManagement({ hasAccess }: PricingManagementProps) {
       setSaving(true)
       setError(null)
 
-      const url = "/api/admin/pricing.php"
+      const url = "/api/admin/pricing"
       const method = editingPlan ? "PUT" : "POST"
 
       const payload = editingPlan ? { id: editingPlan.id, ...formData } : formData

@@ -153,7 +153,7 @@ export function ApplicationManagement() {
   const fetchApplications = async () => {
     try {
       setLoading(true)
-      const response = await fetch("/api/provider-applications.php", {
+      const response = await fetch("/api/admin/provider-applications", {
         credentials: "include",
       })
 
@@ -186,7 +186,7 @@ export function ApplicationManagement() {
 
   const handleStatusUpdate = async (applicationId: number, newStatus: string) => {
     try {
-      const response = await fetch("/api/provider-applications.php", {
+      const response = await fetch("/api/admin/provider-applications", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

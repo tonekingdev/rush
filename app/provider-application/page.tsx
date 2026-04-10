@@ -88,7 +88,7 @@ const ProviderApplication: React.FC = () => {
     })
 
     try {
-      const response = await fetch("/submit-provider-application.php", {
+      const response = await fetch("/api/provider-applications", {
         method: "POST",
         body: formData,
       })

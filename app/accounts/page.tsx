@@ -40,7 +40,7 @@ export default function AccountDeletionPage() {
     setError(null)
 
     try {
-      const response = await fetch("/account-deletion.php", {
+      const response = await fetch("/api/account-deletion", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

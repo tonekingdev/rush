@@ -15,7 +15,7 @@ export default function PreRegister() {
   const [stripePromise, setStripePromise] = useState<Promise<Stripe | null> | null>(null)
 
   useEffect(() => {
-    fetch("/get_stripe_key.php")
+    fetch("/api/stripe-key")
       .then((response) => response.json())
       .then((data) => {
         setStripePromise(loadStripe(data.STRIPE_PUBLISHABLE_KEY))

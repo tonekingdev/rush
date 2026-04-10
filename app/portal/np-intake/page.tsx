@@ -131,7 +131,7 @@ export default function NPIntakePage() {
         formDataToSubmit.append('years_experience', String(formData.yearsExperience))
 
         try {
-            const response = await fetch("/submit-np-intake.php", {
+            const response = await fetch("/api/np-intake", {
                 method: 'POST',
                 body: formDataToSubmit,
             })

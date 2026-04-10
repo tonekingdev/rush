@@ -149,7 +149,7 @@ export default function DemoPage() {
     setIsSubmitting(true)
 
     try {
-      const response = await fetch("/submit-email-connect.php", {
+      const response = await fetch("/api/email-connect", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",

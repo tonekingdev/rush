@@ -115,7 +115,7 @@ export function ApplicationsTable() {
             </div>
             
             <Link 
-              href="/admin/export-applications.php" 
+              href="/api/admin/export-applications" 
               className="ml-4 px-4 py-2 bg-[#1586D6] text-white rounded-lg hover:bg-blue-600 transition duration-200 flex items-center"
             >
               <FaFileDownload className="mr-2" />
