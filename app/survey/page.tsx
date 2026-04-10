@@ -1,61 +1,82 @@
-import React from 'react'
-import { FadeInView } from '../components/FadeInView'
-import { FaUserMd, FaUsers } from 'react-icons/fa'
-import Link from 'next/link'
+import type { Metadata } from "next"
+import { FadeInView } from "../components/FadeInView"
+import { FaUserMd, FaUsers } from "react-icons/fa"
+import Link from "next/link"
+import { Container } from "@/components/ui/container"
 
-const SurveyPage = () => {
-  return (
-    <div>
-        <section className="max-w-5xl mx-auto py-21 text-center">
-            <div className="flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-                <div className="sm:mx-auto sm:w-full sm:max-w-md">
-                    <FadeInView>
-                        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900 font-poppins">
-                            RUSH Healthcare Platform
-                        </h2>
-                        <p className="mt-2 text-xl text-gray-600">
-                            Thank you for choosing RUSH for your on-demand healthcare service.
-                        </p>
-                    </FadeInView>
-                    <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <FadeInView>
-                            <div className="flex flex-col items-center">
-                                <div className="p-4 bg-blue-100 rounded-full">
-                                    <FaUsers className='text-4xl text-[#1586d6]' />
-                                </div>
-                                <h3 className="mt-4 text-xl font-semibold">
-                                    Get Immediate Care
-                                </h3>
-                                <Link
-                                    href='/survey/patient'
-                                    className='px-6 py-3 mt-4 shadow-md bg-white text-[#1586d6] rounded-full text-lg font-semibold hover:bg-blue-200 duration-500'
-                                >
-                                    Sign Up
-                                </Link>
-                            </div>
-                        </FadeInView>
-                        <FadeInView>
-                            <div className="flex flex-col items-center">
-                                <div className="p-4 bg-green-100 rounded-full">
-                                    <FaUserMd className='text-4xl text-green-600' />
-                                </div>
-                                <h3 className="mt-4 text-xl font-semibold">
-                                    Become a Provider
-                                </h3>
-                                <Link
-                                    href='/survey/provider'
-                                    className='px-6 py-3 mt-4 shadow-md bg-white text-[#1586d6] rounded-full text-lg font-semibold hover:bg-blue-200 duration-500'
-                                >
-                                    Sign Up
-                                </Link>
-                            </div>
-                        </FadeInView>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-  )
+export const metadata: Metadata = {
+  title: "Sign Up - Patient or Healthcare Provider",
+  description:
+    "Join RUSH Healthcare as a patient seeking in-home care or as a certified healthcare professional looking to provide services. Start your journey today.",
+  openGraph: {
+    title: "Sign Up for RUSH Healthcare",
+    description:
+      "Join RUSH Healthcare as a patient or healthcare provider. Get started with on-demand home healthcare services.",
+  },
 }
 
-export default SurveyPage
+export default function SurveyPage() {
+  return (
+    <section
+      className="bg-background py-16"
+      aria-labelledby="survey-heading"
+    >
+      <Container size="default" className="text-center">
+        <div className="mx-auto max-w-md py-12">
+          <FadeInView>
+            <h1
+              id="survey-heading"
+              className="text-balance font-heading text-3xl font-extrabold text-foreground"
+            >
+              RUSH Healthcare Platform
+            </h1>
+            <p className="mt-2 text-xl text-muted-foreground">
+              Thank you for choosing RUSH for your on-demand healthcare
+              service.
+            </p>
+          </FadeInView>
+          <div className="mt-20 grid grid-cols-1 gap-8 md:grid-cols-2">
+            <FadeInView>
+              <div className="flex flex-col items-center">
+                <div className="rounded-full bg-blue-100 p-4 dark:bg-blue-900/30">
+                  <FaUsers
+                    className="text-4xl text-[#1586d6]"
+                    aria-hidden="true"
+                  />
+                </div>
+                <h2 className="mt-4 text-xl font-semibold text-foreground">
+                  Get Immediate Care
+                </h2>
+                <Link
+                  href="/survey/patient"
+                  className="mt-4 rounded-full bg-background px-6 py-3 text-lg font-semibold text-[#1586d6] shadow-md duration-500 hover:bg-blue-100 dark:bg-card dark:hover:bg-blue-900/30"
+                >
+                  Sign Up
+                </Link>
+              </div>
+            </FadeInView>
+            <FadeInView>
+              <div className="flex flex-col items-center">
+                <div className="rounded-full bg-green-100 p-4 dark:bg-green-900/30">
+                  <FaUserMd
+                    className="text-4xl text-green-600"
+                    aria-hidden="true"
+                  />
+                </div>
+                <h2 className="mt-4 text-xl font-semibold text-foreground">
+                  Become a Provider
+                </h2>
+                <Link
+                  href="/survey/provider"
+                  className="mt-4 rounded-full bg-background px-6 py-3 text-lg font-semibold text-[#1586d6] shadow-md duration-500 hover:bg-blue-100 dark:bg-card dark:hover:bg-blue-900/30"
+                >
+                  Sign Up
+                </Link>
+              </div>
+            </FadeInView>
+          </div>
+        </div>
+      </Container>
+    </section>
+  )
+}

@@ -5,6 +5,7 @@ import Link from "next/link"
 import { FaCheck, FaTimes, FaStar, FaSpinner } from "react-icons/fa"
 import { FadeInView } from "./FadeInView"
 import { DropInView } from "./DropInView"
+import { Container } from "@/components/ui/container"
 
 interface PricePlan {
   id: number
@@ -24,7 +25,6 @@ export default function PricingSection() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
-  // Fetch pricing data from API
   useEffect(() => {
     const fetchPricingData = async () => {
       try {
@@ -47,14 +47,16 @@ export default function PricingSection() {
         }
       } catch (err) {
         console.error("Error fetching pricing data:", err)
-        setError(err instanceof Error ? err.message : "Failed to load pricing data")
+        setError(
+          err instanceof Error ? err.message : "Failed to load pricing data"
+        )
 
-        // Fallback to static data if API fails
         const fallbackPlans: PricePlan[] = [
           {
             id: 1,
             service_tier: "RUSH Access",
-            included_services: "Visit from nurse assistant (CNA), vitals, light wound care",
+            included_services:
+              "Visit from nurse assistant (CNA), vitals, light wound care",
             patient_price: 59.0,
             enabled: true,
           },
@@ -69,7 +71,8 @@ export default function PricingSection() {
           {
             id: 3,
             service_tier: "RUSH Subscription",
-            included_services: "1 nurse 1 CNA visit/month + chat support (ONE MEMBER PER VISIT)",
+            included_services:
+              "1 nurse 1 CNA visit/month + chat support (ONE MEMBER PER VISIT)",
             patient_price: 109.0,
             enabled: true,
             notes:
@@ -85,7 +88,6 @@ export default function PricingSection() {
     fetchPricingData()
   }, [])
 
-  // Only show enabled plans
   const enabledPlans = pricingPlans.filter((plan) => plan.enabled)
 
   const handlePlanClick = (plan: PricePlan) => {
@@ -100,100 +102,143 @@ export default function PricingSection() {
     return services.split(",").map((service) => service.trim())
   }
 
-  // Loading state
   if (loading) {
     return (
-      <section id="pricing" className="bg-white py-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
+      <section
+        id="pricing"
+        className="bg-background py-16"
+        aria-labelledby="pricing-heading-loading"
+      >
+        <Container size="lg">
+          <div className="mb-12 text-center">
             <DropInView>
-              <h2 className="text-3xl font-bold font-poppins text-gray-800">Choose Your Care Plan</h2>
+              <h2
+                id="pricing-heading-loading"
+                className="font-heading text-3xl font-bold text-foreground"
+              >
+                Choose Your Care Plan
+              </h2>
             </DropInView>
             <FadeInView>
-              <p className="mt-2 text-gray-600">
-                Transparent pricing for quality healthcare services delivered to your home.
+              <p className="mt-2 text-muted-foreground">
+                Transparent pricing for quality healthcare services delivered to
+                your home.
               </p>
             </FadeInView>
           </div>
 
-          <div className="flex justify-center items-center py-12">
-            <FaSpinner className="animate-spin text-4xl text-[#1586D6]" />
-            <span className="ml-3 text-gray-600">Loading pricing plans...</span>
+          <div className="flex items-center justify-center py-12">
+            <FaSpinner
+              className="animate-spin text-4xl text-[#1586D6]"
+              aria-hidden="true"
+            />
+            <span className="ml-3 text-muted-foreground">
+              Loading pricing plans...
+            </span>
           </div>
-        </div>
+        </Container>
       </section>
     )
   }
 
-  // Error state with fallback
   if (error && enabledPlans.length === 0) {
     return (
-      <section id="pricing" className="bg-white py-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
+      <section
+        id="pricing"
+        className="bg-background py-16"
+        aria-labelledby="pricing-heading-error"
+      >
+        <Container size="lg">
+          <div className="mb-12 text-center">
             <DropInView>
-              <h2 className="text-3xl font-bold font-poppins text-gray-800">Choose Your Care Plan</h2>
+              <h2
+                id="pricing-heading-error"
+                className="font-heading text-3xl font-bold text-foreground"
+              >
+                Choose Your Care Plan
+              </h2>
             </DropInView>
             <FadeInView>
-              <p className="mt-2 text-gray-600">
-                Transparent pricing for quality healthcare services delivered to your home.
+              <p className="mt-2 text-muted-foreground">
+                Transparent pricing for quality healthcare services delivered to
+                your home.
               </p>
             </FadeInView>
           </div>
 
-          <div className="text-center py-12">
-            <div className="bg-red-50 border border-red-200 rounded-lg p-6 max-w-md mx-auto">
-              <p className="text-red-600 mb-4">Unable to load pricing information at this time.</p>
+          <div className="py-12 text-center">
+            <div className="mx-auto max-w-md rounded-lg border border-destructive/30 bg-destructive/10 p-6">
+              <p className="mb-4 text-destructive">
+                Unable to load pricing information at this time.
+              </p>
               <button
                 onClick={() => window.location.reload()}
-                className="bg-[#1586D6] text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                className="rounded-lg bg-[#1586D6] px-4 py-2 text-white transition-colors hover:bg-blue-700"
               >
                 Try Again
               </button>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
     )
   }
 
   return (
     <>
-      {/* Pricing Section */}
-      <section id="pricing" className="bg-white py-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
+      <section
+        id="pricing"
+        className="bg-background py-16"
+        aria-labelledby="pricing-heading"
+      >
+        <Container size="lg">
+          <div className="mb-12 text-center">
             <DropInView>
-              <h2 className="text-3xl font-bold font-poppins text-gray-800">Choose Your Care Plan</h2>
+              <h2
+                id="pricing-heading"
+                className="font-heading text-3xl font-bold text-foreground"
+              >
+                Choose Your Care Plan
+              </h2>
             </DropInView>
             <FadeInView>
-              <p className="mt-2 text-gray-600">
-                Transparent pricing for quality healthcare services delivered to your home.
+              <p className="mt-2 text-muted-foreground">
+                Transparent pricing for quality healthcare services delivered to
+                your home.
               </p>
             </FadeInView>
             {error && (
-              <div className="mt-4 text-sm text-yellow-600 bg-yellow-50 border border-yellow-200 rounded-lg p-3 max-w-md mx-auto">
-                Note: Showing cached pricing data. Some information may not be current.
+              <div className="mx-auto mt-4 max-w-md rounded-lg border border-yellow-200 bg-yellow-50 p-3 text-sm text-yellow-800 dark:border-yellow-800/30 dark:bg-yellow-900/20 dark:text-yellow-200">
+                Note: Showing cached pricing data. Some information may not be
+                current.
               </div>
             )}
           </div>
 
           <FadeInView>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-3">
               {enabledPlans.map((plan) => (
                 <div
                   key={plan.id}
                   onClick={() => handlePlanClick(plan)}
-                  className={`relative bg-white rounded-2xl shadow-lg border-2 cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-105 ${
+                  className={`relative cursor-pointer rounded-2xl border-2 bg-card shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl ${
                     plan.is_popular
-                      ? "border-[#1586D6] ring-2 ring-[#1586D6] ring-opacity-20"
-                      : "border-gray-200 hover:border-[#1586D6]"
+                      ? "border-[#1586D6] ring-2 ring-[#1586D6]/20"
+                      : "border-border hover:border-[#1586D6]"
                   }`}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      handlePlanClick(plan)
+                    }
+                  }}
+                  aria-label={`View details for ${plan.service_tier} plan - $${plan.patient_price}`}
                 >
                   {plan.is_popular && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <div className="bg-[#1586D6] text-white px-4 py-1 rounded-full text-sm font-medium flex items-center">
-                        <FaStar className="w-3 h-3 mr-1" />
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 transform">
+                      <div className="flex items-center rounded-full bg-[#1586D6] px-4 py-1 text-sm font-medium text-white">
+                        <FaStar className="mr-1 h-3 w-3" aria-hidden="true" />
                         Most Popular
                       </div>
                     </div>
@@ -201,22 +246,32 @@ export default function PricingSection() {
 
                   <div className="p-8">
                     <div className="text-center">
-                      <h3 className="text-xl font-bold text-gray-800 mb-2">{plan.service_tier}</h3>
+                      <h3 className="mb-2 text-xl font-bold text-foreground">
+                        {plan.service_tier}
+                      </h3>
                       <div className="mb-4">
-                        <span className="text-4xl font-bold text-gray-800">${plan.patient_price}</span>
-                        <span className="text-gray-600 ml-1">{plan.service_tier === "RUSH Subscription" ? "per month" : plan.service_tier === "RUSH Sitter" ? "per hour" : "per visit"}</span>
+                        <span className="text-4xl font-bold text-foreground">
+                          ${plan.patient_price}
+                        </span>
+                        <span className="ml-1 text-muted-foreground">
+                          {plan.service_tier === "RUSH Subscription"
+                            ? "per month"
+                            : plan.service_tier === "RUSH Sitter"
+                              ? "per hour"
+                              : "per visit"}
+                        </span>
                       </div>
-                      <p className="text-gray-600 text-sm mb-6 h-12 flex items-center justify-center">
+                      <p className="mb-6 flex h-12 items-center justify-center text-sm text-muted-foreground">
                         {plan.included_services.length > 50
                           ? `${plan.included_services.substring(0, 50)}...`
                           : plan.included_services}
                       </p>
 
                       <button
-                        className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors duration-300 ${
+                        className={`w-full rounded-lg px-6 py-3 font-semibold transition-colors duration-300 ${
                           plan.is_popular
                             ? "bg-[#1586D6] text-white hover:bg-blue-700"
-                            : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                            : "bg-secondary text-foreground hover:bg-secondary/80"
                         }`}
                       >
                         View Details
@@ -229,63 +284,91 @@ export default function PricingSection() {
           </FadeInView>
 
           <FadeInView>
-            <div className="text-center mt-8">
-              <p className="text-gray-600 text-sm">
-                All plans include HIPAA-compliant care • Licensed professionals • Flexible scheduling
+            <div className="mt-8 text-center">
+              <p className="text-sm text-muted-foreground">
+                All plans include HIPAA-compliant care - Licensed professionals
+                - Flexible scheduling
               </p>
-              <p className="text-gray-600 text-sm">
+              <p className="text-sm text-muted-foreground">
                 HSA/FSA payments are acceptable
               </p>
             </div>
           </FadeInView>
-        </div>
+        </Container>
       </section>
 
       {/* Plan Details Modal */}
       {selectedPlan && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
+        >
+          <div className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl bg-card shadow-2xl">
             <div className="p-8">
               {/* Header */}
-              <div className="flex justify-between items-start mb-6">
+              <div className="mb-6 flex items-start justify-between">
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">{selectedPlan.service_tier}</h3>
+                  <h3
+                    id="modal-title"
+                    className="mb-2 text-2xl font-bold text-foreground"
+                  >
+                    {selectedPlan.service_tier}
+                  </h3>
                   {selectedPlan.is_popular && (
-                    <div className="inline-flex items-center bg-[#1586D6] text-white px-3 py-1 rounded-full text-sm font-medium">
-                      <FaStar className="w-3 h-3 mr-1" />
+                    <div className="inline-flex items-center rounded-full bg-[#1586D6] px-3 py-1 text-sm font-medium text-white">
+                      <FaStar className="mr-1 h-3 w-3" aria-hidden="true" />
                       Most Popular
                     </div>
                   )}
                 </div>
-                <button onClick={handleCloseModal} className="text-gray-400 hover:text-gray-600 transition-colors">
-                  <FaTimes className="w-6 h-6" />
+                <button
+                  onClick={handleCloseModal}
+                  className="text-muted-foreground transition-colors hover:text-foreground"
+                  aria-label="Close modal"
+                >
+                  <FaTimes className="h-6 w-6" />
                 </button>
               </div>
 
               {/* Price */}
-              <div className="text-center mb-8">
-                <div className="text-5xl font-bold text-gray-800 mb-2">${selectedPlan.patient_price}</div>
-                <p className="text-gray-600">{selectedPlan.service_tier === "RUSH Subscription" ? "per month" : "per visit"}</p>
+              <div className="mb-8 text-center">
+                <div className="mb-2 text-5xl font-bold text-foreground">
+                  ${selectedPlan.patient_price}
+                </div>
+                <p className="text-muted-foreground">
+                  {selectedPlan.service_tier === "RUSH Subscription"
+                    ? "per month"
+                    : "per visit"}
+                </p>
               </div>
 
               {/* Services Included */}
               <div className="mb-8">
-                <h4 className="text-lg font-semibold text-gray-800 mb-4">What&apos;s Included:</h4>
+                <h4 className="mb-4 text-lg font-semibold text-foreground">
+                  What&apos;s Included:
+                </h4>
                 <div className="space-y-3">
-                  {formatServices(selectedPlan.included_services).map((service, index) => (
-                    <div key={index} className="flex items-start">
-                      <FaCheck className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-700">{service}</span>
-                    </div>
-                  ))}
+                  {formatServices(selectedPlan.included_services).map(
+                    (service, index) => (
+                      <div key={index} className="flex items-start">
+                        <FaCheck
+                          className="mr-3 mt-0.5 h-5 w-5 shrink-0 text-green-500"
+                          aria-hidden="true"
+                        />
+                        <span className="text-muted-foreground">{service}</span>
+                      </div>
+                    )
+                  )}
                 </div>
               </div>
 
               {/* Special Notes */}
               {selectedPlan.notes && (
                 <div className="mb-8">
-                  <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                    <p className="text-sm text-blue-800 font-medium">
+                  <div className="rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-800/30 dark:bg-blue-900/20">
+                    <p className="text-sm font-medium text-blue-800 dark:text-blue-200">
                       <strong>Important:</strong> {selectedPlan.notes}
                     </p>
                   </div>
@@ -294,28 +377,25 @@ export default function PricingSection() {
 
               {/* Additional Benefits */}
               <div className="mb-8">
-                <h4 className="text-lg font-semibold text-gray-800 mb-4">Additional Benefits:</h4>
+                <h4 className="mb-4 text-lg font-semibold text-foreground">
+                  Additional Benefits:
+                </h4>
                 <div className="space-y-3">
-                  <div className="flex items-start">
-                    <FaCheck className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Licensed and certified healthcare professionals</span>
-                  </div>
-                  <div className="flex items-start">
-                    <FaCheck className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">HIPAA-compliant care and documentation</span>
-                  </div>
-                  <div className="flex items-start">
-                    <FaCheck className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Flexible scheduling to fit your needs</span>
-                  </div>
-                  <div className="flex items-start">
-                    <FaCheck className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Same-day availability when possible</span>
-                  </div>
-                  <div className="flex items-start">
-                    <FaCheck className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">Detailed care reports and follow-up</span>
-                  </div>
+                  {[
+                    "Licensed and certified healthcare professionals",
+                    "HIPAA-compliant care and documentation",
+                    "Flexible scheduling to fit your needs",
+                    "Same-day availability when possible",
+                    "Detailed care reports and follow-up",
+                  ].map((benefit, index) => (
+                    <div key={index} className="flex items-start">
+                      <FaCheck
+                        className="mr-3 mt-0.5 h-5 w-5 shrink-0 text-green-500"
+                        aria-hidden="true"
+                      />
+                      <span className="text-muted-foreground">{benefit}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -323,11 +403,13 @@ export default function PricingSection() {
               <div className="text-center">
                 <Link
                   href="/comingsoon"
-                  className="inline-block w-full bg-[#1586D6] text-white py-4 px-8 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors duration-300"
+                  className="inline-block w-full rounded-lg bg-[#1586D6] px-8 py-4 text-lg font-semibold text-white transition-colors duration-300 hover:bg-blue-700"
                 >
                   Choose This Plan
                 </Link>
-                <p className="text-gray-500 text-sm mt-3">Click to get started with {selectedPlan.service_tier}</p>
+                <p className="mt-3 text-sm text-muted-foreground">
+                  Click to get started with {selectedPlan.service_tier}
+                </p>
               </div>
             </div>
           </div>

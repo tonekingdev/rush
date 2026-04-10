@@ -1,8 +1,20 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import { FaHome, FaShieldAlt, FaEnvelope, FaPhone } from "react-icons/fa"
 import { FadeInView } from "../components/FadeInView"
 import { SlideInView } from "../components/SlideInView"
 import { DropInView } from "../components/DropInView"
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "Learn how RUSH Healthcare collects, uses, and protects your personal information. We are HIPAA compliant and committed to your privacy and data security.",
+  openGraph: {
+    title: "Privacy Policy | RUSH Healthcare",
+    description:
+      "Learn how RUSH Healthcare protects your personal information. HIPAA compliant healthcare services.",
+  },
+}
 
 export default function PrivacyPolicyPage() {
   return (
