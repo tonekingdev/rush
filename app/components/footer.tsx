@@ -16,7 +16,7 @@ export default function Footer() {
             </Link>
           </div>
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} RUSH. All rights reserved.
+            &copy; {new Date().getFullYear()} R.U.S.H. All rights reserved.
             Developed by{" "}
             <a
               className="text-foreground duration-500 hover:text-[#1586D6]"
