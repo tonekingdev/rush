@@ -11,7 +11,7 @@ export function AdminHeader() {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch("/api/logout.php", {
+      const response = await fetch("/api/auth/logout", {
         method: "POST",
         credentials: "include",
       })

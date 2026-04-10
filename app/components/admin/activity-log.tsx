@@ -30,7 +30,7 @@ export function ActivityLog() {
     setError(null)
     
     try {
-      const response = await fetch('/api/activity-log.php')
+      const response = await fetch('/api/admin/activity-log', { credentials: 'include' })
       const data = await response.json()
       
       if (data.success) {

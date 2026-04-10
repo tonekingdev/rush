@@ -35,7 +35,7 @@ export function LoginForm({ onForgotPassword }: LoginFormProps) {
     try {
       console.log("Submitting login with:", usernameOrEmail)
 
-      const response = await fetch("/api/auth.php", {
+      const response = await fetch("/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

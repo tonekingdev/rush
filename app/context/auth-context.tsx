@@ -28,7 +28,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const checkPricingAccess = useCallback(async () => {
     try {
-      const response = await fetch("/api/check-pricing-access.php", {
+      const response = await fetch("/api/auth/check", {
         credentials: "include",
       })
       const data = await response.json()
@@ -41,7 +41,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const checkAuth = useCallback(async () => {
     try {
-      const response = await fetch("/api/check-auth.php", {
+      const response = await fetch("/api/auth/check", {
         credentials: "include",
       })
       const data = await response.json()

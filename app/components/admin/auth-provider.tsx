@@ -28,7 +28,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     // Check if user is already logged in
     const checkAuth = async () => {
       try {
-        const response = await fetch("/api/check-auth.php")
+        const response = await fetch("/api/auth/check")
         const data = await response.json()
         
         if (data.authenticated) {
@@ -48,7 +48,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setIsLoading(true)
     
     try {
-      const response = await fetch("/api/auth.php", {
+      const response = await fetch("/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -74,7 +74,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const logout = async (): Promise<void> => {
     try {
-      await fetch("/api/logout.php", {
+      await fetch("/api/auth/logout", {
         method: "POST",
       })
       

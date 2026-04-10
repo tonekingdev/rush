@@ -51,7 +51,7 @@ export function CreateUserModal({ onClose, onUserCreated }: CreateUserModalProps
     }
 
     try {
-      const response = await fetch("/api/create-admin-user.php", {
+      const response = await fetch("/api/admin/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

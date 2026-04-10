@@ -23,7 +23,7 @@ export function DashboardStats() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const response = await fetch('/api/dashboard-stats.php')
+        const response = await fetch('/api/admin/dashboard-stats', { credentials: 'include' })
         const data = await response.json()
         
         if (data.success) {

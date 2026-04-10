@@ -61,7 +61,7 @@ export function SettingsPanel() {
 
   const fetchSettings = async () => {
     try {
-      const response = await fetch("/api/settings.php", {
+      const response = await fetch("/api/admin/settings", {
         credentials: "include",
       })
 
@@ -140,7 +140,7 @@ export function SettingsPanel() {
         smtp_encryption: settings.smtpEncryption,
       }
 
-      const response = await fetch("/api/settings.php", {
+      const response = await fetch("/api/admin/settings", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

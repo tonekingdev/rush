@@ -185,7 +185,7 @@ export function ApplicationList({
     setCreatingProviders((prev) => new Set(prev).add(application.id))
 
     try {
-      const response = await fetch("/api/create-provider.php", {
+      const response = await fetch("/api/admin/create-provider", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

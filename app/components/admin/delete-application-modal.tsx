@@ -67,7 +67,7 @@ export function DeleteApplicationModal({ isOpen, onClose, application, onSuccess
     setError(null)
 
     try {
-      const response = await fetch("/api/provider-applications.php", {
+      const response = await fetch("/api/admin/provider-applications", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

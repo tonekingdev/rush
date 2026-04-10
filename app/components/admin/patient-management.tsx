@@ -44,7 +44,7 @@ export function PatientManagement() {
         ...(filters.search && { search: filters.search }),
       })
 
-      const response = await fetch(`/api/users.php?${params}`, {
+      const response = await fetch(`/api/admin/users?${params}`, {
         credentials: "include",
       })
 
@@ -73,7 +73,7 @@ export function PatientManagement() {
 
   const handleStatusUpdate = async (patientId: number, status: "active" | "inactive" | "suspended") => {
     try {
-      const response = await fetch("/api/users.php", {
+      const response = await fetch("/api/admin/users", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

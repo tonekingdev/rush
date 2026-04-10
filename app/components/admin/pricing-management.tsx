@@ -48,7 +48,7 @@ export function PricingManagement({ hasAccess }: PricingManagementProps) {
     try {
       setLoading(true)
       setError(null)
-      const response = await fetch("/api/admin/pricing.php", {
+      const response = await fetch("/api/admin/pricing", {
         credentials: "include",
       })
 
@@ -180,7 +180,7 @@ export function PricingManagement({ hasAccess }: PricingManagementProps) {
       setDeletingPlan(planId)
       setError(null)
 
-      const response = await fetch("/api/admin/pricing.php", {
+      const response = await fetch("/api/admin/pricing", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -213,7 +213,7 @@ export function PricingManagement({ hasAccess }: PricingManagementProps) {
       setTogglingPlan(plan.id)
       setError(null)
 
-      const response = await fetch("/api/admin/pricing.php", {
+      const response = await fetch("/api/admin/pricing", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

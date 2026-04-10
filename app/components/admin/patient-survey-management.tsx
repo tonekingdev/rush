@@ -54,7 +54,7 @@ export function PatientSurveyManagement() {
         ...(filters.search && { search: filters.search }),
       })
 
-      const response = await fetch(`/api/patient-surveys.php?${params}`, {
+      const response = await fetch(`/api/admin/patient-surveys?${params}`, {
         credentials: "include",
       })
 
@@ -83,7 +83,7 @@ export function PatientSurveyManagement() {
 
   const handleStatusUpdate = async (surveyId: number, status: "approved" | "rejected") => {
     try {
-      const response = await fetch("/api/patient-surveys.php", {
+      const response = await fetch("/api/admin/patient-surveys", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

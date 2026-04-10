@@ -97,7 +97,7 @@ export function ApplicationDetails({ applicationId }: ApplicationDetailsProps) {
   const fetchApplicationDetails = useCallback(async () => {
     try {
       setLoading(true)
-      const response = await fetch(`/api/provider-applications.php?id=${applicationId}`)
+      const response = await fetch(`/api/admin/provider-applications?id=${applicationId}`, { credentials: "include" })
 
       if (!response.ok) {
         throw new Error("Failed to fetch application details")
@@ -128,7 +128,7 @@ export function ApplicationDetails({ applicationId }: ApplicationDetailsProps) {
     setProviderCreationMessage(null)
 
     try {
-      const response = await fetch("/api/create-provider.php", {
+      const response = await fetch("/api/admin/create-provider", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -165,11 +165,12 @@ export function ApplicationDetails({ applicationId }: ApplicationDetailsProps) {
 
   const updateStatus = async (newStatus: string) => {
     try {
-      const response = await fetch("/api/provider-applications.php", {
+      const response = await fetch("/api/admin/provider-applications", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include",
         body: JSON.stringify({
           id: applicationId,
           status: newStatus,

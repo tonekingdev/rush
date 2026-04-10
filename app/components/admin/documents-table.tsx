@@ -43,7 +43,7 @@ export function DocumentsTable({ applicationId }: DocumentsTableProps) {
         ...(applicationId && { applicationId }),
       })
 
-      const response = await fetch(`/api/documents.php?${params}`)
+      const response = await fetch(`/api/admin/documents?${params}`, { credentials: "include" })
       const data = await response.json()
 
       if (data.success) {
@@ -108,16 +108,16 @@ export function DocumentsTable({ applicationId }: DocumentsTableProps) {
   }
 
   const handleDownload = (documentId: string) => {
-    window.open(`/api/download-document.php?id=${documentId}`, "_blank")
+    window.open(`/api/admin/download-document?id=${documentId}`, "_blank")
   }
 
   const handleView = (documentId: string) => {
-    window.open(`/api/view-document.php?id=${documentId}`, "_blank")
+    window.open(`/api/admin/view-document?id=${documentId}`, "_blank")
   }
 
   const handleVerify = async (documentId: string) => {
     try {
-      const response = await fetch("/api/verify-document.php", {
+      const response = await fetch("/api/admin/verify-document", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -143,7 +143,7 @@ export function DocumentsTable({ applicationId }: DocumentsTableProps) {
 
   const handleReject = async (documentId: string) => {
     try {
-      const response = await fetch("/api/verify-document.php", {
+      const response = await fetch("/api/admin/verify-document", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

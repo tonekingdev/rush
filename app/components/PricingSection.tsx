@@ -29,7 +29,7 @@ export default function PricingSection() {
     const fetchPricingData = async () => {
       try {
         setLoading(true)
-        const response = await fetch("/api/pricing.php", {
+        const response = await fetch("/api/pricing", {
           method: "GET",
           credentials: "include",
         })

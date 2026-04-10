@@ -20,7 +20,7 @@ export function RecentApplications() {
   useEffect(() => {
     const fetchRecentApplications = async () => {
       try {
-        const response = await fetch('/api/recent-applications.php')
+        const response = await fetch('/api/admin/recent-applications', { credentials: 'include' })
         const data = await response.json()
         
         if (data.success) {

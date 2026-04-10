@@ -50,7 +50,7 @@ export function DeleteProviderModal({ isOpen, onClose, provider, onSuccess }: De
     setError("")
 
     try {
-      const response = await fetch("/api/providers.php", {
+      const response = await fetch("/api/providers", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

@@ -633,9 +633,9 @@ function ProviderApplicationPageContent() {
           })
         }
 
-        console.log("Submitting to:", "/submit-provider-application.php")
+        console.log("Submitting to:", "/api/provider-applications")
 
-        const response = await fetch("/submit-provider-application.php", {
+        const response = await fetch("/api/provider-applications", {
           method: "POST",
           body: formDataToSubmit,
         })

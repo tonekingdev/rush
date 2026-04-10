@@ -21,7 +21,7 @@ export default function DashboardLayout({
     // Check if user is authenticated
     const checkAuth = async () => {
       try {
-        const response = await fetch("/api/check-auth.php")
+        const response = await fetch("/api/auth/check")
         const data = await response.json()
 
         if (data.authenticated) {

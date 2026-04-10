@@ -75,7 +75,7 @@ export function SendCompletionLinkModal({ isOpen, onClose, provider }: SendCompl
         missing_fields: selectedFields,
       })
 
-      const response = await fetch("/api/send-completion-link.php", {
+      const response = await fetch("/api/send-completion-link", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

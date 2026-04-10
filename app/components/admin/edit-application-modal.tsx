@@ -87,7 +87,7 @@ export function EditApplicationModal({ isOpen, onClose, application, onSuccess }
     setError(null)
 
     try {
-      const response = await fetch("/api/provider-applications.php", {
+      const response = await fetch("/api/admin/provider-applications", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

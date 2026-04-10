@@ -26,7 +26,7 @@ export function NpIntakeManagement() {
     const fetchApplications = async () => {
       try {
         // Use the consolidated API endpoint
-        const response = await fetch("/api/np-intakes.php", { 
+        const response = await fetch("/api/admin/np-intakes", { 
           credentials: "include", 
         })
         const data = await response.json()

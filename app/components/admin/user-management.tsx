@@ -61,7 +61,7 @@ export function UserManagement() {
         params.append("search", searchTerm)
       }
 
-      const response = await fetch(`/api/all-users.php?${params}`, {
+      const response = await fetch(`/api/admin/users?${params}`, {
         credentials: "include",
       })
 
@@ -107,7 +107,7 @@ export function UserManagement() {
     newStatus: "active" | "inactive" | "suspended",
   ) => {
     try {
-      const response = await fetch("/api/all-users.php", {
+      const response = await fetch("/api/admin/users", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

@@ -36,7 +36,7 @@ export function RushSubscriptionManagement() {
   const fetchSubscriptions = async () => {
     try {
       setLoading(true)
-      const response = await fetch("/api/admin/rush-subscriptions.php", {
+      const response = await fetch("/api/admin/rush-subscriptions", {
         credentials: "include",
       })
 
@@ -61,7 +61,7 @@ export function RushSubscriptionManagement() {
 
   const handleStatusChange = async (subscriptionId: number, newStatus: string) => {
     try {
-      const response = await fetch("/api/admin/rush-subscriptions.php", {
+      const response = await fetch("/api/admin/rush-subscriptions", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

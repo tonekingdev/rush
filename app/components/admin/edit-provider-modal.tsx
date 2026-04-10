@@ -114,7 +114,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
 
       console.log("Submitting provider data:", submitData)
 
-      const response = await fetch("/api/providers.php", {
+      const response = await fetch("/api/providers", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

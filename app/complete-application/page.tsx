@@ -35,7 +35,7 @@ export default function CompleteApplicationPage() {
     }
 
     try {
-      const response = await fetch(`/api/validate-completion-token.php?token=${token}`)
+      const response = await fetch(`/api/validate-completion-token?token=${token}`)
       const data = await response.json()
 
       if (data.success) {
@@ -74,7 +74,7 @@ export default function CompleteApplicationPage() {
         throw new Error(`Please fill in all required fields: ${missingRequiredFields.join(", ")}`)
       }
 
-      const response = await fetch("/api/complete-application.php", {
+      const response = await fetch("/api/complete-application", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

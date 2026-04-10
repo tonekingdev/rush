@@ -26,7 +26,7 @@ export function ApplicationStatusChart() {
     setError(null)
 
     try {
-      const response = await fetch("/api/application-status-chart.php")
+      const response = await fetch("/api/admin/application-status-chart", { credentials: "include" })
       const data = await response.json()
 
       if (data.success) {

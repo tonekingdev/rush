@@ -84,7 +84,7 @@ export function ProviderManagement() {
   const fetchProviders = async () => {
     try {
       setLoading(true)
-      const response = await fetch("/api/providers.php", {
+      const response = await fetch("/api/providers", {
         credentials: "include",
       })
 
@@ -108,7 +108,7 @@ export function ProviderManagement() {
 
   const handleStatusUpdate = async (providerId: number, newStatus: string) => {
     try {
-      const response = await fetch("/api/providers.php", {
+      const response = await fetch("/api/providers", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

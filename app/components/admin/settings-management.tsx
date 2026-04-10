@@ -24,7 +24,7 @@ export function SettingsManagement() {
 
   const fetchSettings = async () => {
     try {
-      const response = await fetch("/api/settings.php", {
+      const response = await fetch("/api/admin/settings", {
         credentials: "include",
       })
 
@@ -67,7 +67,7 @@ export function SettingsManagement() {
         settingsToSave[key] = settings[key].value
       })
 
-      const response = await fetch("/api/settings.php", {
+      const response = await fetch("/api/admin/settings", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -94,7 +94,7 @@ export function SettingsManagement() {
 
   const initializeSettings = async () => {
     try {
-      const response = await fetch("/api/settings.php?action=initialize", {
+      const response = await fetch("/api/admin/settings?action=initialize", {
         method: "POST",
         credentials: "include",
       })

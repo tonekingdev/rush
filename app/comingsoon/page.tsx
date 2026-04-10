@@ -23,9 +23,12 @@ export default function ComingSoon() {
       const formData = new FormData()
       formData.append("email", email)
 
-      const response = await fetch("/comingsoon_submit.php", {
+      const response = await fetch("/api/comingsoon", {
         method: "POST",
-        body: formData,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
       })
 
       const data = await response.json()

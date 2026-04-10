@@ -22,7 +22,7 @@ export function ForgotPasswordForm({ onBackToLogin }: ForgotPasswordFormProps) {
     setMessage("")
 
     try {
-      const response = await fetch("/api/forgot-password.php", {
+      const response = await fetch("/api/forgot-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
