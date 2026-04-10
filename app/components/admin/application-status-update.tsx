@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { toast } from "react-hot-toast"
+import { toast } from "sonner"
 
 interface ApplicationStatusUpdateProps {
   applicationId: string

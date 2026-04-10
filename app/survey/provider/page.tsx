@@ -10,7 +10,7 @@ import FormsAndAgreements from "./components/FormsAndAgreements"
 import { FadeInView } from "@/app/components/FadeInView"
 import { Button } from "@/components/ui/button"
 import { Save, RotateCcw } from "lucide-react"
-import { useToast } from "@/hooks/use-toast"
+import { toast } from "sonner"
 import { ApplicationStorageManager } from "./utils/storage-utils"
 import { useBeforeUnload } from "./hooks/useBeforeUnload"
 import { usePageVisibility } from "./hooks/usePageVisibility"
@@ -228,7 +228,6 @@ const DEBUG_MODE = false
 // Main component - now with proper client-side only rendering
 function ProviderApplicationPageContent() {
   const router = useRouter()
-  const { toast } = useToast()
   const [currentStep, setCurrentStep] = useState(1)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [applicationId, setApplicationId] = useState<string>("")
@@ -342,24 +341,14 @@ function ProviderApplicationPageContent() {
 
       if (!hasProgress()) {
         if (!silent) {
-          toast({
-            title: "Nothing to Save",
-            description: "Please fill out some information before saving.",
-            variant: "destructive",
-            duration: 3000,
-          })
+          toast.error("Please fill out some information before saving.")
         }
         return
       }
 
       if (!isOnline) {
         if (!silent) {
-          toast({
-            title: "Offline",
-            description: "Cannot save while offline. Your changes will be saved when connection is restored.",
-            variant: "destructive",
-            duration: 3000,
-          })
+          toast.error("Cannot save while offline. Your changes will be saved when connection is restored.")
         }
         return
       }
@@ -374,11 +363,7 @@ function ProviderApplicationPageContent() {
           setHasUnsavedChanges(false)
 
           if (!silent) {
-            toast({
-              title: "Progress Saved",
-              description: "Your application progress has been saved. You can return to complete it later.",
-              duration: 3000,
-            })
+            toast.success("Your application progress has been saved. You can return to complete it later.")
           }
         } else {
           throw new Error("Failed to save to localStorage")
@@ -386,18 +371,13 @@ function ProviderApplicationPageContent() {
       } catch (error) {
         console.error("Save error:", error)
         if (!silent) {
-          toast({
-            title: "Save Failed",
-            description: "Unable to save your progress. Please try again.",
-            variant: "destructive",
-            duration: 3000,
-          })
+          toast.error("Unable to save your progress. Please try again.")
         }
       } finally {
         setIsSaving(false)
       }
     },
-    [applicationId, formData, currentStep, toast, hasProgress, isOnline, isClient],
+    [applicationId, formData, currentStep, hasProgress, isOnline, isClient],
   )
 
   // Browser warning when leaving with unsaved changes - Fixed type issue
@@ -490,15 +470,10 @@ function ProviderApplicationPageContent() {
         // Scroll to top when loading progress
         setTimeout(() => scrollToTop(), 100)
 
-        toast({
-          title: "Progress Loaded",
-          description:
-            "Your application progress has been restored. Please re-upload any files that were previously selected.",
-          duration: 5000,
-        })
+        toast.success("Your application progress has been restored. Please re-upload any files that were previously selected.")
       }
     }
-  }, [toast, isClient])
+  }, [isClient])
 
   // Handle clearing progress
   const handleClearProgress = useCallback(() => {
@@ -509,13 +484,9 @@ function ProviderApplicationPageContent() {
       setLastSaved("")
       setShowLoadProgress(false)
       setHasUnsavedChanges(false)
-      toast({
-        title: "Progress Cleared",
-        description: "Your saved application progress has been cleared.",
-        duration: 3000,
-      })
+      toast.success("Your saved application progress has been cleared.")
     }
-  }, [applicationId, toast, isClient])
+  }, [applicationId, isClient])
 
   // Handle form field changes with improved type safety
   const handleChange = useCallback((input: string, value: string | number | boolean) => {
@@ -667,11 +638,7 @@ function ProviderApplicationPageContent() {
           ApplicationStorageManager.deleteApplication(applicationId)
           cleanup() // Clean up file previews
 
-          toast({
-            title: "Application Submitted Successfully!",
-            description: "Thank you for your submission. You will be redirected shortly.",
-            duration: 5000,
-          })
+          toast.success("Application submitted successfully! Thank you for your submission. You will be redirected shortly.")
 
           // Redirect to thank you page
           if (result.redirect) {
@@ -703,17 +670,12 @@ function ProviderApplicationPageContent() {
           }
         }
 
-        toast({
-          title: "Submission Failed",
-          description: errorMessage,
-          variant: "destructive",
-          duration: 8000,
-        })
+        toast.error(errorMessage)
       } finally {
         setIsSubmitting(false)
       }
     },
-    [formData, applicationId, cleanup, router, toast],
+    [formData, applicationId, cleanup, router],
   )
 
   // Cleanup on unmount

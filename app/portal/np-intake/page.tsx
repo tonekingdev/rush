@@ -1,7 +1,7 @@
 // /portal/np-intake/page.tsx
 "use client"
 
-import { useToast } from "@/hooks/use-toast"
+import { toast } from "sonner"
 import React, { useState } from "react"
 import NPQuickIntake from "../components/NPQuickIntake"
 
@@ -41,7 +41,6 @@ export default function NPIntakePage() {
     const [formData, setFormData] = useState<NPFormDataType>(INITIAL_FORM_DATA)
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({})
-    const { toast } = useToast()
 
     // Haptic feedback function
     const triggerHaptic = (type: HapticType = 'medium') => {
@@ -153,10 +152,7 @@ export default function NPIntakePage() {
             triggerHaptic('success')
             
             // Show success message
-            toast({ 
-                title: "Success!", 
-                description: "NP intake submitted successfully. Redirecting..." 
-            })
+            toast.success("NP intake submitted successfully. Redirecting...")
             
             // Option 1: Use window.location.href for redirect
             setTimeout(() => {
@@ -170,11 +166,7 @@ export default function NPIntakePage() {
             
         } catch (error) {
             console.error("Submission failed:", error)
-            toast({
-                title: "Error",
-                description: error instanceof Error ? error.message : "Failed to submit intake. Please try again.",
-                variant: "destructive"
-            })
+            toast.error(error instanceof Error ? error.message : "Failed to submit intake. Please try again.")
         } finally {
             setIsSubmitting(false)
         }

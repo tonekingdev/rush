@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next"
 import { Inter, Poppins } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { LayoutWrapper } from "./components/layout-wrapper"
+import { Toaster } from "sonner"
 import "./globals.css"
 
 const inter = Inter({
@@ -114,6 +115,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <LayoutWrapper>{children}</LayoutWrapper>
+          <Toaster richColors position="top-right" />
         </ThemeProvider>
       </body>
     </html>

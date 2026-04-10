@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Trash2, Clock, User, Mail, BarChart3 } from "lucide-react"
-import { useToast } from "@/hooks/use-toast"
+import { toast } from "sonner"
 
 interface SavedApplicationsListProps {
   onLoadApplication?: (applicationId: string) => void
@@ -19,7 +19,6 @@ export function SavedApplicationsList({
   onDeleteApplication,
   className = "",
 }: SavedApplicationsListProps) {
-  const { toast } = useToast()
   const [applications, setApplications] = React.useState<SavedApplication[]>([])
   const [isLoading, setIsLoading] = React.useState(true)
 
@@ -31,15 +30,11 @@ export function SavedApplicationsList({
       setApplications(savedApps)
     } catch (error) {
       console.error("Failed to load applications:", error)
-      toast({
-        title: "Error",
-        description: "Failed to load saved applications.",
-        variant: "destructive",
-      })
+      toast.error("Failed to load saved applications.")
     } finally {
       setIsLoading(false)
     }
-  }, [toast])
+  }, [])
 
   // Load saved applications on mount
   React.useEffect(() => {
@@ -59,19 +54,12 @@ export function SavedApplicationsList({
       const success = ApplicationStorageManager.deleteApplication(applicationId)
       if (success) {
         setApplications((prev) => prev.filter((app) => app.applicationId !== applicationId))
-        toast({
-          title: "Application Deleted",
-          description: `Application for ${applicantName} has been deleted.`,
-        })
+        toast.success(`Application for ${applicantName} has been deleted.`)
         if (onDeleteApplication) {
           onDeleteApplication(applicationId)
         }
       } else {
-        toast({
-          title: "Error",
-          description: "Failed to delete application. Please try again.",
-          variant: "destructive",
-        })
+        toast.error("Failed to delete application. Please try again.")
       }
     }
   }
@@ -87,16 +75,9 @@ export function SavedApplicationsList({
       const success = ApplicationStorageManager.clearAllApplications()
       if (success) {
         setApplications([])
-        toast({
-          title: "All Applications Deleted",
-          description: "All saved applications have been cleared.",
-        })
+        toast.success("All saved applications have been cleared.")
       } else {
-        toast({
-          title: "Error",
-          description: "Failed to clear applications. Please try again.",
-          variant: "destructive",
-        })
+        toast.error("Failed to clear applications. Please try again.")
       }
     }
   }
