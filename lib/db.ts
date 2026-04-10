@@ -1,4 +1,7 @@
-import mysql from "mysql2/promise"
+import mysql, { type QueryResult, type FieldPacket } from "mysql2/promise"
+
+// Type for query parameters that mysql2 accepts
+type QueryParams = (string | number | boolean | null | Buffer | Date)[]
 
 // Database connection pool for MySQL on VPS
 const pool = mysql.createPool({
@@ -16,15 +19,15 @@ const pool = mysql.createPool({
 
 export async function query<T = unknown>(
   sql: string,
-  params?: unknown[]
+  params?: QueryParams
 ): Promise<T[]> {
-  const [rows] = await pool.execute(sql, params)
+  const [rows]: [QueryResult, FieldPacket[]] = await pool.execute(sql, params)
   return rows as T[]
 }
 
 export async function queryOne<T = unknown>(
   sql: string,
-  params?: unknown[]
+  params?: QueryParams
 ): Promise<T | null> {
   const rows = await query<T>(sql, params)
   return rows[0] || null
@@ -32,9 +35,9 @@ export async function queryOne<T = unknown>(
 
 export async function execute(
   sql: string,
-  params?: unknown[]
+  params?: QueryParams
 ): Promise<{ insertId: number; affectedRows: number }> {
-  const [result] = await pool.execute(sql, params)
+  const [result]: [QueryResult, FieldPacket[]] = await pool.execute(sql, params)
   const resultSet = result as { insertId: number; affectedRows: number }
   return {
     insertId: resultSet.insertId,
