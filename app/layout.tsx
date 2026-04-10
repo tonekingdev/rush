@@ -20,11 +20,11 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    default: "RUSH Healthcare - On-Demand Home Healthcare Services",
-    template: "%s | RUSH Healthcare",
+    default: "R.U.S.H. Healthcare - On-Demand Home Healthcare Services",
+    template: "%s | R.U.S.H. Healthcare",
   },
   description:
-    "Connect with certified healthcare professionals for in-home care. RUSH Healthcare provides fast, safe, and convenient on-demand medical services including nursing, physical therapy, and more. HIPAA compliant.",
+    "Connect with certified healthcare professionals for in-home care. R.U.S.H. Healthcare provides fast, safe, and convenient on-demand medical services including nursing, physical therapy, and more. HIPAA compliant.",
   keywords: [
     "home healthcare",
     "in-home nursing",
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
     "healthcare professionals",
     "mobile healthcare",
   ],
-  authors: [{ name: "RUSH Healthcare" }],
-  creator: "RUSH Healthcare",
-  publisher: "RUSH Healthcare",
+  authors: [{ name: "R.U.S.H. Healthcare" }],
+  creator: "R.U.S.H. Healthcare",
+  publisher: "R.U.S.H. Healthcare",
   robots: {
     index: true,
     follow: true,
@@ -55,8 +55,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://rushhealthc.com",
-    siteName: "RUSH Healthcare",
-    title: "RUSH Healthcare - On-Demand Home Healthcare Services",
+    siteName: "R.U.S.H. Healthcare",
+    title: "R.U.S.H. Healthcare - On-Demand Home Healthcare Services",
     description:
       "Connect with certified healthcare professionals for in-home care. Fast, safe, and convenient on-demand healthcare services.",
     images: [
@@ -64,13 +64,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "RUSH Healthcare - Professional Home Healthcare Services",
+        alt: "R.U.S.H. Healthcare - Professional Home Healthcare Services",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "RUSH Healthcare - On-Demand Home Healthcare Services",
+    title: "R.U.S.H. Healthcare - On-Demand Home Healthcare Services",
     description:
       "Connect with certified healthcare professionals for in-home care. Fast, safe, and convenient on-demand healthcare services.",
     images: ["/og-image.png"],
@@ -113,7 +113,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <LayoutWrapper>{children}</LayoutWrapper>
+          <LayoutWrapper children={undefined}>{children}</LayoutWrapper>
         </ThemeProvider>
       </body>
     </html>
