@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://rushhealthcare.com",
+    url: "https://rushhealthc.com",
     siteName: "RUSH Healthcare",
     title: "RUSH Healthcare - On-Demand Home Healthcare Services",
     description:
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://rushhealthcare.com",
+    canonical: "https://rushhealthc.com",
   },
   category: "Healthcare",
 }
