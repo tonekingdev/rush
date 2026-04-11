@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState, useEffect } from "react"
-import { FaTimes, FaSave } from "react-icons/fa"
+import { X, Save } from "lucide-react"
 
 interface Application {
   id: number
@@ -145,7 +145,7 @@ export function EditApplicationModal({ isOpen, onClose, application, onSuccess }
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-xl font-bold text-gray-900">Edit Application</h2>
           <button onClick={onClose} className="text-gray-400 hover:text-gray-600" disabled={loading}>
-            <FaTimes className="h-5 w-5" />
+            <X className="h-5 w-5" />
           </button>
         </div>
 
@@ -305,7 +305,7 @@ export function EditApplicationModal({ isOpen, onClose, application, onSuccess }
               {loading ? (
                 <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
               ) : (
-                <FaSave className="h-4 w-4" />
+                <Save className="size-4" />
               )}
               <span>{loading ? "Saving..." : "Save Changes"}</span>
             </button>
