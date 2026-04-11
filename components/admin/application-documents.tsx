@@ -1,17 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
-import {
-  FaDownload,
-  FaEye,
-  FaImage,
-  FaFilePdf,
-  FaExclamationTriangle,
-  FaCheckCircle,
-  FaIdCard,
-  FaTimes,
-  FaInfoCircle,
-} from "react-icons/fa"
+import { Download, Eye, Image, FileText, TriangleAlert, CircleCheck, IdCard, X, Info } from "lucide-react"
 import { SlideInNotification } from "@/components/SlideInNotification"
 
 interface ProviderApplication {
@@ -130,13 +120,13 @@ export default function ApplicationDocuments({ applicationId }: ApplicationDocum
 
   const getFileIcon = (type: string) => {
     if (type.includes("image")) {
-      return <FaImage className="h-5 w-5 text-blue-500" />
+      return <Image className="h-5 w-5 text-blue-500" />
     } else if (type.includes("pdf")) {
-      return <FaFilePdf className="h-5 w-5 text-red-500" />
+      return <FileText className="h-5 w-5 text-red-500" />
     } else if (type.includes("license")) {
-      return <FaIdCard className="h-5 w-5 text-green-500" />
+      return <IdCard className="h-5 w-5 text-green-500" />
     } else {
-      return <FaImage className="h-5 w-5 text-gray-500" />
+      return <Image className="h-5 w-5 text-gray-500" />
     }
   }
 
@@ -433,15 +423,15 @@ export default function ApplicationDocuments({ applicationId }: ApplicationDocum
     const getNotificationIcon = (type: string) => {
       switch (type) {
         case "success":
-          return <FaCheckCircle className="h-5 w-5 text-green-500" />
+          return <CircleCheck className="h-5 w-5 text-green-500" />
         case "error":
-          return <FaExclamationTriangle className="h-5 w-5 text-red-500" />
+          return <TriangleAlert className="h-5 w-5 text-red-500" />
         case "warning":
-          return <FaExclamationTriangle className="h-5 w-5 text-yellow-500" />
+          return <TriangleAlert className="h-5 w-5 text-yellow-500" />
         case "info":
-          return <FaInfoCircle className="h-5 w-5 text-blue-500" />
+          return <Info className="h-5 w-5 text-blue-500" />
         default:
-          return <FaInfoCircle className="h-5 w-5 text-gray-500" />
+          return <Info className="h-5 w-5 text-gray-500" />
       }
     }
 
@@ -459,7 +449,7 @@ export default function ApplicationDocuments({ applicationId }: ApplicationDocum
                 onClick={() => removeNotification(notification.id)}
                 className="inline-flex text-gray-400 hover:text-gray-600 focus:outline-none"
               >
-                <FaTimes className="h-4 w-4" />
+                <X className="h-4 w-4" />
               </button>
             </div>
           </div>
@@ -508,7 +498,7 @@ export default function ApplicationDocuments({ applicationId }: ApplicationDocum
       {error && (
         <div className="mb-4 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg">
           <div className="flex items-center">
-            <FaExclamationTriangle className="h-5 w-5 text-red-500 mr-3" />
+            <TriangleAlert className="h-5 w-5 text-red-500 mr-3" />
             <div>
               <h4 className="text-sm font-medium">Error Loading Documents</h4>
               <p className="text-sm mt-1">{error}</p>
@@ -537,7 +527,7 @@ export default function ApplicationDocuments({ applicationId }: ApplicationDocum
                     {document.required && <span className="text-red-500">Required</span>}
                     {documentUrl && (
                       <span className="text-green-600">
-                        <FaCheckCircle className="inline h-3 w-3 mr-1" />
+                        <CircleCheck className="inline h-3 w-3 mr-1" />
                         Available
                       </span>
                     )}
@@ -564,7 +554,7 @@ export default function ApplicationDocuments({ applicationId }: ApplicationDocum
                       {isProcessingPreview ? (
                         <div className="animate-spin h-4 w-4 border-2 border-blue-600 border-t-transparent rounded-full"></div>
                       ) : (
-                        <FaEye className="h-4 w-4" />
+                        <Eye className="h-4 w-4" />
                       )}
                     </button>
                     <button
@@ -576,14 +566,14 @@ export default function ApplicationDocuments({ applicationId }: ApplicationDocum
                       {isProcessingDownload ? (
                         <div className="animate-spin h-4 w-4 border-2 border-green-600 border-t-transparent rounded-full"></div>
                       ) : (
-                        <FaDownload className="h-4 w-4" />
+                        <Download className="h-4 w-4" />
                       )}
                     </button>
                   </>
                 )}
                 {status === "missing" && (
                   <div className="p-2 text-red-500" title="Document missing">
-                    <FaExclamationTriangle className="h-4 w-4" />
+                    <TriangleAlert className="h-4 w-4" />
                   </div>
                 )}
               </div>
