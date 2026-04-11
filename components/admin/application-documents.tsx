@@ -12,7 +12,7 @@ import {
   FaTimes,
   FaInfoCircle,
 } from "react-icons/fa"
-import { SlideInNotification } from "@/app/components/SlideInNotification"
+import { SlideInNotification } from "@/components/SlideInNotification"
 
 interface ProviderApplication {
   id: number

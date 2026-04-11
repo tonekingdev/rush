@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 
 interface AuthGuardProps {
@@ -93,7 +93,7 @@ export function AuthGuard({ children }: AuthGuardProps) {
 export function useAuth() {
   const [user, setUser] = useState<SessionData["user"] | null>(null)
 
-  useEffect(() => {
+  useCallback(() => {
     try {
       const sessionData = localStorage.getItem("admin_session")
       if (sessionData) {
