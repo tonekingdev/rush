@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
     })
 
     // Send notification to admin
-    const adminEmail = process.env.ADMIN_EMAIL || "admin@rushhealthcare.com"
+    const adminEmail = process.env.ADMIN_EMAIL || "admin@rushhealthc.com"
     await sendEmail({
       to: adminEmail,
       subject: "New Account Deletion Request",

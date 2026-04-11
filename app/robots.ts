@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/admin/", "/api/", "/thank-you"],
       },
     ],
-    sitemap: "https://rushhealthcare.com/sitemap.xml",
+    sitemap: "https://rushhealthc.com/sitemap.xml",
   }
 }
