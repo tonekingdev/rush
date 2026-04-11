@@ -1,7 +1,9 @@
+// components/admin/export-button.tsx
+
 "use client"
 
 import { useState } from "react"
-import { FaDownload, FaSpinner } from "react-icons/fa"
+import { Download, LoaderCircle } from "lucide-react"
 
 interface ExportButtonProps {
   type: "applications" | "providers" | "communications"
@@ -60,7 +62,7 @@ export function ExportButton({ type }: ExportButtonProps) {
         disabled={isExporting}
         className="bg-accent text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 flex items-center space-x-2 disabled:opacity-50"
       >
-        {isExporting ? <FaSpinner className="h-4 w-4 animate-spin" /> : <FaDownload className="h-4 w-4" />}
+        {isExporting ? <LoaderCircle className="h-4 w-4 animate-spin" /> : <Download className="h-4 w-4" />}
         <span>{isExporting ? "Exporting..." : "Export"}</span>
       </button>
 
