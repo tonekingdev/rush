@@ -1,4 +1,5 @@
-// app/components/admin/auth-provider.tsx
+// /components/admin/auth-provider.tsx
+
 "use client"
 
 import { createContext, useContext, useState, useEffect, ReactNode } from "react"
@@ -30,7 +31,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       try {
         const response = await fetch("/api/auth/check")
         const data = await response.json()
-        
+
         if (data.authenticated) {
           setUser(data.user)
         }
@@ -40,13 +41,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setIsLoading(false)
       }
     }
-    
+
     checkAuth()
   }, [])
 
   const login = async (email: string, password: string): Promise<boolean> => {
     setIsLoading(true)
-    
+
     try {
       const response = await fetch("/api/auth/login", {
         method: "POST",
@@ -55,14 +56,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         },
         body: JSON.stringify({ email, password }),
       })
-      
+
       const data = await response.json()
-      
+
       if (response.ok && data.success) {
         setUser(data.user)
         return true
       }
-      
+
       return false
     } catch (error) {
       console.error("Login failed:", error)
@@ -77,7 +78,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       await fetch("/api/auth/logout", {
         method: "POST",
       })
-      
+
       setUser(null)
     } catch (error) {
       console.error("Logout failed:", error)
@@ -101,10 +102,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
 export function useAuth() {
   const context = useContext(AuthContext)
-  
+
   if (context === undefined) {
     throw new Error("useAuth must be used within an AuthProvider")
   }
-  
+
   return context
 }
