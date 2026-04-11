@@ -2,7 +2,6 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { FaUserPlus, FaCheckCircle, FaHourglass, FaExclamationTriangle } from "react-icons/fa"
 import { UserPlus, CircleCheck, Hourglass, TriangleAlert } from "lucide-react"
 
 interface StatsData {
