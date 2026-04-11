@@ -439,12 +439,12 @@ export default function ApplicationDocuments({ applicationId }: ApplicationDocum
       <SlideInNotification>
         <div className={`border rounded-lg p-4 shadow-lg ${getNotificationStyles(notification.type)}`}>
           <div className="flex items-start">
-            <div className="flex-shrink-0">{getNotificationIcon(notification.type)}</div>
+            <div className="shrink-0">{getNotificationIcon(notification.type)}</div>
             <div className="ml-3 flex-1">
               <h4 className="text-sm font-medium">{notification.title}</h4>
               <p className="text-sm mt-1">{notification.message}</p>
             </div>
-            <div className="ml-4 flex-shrink-0">
+            <div className="ml-4 shrink-0">
               <button
                 onClick={() => removeNotification(notification.id)}
                 className="inline-flex text-gray-400 hover:text-gray-600 focus:outline-none"
@@ -520,7 +520,7 @@ export default function ApplicationDocuments({ applicationId }: ApplicationDocum
               className="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50"
             >
               <div className="flex items-center space-x-3">
-                <div className="flex-shrink-0">{getFileIcon(document.type)}</div>
+                <div className="shrink-0">{getFileIcon(document.type)}</div>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-gray-900 truncate">{document.name}</p>
                   <div className="flex items-center space-x-2 text-xs text-gray-500">
@@ -533,7 +533,7 @@ export default function ApplicationDocuments({ applicationId }: ApplicationDocum
                     )}
                   </div>
                 </div>
-                <div className="flex-shrink-0">
+                <div className="shrink-0">
                   <span
                     className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(status)}`}
                   >

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { X, Trash, TriangleAlert } from "lucide-react"
 import { FaTimes, FaTrash, FaExclamationTriangle } from "react-icons/fa"
 
 interface Application {
@@ -105,7 +106,7 @@ export function DeleteApplicationModal({ isOpen, onClose, application, onSuccess
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-xl font-bold text-gray-900">Delete Application</h2>
           <button onClick={onClose} className="text-gray-400 hover:text-gray-600" disabled={loading}>
-            <FaTimes className="h-5 w-5" />
+            <X className="h-5 w-5" />
           </button>
         </div>
 
@@ -113,7 +114,7 @@ export function DeleteApplicationModal({ isOpen, onClose, application, onSuccess
 
         <div className="mb-6">
           <div className="flex items-center mb-4">
-            <FaExclamationTriangle className="h-8 w-8 text-red-500 mr-3" />
+            <TriangleAlert className="h-8 w-8 text-red-500 mr-3" />
             <div>
               <h3 className="text-lg font-medium text-gray-900">Are you sure?</h3>
               <p className="text-sm text-gray-500">This action cannot be undone.</p>
@@ -165,7 +166,7 @@ export function DeleteApplicationModal({ isOpen, onClose, application, onSuccess
             {loading ? (
               <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
             ) : (
-              <FaTrash className="h-4 w-4" />
+              <Trash className="h-4 w-4" />
             )}
             <span>{loading ? "Deleting..." : "Delete Application"}</span>
           </button>
