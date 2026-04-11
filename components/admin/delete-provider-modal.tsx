@@ -1,18 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import {
-  FaTimes,
-  FaTrash,
-  FaSpinner,
-  FaUser,
-  FaEnvelope,
-  FaPhone,
-  FaIdCard,
-  FaCalendar,
-  FaExclamationTriangle,
-  FaBuilding,
-} from "react-icons/fa"
 import { X, Trash, LoaderCircle, User, Mail, Phone, IdCard, Calendar, TriangleAlert, Building } from "lucide-react"
 
 interface Provider {
