@@ -1,4 +1,3 @@
-// app/components/admin/dashboard-stats.tsx
 "use client"
 
 import { useState, useEffect } from "react"
