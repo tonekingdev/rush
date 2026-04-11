@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react"
 import { User, GraduationCap, Briefcase, Users, FileArchive, Phone, Mail, MapPin, CircleCheck, CircleX, Download, IdCard, UserPlus, LoaderCircle } from "lucide-react"
+import Image from "next/image"
 
 interface ApplicationData {
   id: number
