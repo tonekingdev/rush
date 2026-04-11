@@ -49,14 +49,14 @@ export default function MaintenanceAlert() {
         <div className="max-w-5xl mx-auto px-4 py-3 relative">
           <div className="flex items-center justify-center gap-3 text-sm md:text-base">
             <div className="p-2 bg-blue-100 rounded-full flex-shrink-0">
-              <IoTimeOutline className="text-[#1586D6]" />
+              <IoTimeOutline className="text-accent" />
             </div>
             <div className="text-gray-700">
               <span className="font-semibold">Scheduled Maintenance:</span> Our system will undergo maintenance on
               <span className="font-semibold"> April 1, 2025 (8:30 AM - 9:30 AM)</span>. You may experience brief
               service interruptions during this time.
             </div>
-            <div className="hidden md:block bg-blue-100 px-3 py-1 rounded-full text-[#1586D6] font-medium text-sm">
+            <div className="hidden md:block bg-blue-100 px-3 py-1 rounded-full text-accent font-medium text-sm">
               {timeRemaining}
             </div>
             <button

@@ -87,7 +87,7 @@ export default function AccountDeletionPage() {
               </div>
               <Link
                 href="/"
-                className="bg-[#1586D6] text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 font-medium flex items-center"
+                className="bg-accent text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 font-medium flex items-center"
               >
                 <FaHome className="mr-2" />
                 Back to Home
@@ -136,7 +136,7 @@ export default function AccountDeletionPage() {
               <div className="space-y-3">
                 <Link
                   href="/"
-                  className="block w-full bg-[#1586D6] text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300 font-medium"
+                  className="block w-full bg-accent text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300 font-medium"
                 >
                   Return to Home
                 </Link>
@@ -195,7 +195,7 @@ export default function AccountDeletionPage() {
         <DropInView>
           <div className="bg-white rounded-2xl shadow-xl p-8">
             <div className="flex items-center mb-6">
-              <FaShieldAlt className="text-2xl text-[#1586D6] mr-3" />
+              <FaShieldAlt className="text-2xl text-accent mr-3" />
               <h2 className="text-2xl font-bold text-gray-900">Submit Deletion Request</h2>
             </div>
 
@@ -225,7 +225,7 @@ export default function AccountDeletionPage() {
                     value={formData.firstName}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-[#1586D6]"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
                     placeholder="Enter your first name"
                   />
                 </div>
@@ -242,7 +242,7 @@ export default function AccountDeletionPage() {
                     value={formData.lastName}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-[#1586D6]"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
                     placeholder="Enter your last name"
                   />
                 </div>
@@ -260,7 +260,7 @@ export default function AccountDeletionPage() {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-[#1586D6]"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
                   placeholder="Enter the email associated with your account"
                 />
                 <p className="text-sm text-gray-500 mt-1">
@@ -285,7 +285,7 @@ export default function AccountDeletionPage() {
                   type="checkbox"
                   id="confirmation"
                   required
-                  className="mt-1 h-4 w-4 text-[#1586D6] border-gray-300 rounded focus:ring-[#1586D6]"
+                  className="mt-1 h-4 w-4 text-accent border-gray-300 rounded focus:ring-accent"
                 />
                 <label htmlFor="confirmation" className="text-sm text-gray-700">
                   I understand that this action is permanent and cannot be undone. I confirm that I want to delete my
@@ -329,7 +329,7 @@ export default function AccountDeletionPage() {
         <div className="p-4 mt-6 flex items-center justify-center">
           <Link
             href="/"
-            className="bg-[#1586D6] text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 font-medium flex items-center"
+            className="bg-accent text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 font-medium flex items-center"
           >
             <FaHome className="mr-2" />
             Back to Home

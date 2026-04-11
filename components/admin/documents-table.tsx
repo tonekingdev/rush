@@ -194,7 +194,7 @@ export function DocumentsTable({ applicationId }: DocumentsTableProps) {
             <input
               type="text"
               placeholder="Search documents..."
-              className="pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1586D6]"
+              className="pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -275,7 +275,7 @@ export function DocumentsTable({ applicationId }: DocumentsTableProps) {
                     <td className="px-6 py-4 whitespace-nowrap">
                       <Link
                         href={`/admin/dashboard/applications/${document.applicationId}`}
-                        className="text-sm text-[#1586D6] hover:text-blue-800"
+                        className="text-sm text-accent hover:text-blue-800"
                       >
                         {document.applicationId}
                       </Link>
@@ -344,11 +344,10 @@ export function DocumentsTable({ applicationId }: DocumentsTableProps) {
           <button
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
             disabled={currentPage === 1}
-            className={`px-3 py-1 rounded ${
-              currentPage === 1
+            className={`px-3 py-1 rounded ${currentPage === 1
                 ? "bg-gray-100 text-gray-400 cursor-not-allowed"
                 : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-            }`}
+              }`}
           >
             Previous
           </button>
@@ -360,11 +359,10 @@ export function DocumentsTable({ applicationId }: DocumentsTableProps) {
           <button
             onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
             disabled={currentPage === totalPages}
-            className={`px-3 py-1 rounded ${
-              currentPage === totalPages
+            className={`px-3 py-1 rounded ${currentPage === totalPages
                 ? "bg-gray-100 text-gray-400 cursor-not-allowed"
                 : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-            }`}
+              }`}
           >
             Next
           </button>

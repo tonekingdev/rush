@@ -3,14 +3,14 @@ import { motion } from 'framer-motion'
 import { ChangeEvent, FormEvent } from 'react'
 
 type FormData = {
-    role: string;
-    experience: string;
-    expertise: string;
-    schedule: string;
+  role: string;
+  experience: string;
+  expertise: string;
+  schedule: string;
 }
 
 type BackgroundInfoProps = {
-    onNext: (FormData: FormData) => void;
+  onNext: (FormData: FormData) => void;
 }
 
 export default function BackgroundInfo({ onNext }: BackgroundInfoProps) {
@@ -117,7 +117,7 @@ export default function BackgroundInfo({ onNext }: BackgroundInfoProps) {
       <div>
         <button
           type="submit"
-          className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#1586D6] hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+          className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-accent hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
         >
           Next
         </button>

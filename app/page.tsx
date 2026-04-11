@@ -54,7 +54,7 @@ export default function Home() {
                   <div className="mt-6 flex flex-wrap justify-center gap-4 sm:justify-start">
                     <Link
                       href="/comingsoon"
-                      className="group relative overflow-hidden whitespace-nowrap rounded-full bg-[#1586D6] px-4 py-2 text-base font-semibold text-white"
+                      className="group relative overflow-hidden whitespace-nowrap rounded-full bg-accent px-4 py-2 text-base font-semibold text-white"
                     >
                       <span className="relative z-10 block transition-transform duration-650 ease-in-out group-hover:-translate-y-full">
                         Get Immediate Care
@@ -65,7 +65,7 @@ export default function Home() {
                     </Link>
                     <Link
                       href="/survey/provider"
-                      className="group relative overflow-hidden whitespace-nowrap rounded-full border border-[#1586D6] bg-background px-4 py-2 text-base font-semibold text-[#1586D6]"
+                      className="group relative overflow-hidden whitespace-nowrap rounded-full border border-accent bg-background px-4 py-2 text-base font-semibold text-accent"
                     >
                       <span className="relative z-10 block transition-transform duration-650 ease-in-out group-hover:-translate-y-full">
                         Become a Provider
@@ -79,7 +79,7 @@ export default function Home() {
                   <div className="mt-4 flex items-center justify-center sm:justify-start">
                     <div className="flex items-center rounded-full bg-background px-4 py-2 shadow-sm dark:bg-card">
                       <FaUserMd
-                        className="mr-2 text-[#1586D6]"
+                        className="mr-2 text-accent"
                         aria-hidden="true"
                       />
                       <span className="mr-2 text-foreground">
@@ -87,7 +87,7 @@ export default function Home() {
                       </span>
                       <a
                         href="/portal/np-intake"
-                        className="text-sm font-medium text-[#1586D6] hover:underline"
+                        className="text-sm font-medium text-accent hover:underline"
                       >
                         Click Here
                       </a>
@@ -97,7 +97,7 @@ export default function Home() {
                   <div className="mt-4 flex items-center justify-center sm:justify-start">
                     <div className="flex items-center rounded-full bg-background px-4 py-2 shadow-sm dark:bg-card">
                       <FaPhone
-                        className="mr-2 text-[#1586D6]"
+                        className="mr-2 text-accent"
                         aria-hidden="true"
                       />
                       <span className="mr-2 text-foreground">
@@ -105,7 +105,7 @@ export default function Home() {
                       </span>
                       <a
                         href="tel:8006771790"
-                        className="font-medium text-[#1586D6] hover:underline"
+                        className="font-medium text-accent hover:underline"
                       >
                         (800) 677-1790
                       </a>
@@ -153,7 +153,7 @@ export default function Home() {
                 <div className="flex flex-col items-center">
                   <div className="rounded-full bg-blue-100 p-4 dark:bg-blue-900/30">
                     <FaSearch
-                      className="text-4xl text-[#1586D6]"
+                      className="text-4xl text-accent"
                       aria-hidden="true"
                     />
                   </div>
@@ -198,12 +198,12 @@ export default function Home() {
               <div className="mx-auto mt-6 flex flex-col items-center justify-center">
                 <Link
                   href="/videos/demo"
-                  className="group relative overflow-hidden whitespace-nowrap rounded-full border border-[#1586D6] bg-background px-4 py-2 text-base font-semibold text-[#1586D6]"
+                  className="group relative overflow-hidden whitespace-nowrap rounded-full border border-accent bg-background px-4 py-2 text-base font-semibold text-accent"
                 >
                   <span className="relative z-10 block transition-transform duration-650 ease-in-out group-hover:-translate-y-full">
                     See Demo
                   </span>
-                  <span className="absolute inset-0 flex translate-y-full items-center justify-center bg-[#1586D6] text-white transition-transform duration-650 ease-in-out group-hover:translate-y-0">
+                  <span className="absolute inset-0 flex translate-y-full items-center justify-center bg-accent text-white transition-transform duration-650 ease-in-out group-hover:translate-y-0">
                     Watch video
                   </span>
                 </Link>
@@ -240,7 +240,7 @@ export default function Home() {
                 <div className="flex flex-col items-center">
                   <div className="rounded-full bg-blue-100 p-4 dark:bg-blue-900/30">
                     <IoTimeOutline
-                      className="text-4xl text-[#1586D6]"
+                      className="text-4xl text-accent"
                       aria-hidden="true"
                     />
                   </div>
@@ -314,7 +314,7 @@ export default function Home() {
                 <div className="flex flex-col items-center">
                   <div className="rounded-full bg-blue-100 p-4 dark:bg-blue-900/30">
                     <LuCalendarCheck
-                      className="text-4xl text-[#1586D6]"
+                      className="text-4xl text-accent"
                       aria-hidden="true"
                     />
                   </div>
@@ -387,7 +387,7 @@ export default function Home() {
 
         {/* CTA Section */}
         <section
-          className="bg-[#1586D6] py-16"
+          className="bg-accent py-16"
           aria-labelledby="cta-heading"
         >
           <Container size="default" className="text-center">
@@ -410,13 +410,13 @@ export default function Home() {
                 <div className="flex flex-col justify-center gap-4 md:flex-row">
                   <Link
                     href="/comingsoon"
-                    className="rounded-full bg-white px-6 py-3 font-semibold text-[#1586d6] duration-500 hover:bg-blue-50"
+                    className="rounded-full bg-white px-6 py-3 font-semibold text-accent duration-500 hover:bg-blue-50"
                   >
                     Download on App Store
                   </Link>
                   <Link
                     href="/comingsoon"
-                    className="rounded-full bg-white px-6 py-3 font-semibold text-[#1586d6] duration-500 hover:bg-blue-50"
+                    className="rounded-full bg-white px-6 py-3 font-semibold text-accent duration-500 hover:bg-blue-50"
                   >
                     Get it on Google Play
                   </Link>

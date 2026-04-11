@@ -159,7 +159,7 @@ export default function ApplicationNotes({ applicationId }: ApplicationNotesProp
         <h3 className="text-lg font-medium text-gray-900">Application Notes</h3>
         <button
           onClick={() => setIsAddingNote(true)}
-          className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-[#1586D6] hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+          className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-accent hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
         >
           <FaPlus className="h-3 w-3 mr-1" />
           Add Note
@@ -191,7 +191,7 @@ export default function ApplicationNotes({ applicationId }: ApplicationNotesProp
             </button>
             <button
               onClick={addNote}
-              className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-[#1586D6] hover:bg-blue-700"
+              className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-accent hover:bg-blue-700"
             >
               <FaSave className="h-3 w-3 mr-1" />
               Save Note
@@ -228,7 +228,7 @@ export default function ApplicationNotes({ applicationId }: ApplicationNotesProp
                     </button>
                     <button
                       onClick={() => updateNote(note.id)}
-                      className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-[#1586D6] hover:bg-blue-700"
+                      className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-accent hover:bg-blue-700"
                     >
                       <FaSave className="h-3 w-3 mr-1" />
                       Save

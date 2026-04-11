@@ -115,7 +115,7 @@ export function CreateUserModal({ onClose, onUserCreated }: CreateUserModalProps
                 value={formData.username}
                 onChange={handleInputChange}
                 required
-                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6]"
+                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
               />
             </div>
 
@@ -130,7 +130,7 @@ export function CreateUserModal({ onClose, onUserCreated }: CreateUserModalProps
                 value={formData.email}
                 onChange={handleInputChange}
                 required
-                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6]"
+                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
               />
             </div>
 
@@ -143,7 +143,7 @@ export function CreateUserModal({ onClose, onUserCreated }: CreateUserModalProps
                 name="role"
                 value={formData.role}
                 onChange={handleInputChange}
-                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6]"
+                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
               >
                 <option value="admin">Admin</option>
                 <option value="super_admin">Super Admin</option>
@@ -163,7 +163,7 @@ export function CreateUserModal({ onClose, onUserCreated }: CreateUserModalProps
                   onChange={handleInputChange}
                   required
                   minLength={8}
-                  className="mt-1 w-full px-3 py-2 pr-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6]"
+                  className="mt-1 w-full px-3 py-2 pr-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
                 />
                 <button
                   type="button"
@@ -188,7 +188,7 @@ export function CreateUserModal({ onClose, onUserCreated }: CreateUserModalProps
                   onChange={handleInputChange}
                   required
                   minLength={8}
-                  className="mt-1 w-full px-3 py-2 pr-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6]"
+                  className="mt-1 w-full px-3 py-2 pr-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
                 />
                 <button
                   type="button"
@@ -211,7 +211,7 @@ export function CreateUserModal({ onClose, onUserCreated }: CreateUserModalProps
               <button
                 type="submit"
                 disabled={isLoading}
-                className="bg-[#1586D6] text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 disabled:opacity-50"
+                className="bg-accent text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 disabled:opacity-50"
               >
                 {isLoading ? "Creating..." : "Create User"}
               </button>

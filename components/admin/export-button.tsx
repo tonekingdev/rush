@@ -58,7 +58,7 @@ export function ExportButton({ type }: ExportButtonProps) {
       <button
         onClick={() => setShowOptions(!showOptions)}
         disabled={isExporting}
-        className="bg-[#1586D6] text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 flex items-center space-x-2 disabled:opacity-50"
+        className="bg-accent text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 flex items-center space-x-2 disabled:opacity-50"
       >
         {isExporting ? <FaSpinner className="h-4 w-4 animate-spin" /> : <FaDownload className="h-4 w-4" />}
         <span>{isExporting ? "Exporting..." : "Export"}</span>

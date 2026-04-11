@@ -163,7 +163,7 @@ export function EditApplicationModal({ isOpen, onClose, application, onSuccess }
                 name="name"
                 value={formData.name || ""}
                 onChange={handleInputChange}
-                className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-[#1586D6] focus:border-[#1586D6]"
+                className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-accent focus:border-accent"
                 required
               />
             </div>
@@ -178,7 +178,7 @@ export function EditApplicationModal({ isOpen, onClose, application, onSuccess }
                 name="email"
                 value={formData.email || ""}
                 onChange={handleInputChange}
-                className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-[#1586D6] focus:border-[#1586D6]"
+                className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-accent focus:border-accent"
                 required
               />
             </div>
@@ -193,7 +193,7 @@ export function EditApplicationModal({ isOpen, onClose, application, onSuccess }
                 name="phone"
                 value={formData.phone || ""}
                 onChange={handleInputChange}
-                className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-[#1586D6] focus:border-[#1586D6]"
+                className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-accent focus:border-accent"
                 required
               />
             </div>
@@ -208,7 +208,7 @@ export function EditApplicationModal({ isOpen, onClose, application, onSuccess }
                 name="license_type"
                 value={formData.license_type || ""}
                 onChange={handleInputChange}
-                className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-[#1586D6] focus:border-[#1586D6]"
+                className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-accent focus:border-accent"
               />
             </div>
 
@@ -222,7 +222,7 @@ export function EditApplicationModal({ isOpen, onClose, application, onSuccess }
                 name="license_number"
                 value={formData.license_number || ""}
                 onChange={handleInputChange}
-                className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-[#1586D6] focus:border-[#1586D6]"
+                className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-accent focus:border-accent"
               />
             </div>
 
@@ -237,7 +237,7 @@ export function EditApplicationModal({ isOpen, onClose, application, onSuccess }
                 value={formData.years_experience || 0}
                 onChange={handleInputChange}
                 min="0"
-                className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-[#1586D6] focus:border-[#1586D6]"
+                className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-accent focus:border-accent"
               />
             </div>
 
@@ -251,7 +251,7 @@ export function EditApplicationModal({ isOpen, onClose, application, onSuccess }
                 name="malpractice_provider"
                 value={formData.malpractice_provider || ""}
                 onChange={handleInputChange}
-                className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-[#1586D6] focus:border-[#1586D6]"
+                className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-accent focus:border-accent"
               />
             </div>
 
@@ -264,7 +264,7 @@ export function EditApplicationModal({ isOpen, onClose, application, onSuccess }
                 name="status"
                 value={formData.status || ""}
                 onChange={handleInputChange}
-                className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-[#1586D6] focus:border-[#1586D6]"
+                className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-accent focus:border-accent"
               >
                 <option value="pending">Pending</option>
                 <option value="under_review">Under Review</option>
@@ -284,7 +284,7 @@ export function EditApplicationModal({ isOpen, onClose, application, onSuccess }
               value={formData.address || ""}
               onChange={handleInputChange}
               rows={3}
-              className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-[#1586D6] focus:border-[#1586D6]"
+              className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-accent focus:border-accent"
             />
           </div>
 
@@ -300,7 +300,7 @@ export function EditApplicationModal({ isOpen, onClose, application, onSuccess }
             <button
               type="submit"
               disabled={loading}
-              className="px-4 py-2 text-sm font-medium text-white bg-[#1586D6] border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1586D6] disabled:opacity-50 flex items-center space-x-2"
+              className="px-4 py-2 text-sm font-medium text-white bg-accent border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent disabled:opacity-50 flex items-center space-x-2"
             >
               {loading ? (
                 <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>

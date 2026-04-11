@@ -61,7 +61,7 @@ export default function ComingSoon() {
                     className='mt-2 text-center text-sm text-gray-600'
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2  }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
                 >
                     We&apos;re working hard to bring you on-demand in-home healthcare.
                 </motion.p>
@@ -82,7 +82,7 @@ export default function ComingSoon() {
                                     Email address
                                 </label>
                                 <div className="mt-1">
-                                    <input 
+                                    <input
                                         id='email'
                                         name='email'
                                         type='email'
@@ -97,7 +97,7 @@ export default function ComingSoon() {
                             <div>
                                 <button
                                     type='submit'
-                                    className='w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#1586D6] hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
+                                    className='w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-accent hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
                                 >
                                     Notify me when RUSH launches
                                 </button>
@@ -111,7 +111,7 @@ export default function ComingSoon() {
                             transition={{ duration: 0.5 }}
                         >
                             <p className="text-center text-sm text-gray-600">{message}</p>
-                            <Link href="/" className='w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#1586D6] hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'>
+                            <Link href="/" className='w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-accent hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'>
                                 Go Back Home
                             </Link>
                         </motion.div>
@@ -125,7 +125,7 @@ export default function ComingSoon() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
             >
-                <Link href="/survey/provider" className='text-[#1586D6] hover:text-blue-500'>
+                <Link href="/survey/provider" className='text-accent hover:text-blue-500'>
                     Sign up as a healthcare professional
                 </Link>
             </motion.div>

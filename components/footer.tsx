@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="mb-2 text-sm">
             <Link
               href="/privacy-policy"
-              className="font-medium text-muted-foreground transition-colors duration-300 hover:text-[#1586D6]"
+              className="font-medium text-muted-foreground transition-colors duration-300 hover:text-accent"
             >
               Privacy Policy
             </Link>
@@ -19,7 +19,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} R.U.S.H. All rights reserved.
             Developed by{" "}
             <a
-              className="text-foreground duration-500 hover:text-[#1586D6]"
+              className="text-foreground duration-500 hover:text-accent"
               href="https://tonekingdev.com/"
               target="_blank"
               rel="noopener noreferrer"

@@ -25,7 +25,7 @@ export function DashboardStats() {
       try {
         const response = await fetch('/api/admin/dashboard-stats', { credentials: 'include' })
         const data = await response.json()
-        
+
         if (data.success) {
           setStats(data.stats)
         }
@@ -35,7 +35,7 @@ export function DashboardStats() {
         setIsLoading(false)
       }
     }
-    
+
     fetchStats()
   }, [])
 
@@ -57,7 +57,7 @@ export function DashboardStats() {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       <div className="bg-white p-6 rounded-lg shadow">
         <div className="flex items-center">
-          <div className="p-3 rounded-full bg-blue-100 text-[#1586D6]">
+          <div className="p-3 rounded-full bg-blue-100 text-accent">
             <FaUserPlus className="h-6 w-6" />
           </div>
           <div className="ml-4">
@@ -66,7 +66,7 @@ export function DashboardStats() {
           </div>
         </div>
       </div>
-      
+
       <div className="bg-white p-6 rounded-lg shadow">
         <div className="flex items-center">
           <div className="p-3 rounded-full bg-yellow-100 text-yellow-600">
@@ -78,7 +78,7 @@ export function DashboardStats() {
           </div>
         </div>
       </div>
-      
+
       <div className="bg-white p-6 rounded-lg shadow">
         <div className="flex items-center">
           <div className="p-3 rounded-full bg-green-100 text-green-600">
@@ -90,7 +90,7 @@ export function DashboardStats() {
           </div>
         </div>
       </div>
-      
+
       <div className="bg-white p-6 rounded-lg shadow">
         <div className="flex items-center">
           <div className="p-3 rounded-full bg-red-100 text-red-600">

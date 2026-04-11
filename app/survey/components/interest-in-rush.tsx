@@ -77,21 +77,21 @@ export default function InterestInRush({ onNext, onPrevious }: InterestInRushPro
         </span>
         <div className="mt-2 space-y-2">
           {['Flexible scheduling', 'Competitive pay rates', 'Easy-to-use interface', 'Reliable payment system', 'Opportunity to specialize'].map((feature) => (
-              <div key={feature} className="flex items-center">
-                <input
-                  id={`feature-${feature}`}
-                  name="features"
-                  type="checkbox"
-                  value={feature}
-                  checked={formData.features.includes(feature)}
-                  onChange={handleCheckboxChange}
-                  className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-                />
-                <label htmlFor={`feature-${feature}`} className="ml-2 block text-sm text-gray-900">
-                  {feature}
-                </label>
-              </div>
-            ))}
+            <div key={feature} className="flex items-center">
+              <input
+                id={`feature-${feature}`}
+                name="features"
+                type="checkbox"
+                value={feature}
+                checked={formData.features.includes(feature)}
+                onChange={handleCheckboxChange}
+                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+              />
+              <label htmlFor={`feature-${feature}`} className="ml-2 block text-sm text-gray-900">
+                {feature}
+              </label>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -129,7 +129,7 @@ export default function InterestInRush({ onNext, onPrevious }: InterestInRushPro
         </button>
         <button
           type='submit'
-          className='inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-[#1586D6] hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
+          className='inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-accent hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
         >
           Next
         </button>

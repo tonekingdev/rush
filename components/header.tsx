@@ -114,7 +114,7 @@ export default function Header() {
             <ThemeToggle />
             <Link
               href="/survey"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-[#1586D6] px-4 py-2 text-base font-medium text-white shadow-sm transition-colors hover:bg-blue-600"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-accent px-4 py-2 text-base font-medium text-white shadow-sm transition-colors hover:bg-blue-600"
             >
               Sign Up
             </Link>
@@ -158,7 +158,7 @@ export default function Header() {
           </Link>
           <Link
             href="/survey"
-            className="mt-2 block w-full rounded-md bg-[#1586D6] px-3 py-2 text-center text-base font-medium text-white hover:bg-blue-600"
+            className="mt-2 block w-full rounded-md bg-accent px-3 py-2 text-center text-base font-medium text-white hover:bg-blue-600"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Sign Up

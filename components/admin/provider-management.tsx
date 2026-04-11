@@ -142,7 +142,7 @@ export function ProviderManagement() {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-12">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1586D6]"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent"></div>
       </div>
     )
   }
@@ -156,7 +156,7 @@ export function ProviderManagement() {
             setError("")
             fetchProviders()
           }}
-          className="mt-4 bg-[#1586D6] text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300"
+          className="mt-4 bg-accent text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300"
         >
           Try Again
         </button>
@@ -176,7 +176,7 @@ export function ProviderManagement() {
             >
               Refresh
             </button>
-            <button className="bg-[#1586D6] text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">
+            <button className="bg-accent text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">
               Export
             </button>
           </div>

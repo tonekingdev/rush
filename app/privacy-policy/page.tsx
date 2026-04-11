@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
         <FadeInView>
           <div className="text-center mb-12">
             <div className="flex justify-center mb-4">
-              <FaShieldAlt className="text-6xl text-[#1586D6]" />
+              <FaShieldAlt className="text-6xl text-accent" />
             </div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Privacy Policy</h1>
             <p className="text-lg text-gray-600">
@@ -40,7 +40,7 @@ export default function PrivacyPolicyPage() {
             {/* Introduction */}
             <DropInView>
               <section>
-                <h2 className="text-2xl font-bold mb-4 text-[#1586D6]">Introduction</h2>
+                <h2 className="text-2xl font-bold mb-4 text-accent">Introduction</h2>
                 <p className="text-gray-700 leading-relaxed">
                   RUSH Servicing LLC (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) operates the RUSH Healthcare
                   application and website. This Privacy Policy explains how we collect, use, disclose, and safeguard
@@ -54,7 +54,7 @@ export default function PrivacyPolicyPage() {
             {/* Information We Collect */}
             <DropInView>
               <section>
-                <h2 className="text-2xl font-bold mb-4 text-[#1586D6]">Information We Collect</h2>
+                <h2 className="text-2xl font-bold mb-4 text-accent">Information We Collect</h2>
 
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">Personal Information</h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
@@ -82,7 +82,7 @@ export default function PrivacyPolicyPage() {
             {/* How We Use Information */}
             <DropInView>
               <section>
-                <h2 className="text-2xl font-bold mb-4 text-[#1586D6]">How We Use Your Information</h2>
+                <h2 className="text-2xl font-bold mb-4 text-accent">How We Use Your Information</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   We use the collected information for the following purposes:
                 </p>
@@ -102,7 +102,7 @@ export default function PrivacyPolicyPage() {
             {/* Information Sharing */}
             <DropInView>
               <section>
-                <h2 className="text-2xl font-bold mb-4 text-[#1586D6]">Information Sharing and Disclosure</h2>
+                <h2 className="text-2xl font-bold mb-4 text-accent">Information Sharing and Disclosure</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   We may share your information in the following circumstances:
                 </p>
@@ -129,7 +129,7 @@ export default function PrivacyPolicyPage() {
             {/* Data Security */}
             <DropInView>
               <section>
-                <h2 className="text-2xl font-bold mb-4 text-[#1586D6]">Data Security</h2>
+                <h2 className="text-2xl font-bold mb-4 text-accent">Data Security</h2>
                 <p className="text-gray-700 leading-relaxed">
                   We implement appropriate technical and organizational security measures to protect your personal
                   information against unauthorized access, alteration, disclosure, or destruction. These measures
@@ -142,7 +142,7 @@ export default function PrivacyPolicyPage() {
             {/* Data Retention */}
             <DropInView>
               <section>
-                <h2 className="text-2xl font-bold mb-4 text-[#1586D6]">Data Retention</h2>
+                <h2 className="text-2xl font-bold mb-4 text-accent">Data Retention</h2>
                 <p className="text-gray-700 leading-relaxed">
                   We retain your personal information for as long as necessary to fulfill the purposes outlined in this
                   Privacy Policy, comply with legal obligations, resolve disputes, and enforce our agreements.
@@ -155,7 +155,7 @@ export default function PrivacyPolicyPage() {
             {/* Your Rights */}
             <DropInView>
               <section>
-                <h2 className="text-2xl font-bold mb-4 text-[#1586D6]">Your Privacy Rights</h2>
+                <h2 className="text-2xl font-bold mb-4 text-accent">Your Privacy Rights</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Depending on your location, you may have the following rights regarding your personal information:
                 </p>
@@ -173,7 +173,7 @@ export default function PrivacyPolicyPage() {
             {/* Children's Privacy */}
             <DropInView>
               <section>
-                <h2 className="text-2xl font-bold mb-4 text-[#1586D6]">Children&apos;s Privacy</h2>
+                <h2 className="text-2xl font-bold mb-4 text-accent">Children&apos;s Privacy</h2>
                 <p className="text-gray-700 leading-relaxed">
                   Our Service is not intended for individuals under the age of 18. We do not knowingly collect personal
                   information from children under 18. If we become aware that we have collected personal information
@@ -185,7 +185,7 @@ export default function PrivacyPolicyPage() {
             {/* International Transfers */}
             <DropInView>
               <section>
-                <h2 className="text-2xl font-bold mb-4 text-[#1586D6]">International Data Transfers</h2>
+                <h2 className="text-2xl font-bold mb-4 text-accent">International Data Transfers</h2>
                 <p className="text-gray-700 leading-relaxed">
                   Your information may be transferred to and processed in countries other than your country of
                   residence. We ensure that such transfers comply with applicable data protection laws and implement
@@ -197,7 +197,7 @@ export default function PrivacyPolicyPage() {
             {/* Third-Party Services */}
             <DropInView>
               <section>
-                <h2 className="text-2xl font-bold mb-4 text-[#1586D6]">Third-Party Services</h2>
+                <h2 className="text-2xl font-bold mb-4 text-accent">Third-Party Services</h2>
                 <p className="text-gray-700 leading-relaxed">
                   Our Service may contain links to third-party websites or services. We are not responsible for the
                   privacy practices of these third parties. We encourage you to review their privacy policies before
@@ -209,7 +209,7 @@ export default function PrivacyPolicyPage() {
             {/* Updates to Privacy Policy */}
             <DropInView>
               <section>
-                <h2 className="text-2xl font-bold mb-4 text-[#1586D6]">Updates to This Privacy Policy</h2>
+                <h2 className="text-2xl font-bold mb-4 text-accent">Updates to This Privacy Policy</h2>
                 <p className="text-gray-700 leading-relaxed">
                   We may update this Privacy Policy from time to time. We will notify you of any material changes by
                   posting the new Privacy Policy on this page and updating the &quot;Last updated&quot; date. Your
@@ -222,17 +222,17 @@ export default function PrivacyPolicyPage() {
             {/* Contact Information */}
             <DropInView>
               <section>
-                <h2 className="text-2xl font-bold mb-4 text-[#1586D6]">Contact Us</h2>
+                <h2 className="text-2xl font-bold mb-4 text-accent">Contact Us</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   If you have any questions about this Privacy Policy or our privacy practices, please contact us:
                 </p>
                 <div className="bg-gray-50 rounded-lg p-6 space-y-3">
                   <div className="flex items-center">
-                    <FaEnvelope className="text-[#1586D6] mr-3" />
+                    <FaEnvelope className="text-accent mr-3" />
                     <span className="text-gray-700">Email: privacy@rushhealthc.com</span>
                   </div>
                   <div className="flex items-center">
-                    <FaPhone className="text-[#1586D6] mr-3" />
+                    <FaPhone className="text-accent mr-3" />
                     <span className="text-gray-700">Phone: (586) 344-4567</span>
                   </div>
                   <div className="text-gray-700">
@@ -254,7 +254,7 @@ export default function PrivacyPolicyPage() {
             {/* Compliance */}
             <DropInView>
               <section>
-                <h2 className="text-2xl font-bold mb-4 text-[#1586D6]">Regulatory Compliance</h2>
+                <h2 className="text-2xl font-bold mb-4 text-accent">Regulatory Compliance</h2>
                 <p className="text-gray-700 leading-relaxed">
                   This Privacy Policy is designed to comply with applicable privacy laws, including but not limited to
                   the California Consumer Privacy Act (CCPA), General Data Protection Regulation (GDPR), and Health
@@ -271,7 +271,7 @@ export default function PrivacyPolicyPage() {
           <div className="text-center mt-12">
             <Link
               href="/"
-              className="bg-[#1586D6] text-white px-8 py-3 rounded-lg hover:bg-blue-600 transition duration-300 font-semibold inline-flex items-center"
+              className="bg-accent text-white px-8 py-3 rounded-lg hover:bg-blue-600 transition duration-300 font-semibold inline-flex items-center"
             >
               <FaHome className="mr-2" />
               Return to Home

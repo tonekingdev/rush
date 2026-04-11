@@ -201,7 +201,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
                   value={formData.full_name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
 
@@ -216,7 +216,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
 
@@ -230,7 +230,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
 
@@ -244,7 +244,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
                   value={formData.specialty}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 >
                   <option value="">Select Specialty</option>
                   <option value="Family Medicine">Family Medicine</option>
@@ -278,7 +278,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
                   name="status"
                   value={formData.status}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 >
                   <option value="active">Active</option>
                   <option value="inactive">Inactive</option>
@@ -304,7 +304,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
                   name="license_type"
                   value={formData.license_type}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 >
                   <option value="">Select License Type</option>
                   <option value="MD">Doctor of Medicine (MD)</option>
@@ -330,7 +330,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
                   name="license_number"
                   value={formData.license_number}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
 
@@ -345,7 +345,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
                   value={formData.license_state}
                   onChange={handleInputChange}
                   placeholder="e.g., CA, NY, TX"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
 
@@ -359,7 +359,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
                   name="npi_number"
                   value={formData.npi_number}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
 
@@ -373,7 +373,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
                   name="dea_number"
                   value={formData.dea_number}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
             </div>
@@ -397,7 +397,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
                   name="practice_name"
                   value={formData.practice_name}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
 
@@ -411,7 +411,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
                   name="practice_phone"
                   value={formData.practice_phone}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
 
@@ -425,7 +425,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
                   name="practice_email"
                   value={formData.practice_email}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
 
@@ -441,7 +441,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
                   onChange={handleInputChange}
                   min="0"
                   max="50"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
 
@@ -455,7 +455,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
                   value={formData.practice_address}
                   onChange={handleInputChange}
                   rows={3}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
             </div>
@@ -476,7 +476,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
                   name="malpractice_provider"
                   value={formData.malpractice_provider}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
 
@@ -490,7 +490,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
                   name="education"
                   value={formData.education}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
 
@@ -504,7 +504,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
                   value={formData.licenses}
                   onChange={handleInputChange}
                   rows={2}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
 
@@ -518,7 +518,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
                   value={formData.work_ethic}
                   onChange={handleInputChange}
                   rows={3}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
 
@@ -532,7 +532,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
                   value={formData.notes}
                   onChange={handleInputChange}
                   rows={3}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                   placeholder="Internal notes for administrative use..."
                 />
               </div>
@@ -545,14 +545,14 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
               type="button"
               onClick={onClose}
               disabled={loading}
-              className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1586D6] disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={loading}
-              className="px-4 py-2 text-sm font-medium text-white bg-[#1586D6] border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1586D6] disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
+              className="px-4 py-2 text-sm font-medium text-white bg-accent border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
             >
               {loading ? (
                 <>

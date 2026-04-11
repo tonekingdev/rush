@@ -27,9 +27,9 @@ export default function Header() {
     // Close mobile menu when window is resized to larger screen
     useEffect(() => {
         const handleResize = () => {
-        if (window.innerWidth >= 768) { // md breakpoint
-            setIsMobileMenuOpen(false);
-        }
+            if (window.innerWidth >= 768) { // md breakpoint
+                setIsMobileMenuOpen(false);
+            }
         };
 
         window.addEventListener('resize', handleResize);
@@ -43,7 +43,7 @@ export default function Header() {
                     <div className="flex justify-start lg:w-0 lg:flex-1">
                         <Link href="/">
                             <span className="sr-only">RUSH</span>
-                            <Image 
+                            <Image
                                 src="/img/logo.png"
                                 alt="RUSH Logo"
                                 width={32}
@@ -77,7 +77,7 @@ export default function Header() {
                         </Link>
                     </nav>
                     <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-                        <Link href="/survey" className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-[#1586D6] hover:bg-blue-500">
+                        <Link href="/survey" className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-accent hover:bg-blue-500">
                             Sign Up
                         </Link>
                     </div>
@@ -99,7 +99,7 @@ export default function Header() {
                     <Link href="#compliance" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" onClick={handleScroll}>
                         Compliance
                     </Link>
-                    <Link href="/survey" className="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white bg-[#1586D6] hover:bg-blue-500" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Link href="/survey" className="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white bg-accent hover:bg-blue-500" onClick={() => setIsMobileMenuOpen(false)}>
                         Sign Up
                     </Link>
                 </div>

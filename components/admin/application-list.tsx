@@ -285,7 +285,7 @@ export function ApplicationList({
                   <div>
                     <Link
                       href={`/admin/dashboard/applications/${application.id}`}
-                      className="text-sm font-medium text-[#1586D6] hover:text-blue-700 hover:underline cursor-pointer"
+                      className="text-sm font-medium text-accent hover:text-blue-700 hover:underline cursor-pointer"
                       onClick={(e) => {
                         e.preventDefault()
                         window.location.href = `/admin/dashboard/applications/${application.id}`
@@ -370,7 +370,7 @@ export function ApplicationList({
                   <div className="flex space-x-2">
                     <Link
                       href={`/admin/dashboard/applications/${application.id}`}
-                      className="text-[#1586D6] hover:text-blue-700"
+                      className="text-accent hover:text-blue-700"
                       title="View Details"
                       onClick={(e) => {
                         e.preventDefault()
@@ -434,20 +434,18 @@ export function ApplicationList({
             <button
               onClick={() => onPageChange(Math.max(1, pagination.page - 1))}
               disabled={pagination.page === 1}
-              className={`relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium ${
-                pagination.page === 1 ? "text-gray-300 cursor-not-allowed" : "text-gray-700 hover:bg-gray-50"
-              }`}
+              className={`relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium ${pagination.page === 1 ? "text-gray-300 cursor-not-allowed" : "text-gray-700 hover:bg-gray-50"
+                }`}
             >
               Previous
             </button>
             <button
               onClick={() => onPageChange(Math.min(pagination.pages, pagination.page + 1))}
               disabled={pagination.page === pagination.pages}
-              className={`relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium ${
-                pagination.page === pagination.pages
+              className={`relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium ${pagination.page === pagination.pages
                   ? "text-gray-300 cursor-not-allowed"
                   : "text-gray-700 hover:bg-gray-50"
-              }`}
+                }`}
             >
               Next
             </button>
@@ -465,9 +463,8 @@ export function ApplicationList({
                 <button
                   onClick={() => onPageChange(Math.max(1, pagination.page - 1))}
                   disabled={pagination.page === 1}
-                  className={`relative inline-flex items-center rounded-l-md px-2 py-2 ${
-                    pagination.page === 1 ? "text-gray-300 cursor-not-allowed" : "text-gray-500 hover:bg-gray-50"
-                  }`}
+                  className={`relative inline-flex items-center rounded-l-md px-2 py-2 ${pagination.page === 1 ? "text-gray-300 cursor-not-allowed" : "text-gray-500 hover:bg-gray-50"
+                    }`}
                 >
                   <span className="sr-only">Previous</span>
                   <FaChevronLeft className="h-3 w-3" aria-hidden="true" />
@@ -485,11 +482,10 @@ export function ApplicationList({
                     <button
                       key={pageNum}
                       onClick={() => onPageChange(pageNum)}
-                      className={`relative inline-flex items-center px-4 py-2 text-sm font-semibold ${
-                        pageNum === pagination.page
-                          ? "bg-[#1586D6] text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1586D6]"
+                      className={`relative inline-flex items-center px-4 py-2 text-sm font-semibold ${pageNum === pagination.page
+                          ? "bg-accent text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                           : "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-                      }`}
+                        }`}
                     >
                       {pageNum}
                     </button>
@@ -499,11 +495,10 @@ export function ApplicationList({
                 <button
                   onClick={() => onPageChange(Math.min(pagination.pages, pagination.page + 1))}
                   disabled={pagination.page === pagination.pages}
-                  className={`relative inline-flex items-center rounded-r-md px-2 py-2 ${
-                    pagination.page === pagination.pages
+                  className={`relative inline-flex items-center rounded-r-md px-2 py-2 ${pagination.page === pagination.pages
                       ? "text-gray-300 cursor-not-allowed"
                       : "text-gray-500 hover:bg-gray-50"
-                  }`}
+                    }`}
                 >
                   <span className="sr-only">Next</span>
                   <FaChevronRight className="h-3 w-3" aria-hidden="true" />
@@ -524,12 +519,12 @@ export function ApplicationList({
         provider={
           selectedApplication
             ? {
-                id: selectedApplication.id,
-                provider_id: selectedApplication.provider_id,
-                full_name: selectedApplication.name,
-                email: selectedApplication.email,
-                application_id: selectedApplication.id,
-              }
+              id: selectedApplication.id,
+              provider_id: selectedApplication.provider_id,
+              full_name: selectedApplication.name,
+              email: selectedApplication.email,
+              application_id: selectedApplication.id,
+            }
             : null
         }
       />

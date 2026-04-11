@@ -262,7 +262,7 @@ export function PricingManagement({ hasAccess }: PricingManagementProps) {
     return (
       <div className="bg-white rounded-lg shadow p-6">
         <div className="flex justify-center items-center py-12">
-          <FaSpinner className="animate-spin text-4xl text-[#1586D6]" />
+          <FaSpinner className="animate-spin text-4xl text-accent" />
           <span className="ml-3 text-gray-600">Loading pricing plans...</span>
         </div>
       </div>
@@ -277,7 +277,7 @@ export function PricingManagement({ hasAccess }: PricingManagementProps) {
           <button
             onClick={handleCreate}
             disabled={isCreating || editingPlan !== null}
-            className="bg-[#1586D6] text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center disabled:opacity-50 disabled:cursor-not-allowed"
+            className="bg-accent text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <FaPlus className="h-4 w-4 mr-2" />
             Add New Plan
@@ -308,7 +308,7 @@ export function PricingManagement({ hasAccess }: PricingManagementProps) {
                   type="text"
                   value={formData.service_tier}
                   onChange={(e) => setFormData({ ...formData, service_tier: e.target.value })}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6]"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
                   placeholder="e.g., RUSH Core"
                 />
               </div>
@@ -321,7 +321,7 @@ export function PricingManagement({ hasAccess }: PricingManagementProps) {
                   min="0"
                   value={formData.patient_price}
                   onChange={(e) => setFormData({ ...formData, patient_price: Number.parseFloat(e.target.value) || 0 })}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6]"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
                   placeholder="0.00"
                 />
               </div>
@@ -332,7 +332,7 @@ export function PricingManagement({ hasAccess }: PricingManagementProps) {
                   value={formData.included_services}
                   onChange={(e) => setFormData({ ...formData, included_services: e.target.value })}
                   rows={3}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6]"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
                   placeholder="Describe what's included in this plan..."
                 />
               </div>
@@ -343,7 +343,7 @@ export function PricingManagement({ hasAccess }: PricingManagementProps) {
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                   rows={2}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6]"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
                   placeholder="Additional notes or important information..."
                 />
               </div>
@@ -382,7 +382,7 @@ export function PricingManagement({ hasAccess }: PricingManagementProps) {
               <button
                 onClick={handleSave}
                 disabled={saving || !formData.service_tier.trim() || !formData.included_services.trim()}
-                className="px-4 py-2 text-sm font-medium text-white bg-[#1586D6] border border-transparent rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
+                className="px-4 py-2 text-sm font-medium text-white bg-accent border border-transparent rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
               >
                 {saving ? (
                   <>
@@ -448,9 +448,8 @@ export function PricingManagement({ hasAccess }: PricingManagementProps) {
                     <button
                       onClick={() => handleToggleEnabled(plan)}
                       disabled={togglingPlan === plan.id}
-                      className={`flex items-center ${
-                        plan.enabled ? "text-green-600" : "text-gray-400"
-                      } hover:opacity-75 disabled:opacity-50`}
+                      className={`flex items-center ${plan.enabled ? "text-green-600" : "text-gray-400"
+                        } hover:opacity-75 disabled:opacity-50`}
                     >
                       {togglingPlan === plan.id ? (
                         <FaSpinner className="animate-spin h-5 w-5 mr-1" />
@@ -472,7 +471,7 @@ export function PricingManagement({ hasAccess }: PricingManagementProps) {
                       <button
                         onClick={() => handleEdit(plan)}
                         disabled={isCreating || editingPlan !== null}
-                        className="text-[#1586D6] hover:text-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="text-accent hover:text-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
                         title="Edit Plan"
                       >
                         <FaEdit className="h-4 w-4" />

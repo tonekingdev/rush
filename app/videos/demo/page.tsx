@@ -221,7 +221,7 @@ export default function DemoPage() {
             <div className="flex justify-center items-center space-x-4 mt-6">
               <button
                 onClick={togglePlay}
-                className="bg-[#1586D6] text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300 font-medium flex items-center"
+                className="bg-accent text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300 font-medium flex items-center"
               >
                 {isPlaying ? <FaPause className="mr-2" /> : <FaPlay className="mr-2" />}
                 {isPlaying ? "Pause" : "Play"}
@@ -298,9 +298,8 @@ export default function DemoPage() {
                   onChange={handleEmailFormChange}
                   required
                   maxLength={100}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#1586D6] focus:border-transparent transition duration-200 ${
-                    formErrors.name ? "border-red-500" : "border-gray-300"
-                  }`}
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition duration-200 ${formErrors.name ? "border-red-500" : "border-gray-300"
+                    }`}
                   placeholder="Enter your full name"
                 />
                 {formErrors.name && <p className="mt-1 text-sm text-red-600">{formErrors.name}</p>}
@@ -319,9 +318,8 @@ export default function DemoPage() {
                   onChange={handleEmailFormChange}
                   required
                   maxLength={100}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#1586D6] focus:border-transparent transition duration-200 ${
-                    formErrors.occupation ? "border-red-500" : "border-gray-300"
-                  }`}
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition duration-200 ${formErrors.occupation ? "border-red-500" : "border-gray-300"
+                    }`}
                   placeholder="Enter your occupation"
                 />
                 {formErrors.occupation && <p className="mt-1 text-sm text-red-600">{formErrors.occupation}</p>}
@@ -339,9 +337,8 @@ export default function DemoPage() {
                   value={emailForm.email}
                   onChange={handleEmailFormChange}
                   required
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#1586D6] focus:border-transparent transition duration-200 ${
-                    formErrors.email ? "border-red-500" : "border-gray-300"
-                  }`}
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition duration-200 ${formErrors.email ? "border-red-500" : "border-gray-300"
+                    }`}
                   placeholder="Enter your email address"
                 />
                 {formErrors.email && <p className="mt-1 text-sm text-red-600">{formErrors.email}</p>}
@@ -363,7 +360,7 @@ export default function DemoPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#1586D6] text-white py-3 px-6 rounded-lg hover:bg-blue-600 transition duration-300 font-medium flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-accent text-white py-3 px-6 rounded-lg hover:bg-blue-600 transition duration-300 font-medium flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>
@@ -380,11 +377,10 @@ export default function DemoPage() {
 
               {submitMessage && (
                 <div
-                  className={`p-4 rounded-lg text-center ${
-                    submitMessage.includes("Thank you")
+                  className={`p-4 rounded-lg text-center ${submitMessage.includes("Thank you")
                       ? "bg-green-50 text-green-800 border border-green-200"
                       : "bg-red-50 text-red-800 border border-red-200"
-                  }`}
+                    }`}
                 >
                   {submitMessage}
                 </div>
@@ -396,7 +392,7 @@ export default function DemoPage() {
         <div className="mx-auto flex items-center justify-center py-8">
           <Link
             href="/"
-            className="bg-[#1586D6] text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition duration-300 font-medium flex items-center"
+            className="bg-accent text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition duration-300 font-medium flex items-center"
           >
             <FaHome className="mr-2" />
             Back to Home

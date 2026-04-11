@@ -124,7 +124,7 @@ export function RushSubscriptionManagement() {
     return (
       <div className="bg-white rounded-lg shadow p-6">
         <div className="flex justify-center items-center py-12">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#1586D6]"></div>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-accent"></div>
           <span className="ml-3 text-gray-600">Loading RUSH Subscriptions...</span>
         </div>
       </div>
@@ -143,7 +143,7 @@ export function RushSubscriptionManagement() {
             <select
               value={selectedStatus}
               onChange={(e) => setSelectedStatus(e.target.value)}
-              className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6]"
+              className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
             >
               <option value="all">All Statuses</option>
               <option value="active">Active</option>
@@ -268,7 +268,7 @@ export function RushSubscriptionManagement() {
                           <FaToggleOn className="h-4 w-4" />
                         </button>
                       ) : null}
-                      <button className="text-[#1586D6] hover:text-blue-700" title="View Details">
+                      <button className="text-accent hover:text-blue-700" title="View Details">
                         <FaEye className="h-4 w-4" />
                       </button>
                       <button className="text-gray-600 hover:text-gray-700" title="Edit Subscription">

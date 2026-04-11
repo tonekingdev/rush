@@ -40,7 +40,7 @@ export default function SurveyPage() {
               <div className="flex flex-col items-center">
                 <div className="rounded-full bg-blue-100 p-4 dark:bg-blue-900/30">
                   <FaUsers
-                    className="text-4xl text-[#1586d6]"
+                    className="text-4xl text-accent"
                     aria-hidden="true"
                   />
                 </div>
@@ -49,7 +49,7 @@ export default function SurveyPage() {
                 </h2>
                 <Link
                   href="/survey/patient"
-                  className="mt-4 rounded-full bg-background px-6 py-3 text-lg font-semibold text-[#1586d6] shadow-md duration-500 hover:bg-blue-100 dark:bg-card dark:hover:bg-blue-900/30"
+                  className="mt-4 rounded-full bg-background px-6 py-3 text-lg font-semibold text-accent shadow-md duration-500 hover:bg-blue-100 dark:bg-card dark:hover:bg-blue-900/30"
                 >
                   Sign Up
                 </Link>
@@ -68,7 +68,7 @@ export default function SurveyPage() {
                 </h2>
                 <Link
                   href="/survey/provider"
-                  className="mt-4 rounded-full bg-background px-6 py-3 text-lg font-semibold text-[#1586d6] shadow-md duration-500 hover:bg-blue-100 dark:bg-card dark:hover:bg-blue-900/30"
+                  className="mt-4 rounded-full bg-background px-6 py-3 text-lg font-semibold text-accent shadow-md duration-500 hover:bg-blue-100 dark:bg-card dark:hover:bg-blue-900/30"
                 >
                   Sign Up
                 </Link>

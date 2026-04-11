@@ -27,7 +27,7 @@ export default function FeedbackAndContact({ onSubmit, onPrevious }: FeedbackAnd
     setFormData((prev) => ({
       ...prev,
       [name]: type === 'checkbox'
-        ? (e.target as HTMLInputElement).checked 
+        ? (e.target as HTMLInputElement).checked
         : value
     }))
   }
@@ -114,7 +114,7 @@ export default function FeedbackAndContact({ onSubmit, onPrevious }: FeedbackAnd
         </button>
         <button
           type="submit"
-          className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-[#1586D6] hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+          className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-accent hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
         >
           Submit
         </button>

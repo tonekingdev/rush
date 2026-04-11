@@ -22,7 +22,7 @@ export function RecentApplications() {
       try {
         const response = await fetch('/api/admin/recent-applications', { credentials: 'include' })
         const data = await response.json()
-        
+
         if (data.success) {
           setApplications(data.applications)
         } else {
@@ -35,7 +35,7 @@ export function RecentApplications() {
         setIsLoading(false)
       }
     }
-    
+
     fetchRecentApplications()
   }, [])
 
@@ -98,20 +98,20 @@ export function RecentApplications() {
             <span className={`px-2 py-1 text-xs rounded-full ${getStatusClass(application.status)}`}>
               {application.status}
             </span>
-            <Link 
+            <Link
               href={`/admin/dashboard/applications/${application.id}`}
-              className="text-[#1586D6] hover:text-blue-800"
+              className="text-accent hover:text-blue-800"
             >
               <FaEye className="h-4 w-4" />
             </Link>
           </div>
         </div>
       ))}
-      
+
       <div className="pt-3">
-        <Link 
+        <Link
           href="/admin/dashboard/applications"
-          className="text-[#1586D6] hover:text-blue-800 text-sm font-medium"
+          className="text-accent hover:text-blue-800 text-sm font-medium"
         >
           View all applications
         </Link>

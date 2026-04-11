@@ -79,12 +79,12 @@ export default function PreRegister() {
             {plans.map((plan) => (
               <div
                 key={plan.id}
-                className={`relative flex flex-col rounded-2xl ${selectedPlan === plan.id ? "ring-4 ring-[#1586D6]" : "ring-1 ring-gray-200"
+                className={`relative flex flex-col rounded-2xl ${selectedPlan === plan.id ? "ring-4 ring-accent" : "ring-1 ring-gray-200"
                   } ${plan.popular ? "scale-105 shadow-xl" : "shadow-md"
                   } bg-white transition-all duration-200 hover:shadow-xl`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-0 right-0 mx-auto w-32 rounded-full bg-[#1586D6] py-1 text-center text-sm font-semibold text-white">
+                  <div className="absolute -top-4 left-0 right-0 mx-auto w-32 rounded-full bg-accent py-1 text-center text-sm font-semibold text-white">
                     Most Popular
                   </div>
                 )}
@@ -93,7 +93,7 @@ export default function PreRegister() {
                   <h3 className="text-xl font-semibold text-gray-900">{plan.name}</h3>
                   <p className="mt-2 text-gray-500">{plan.description}</p>
                   <div className="my-4">
-                    <span className="text-4xl font-bold text-[#1586D6]">${plan.price}</span>
+                    <span className="text-4xl font-bold text-accent">${plan.price}</span>
                     <span className="text-gray-600">/{plan.interval}</span>
                   </div>
 
@@ -105,7 +105,7 @@ export default function PreRegister() {
                   <ul className="space-y-3">
                     {plan.services.map((service, index) => (
                       <li key={index} className="flex items-start">
-                        <FaCheck className="h-5 w-5 text-[#1586D6] shrink-0" />
+                        <FaCheck className="h-5 w-5 text-accent shrink-0" />
                         <span className="ml-3 text-gray-600">{service}</span>
                       </li>
                     ))}
@@ -114,8 +114,8 @@ export default function PreRegister() {
                   <button
                     onClick={() => setSelectedPlan(plan.id)}
                     className={`mt-8 w-full rounded-lg px-4 py-2 text-center text-sm font-semibold transition-colors ${selectedPlan === plan.id
-                        ? "bg-[#1586D6] text-white"
-                        : "bg-gray-100 text-gray-600 hover:bg-[#1586D6] hover:text-white"
+                      ? "bg-accent text-white"
+                      : "bg-gray-100 text-gray-600 hover:bg-accent hover:text-white"
                       }`}
                   >
                     {selectedPlan === plan.id ? "Selected" : "Select Plan"}
@@ -143,7 +143,7 @@ export default function PreRegister() {
                 <button
                   type="submit"
                   disabled={isProcessing || !stripePromise}
-                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-[#1586D6] hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1586D6] disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-accent hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isProcessing ? "Processing..." : "Proceed to Secure Payment"}
                 </button>

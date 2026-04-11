@@ -52,7 +52,7 @@ export function AdminHeader() {
               className="flex items-center space-x-2 text-gray-700 hover:text-gray-900 focus:outline-none"
               onClick={() => setIsProfileOpen(!isProfileOpen)}
             >
-              <div className="w-8 h-8 rounded-full bg-[#1586D6] flex items-center justify-center text-white">
+              <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white">
                 <FaUser className="h-4 w-4" />
               </div>
               <span className="hidden md:inline-block font-medium">Admin</span>
@@ -91,7 +91,7 @@ export function AdminHeader() {
 
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-[#1586D6] text-white">
+        <div className="md:hidden bg-accent text-white">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link
               href="/admin/dashboard"

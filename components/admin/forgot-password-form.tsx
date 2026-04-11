@@ -72,14 +72,14 @@ export function ForgotPasswordForm({ onBackToLogin }: ForgotPasswordFormProps) {
             onChange={(e) => setEmail(e.target.value)}
             required
             placeholder="admin@rushhealthc.com"
-            className="w-full px-4 py-3 text-base border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1586D6] bg-white text-gray-900 border-gray-300"
+            className="w-full px-4 py-3 text-base border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent bg-white text-gray-900 border-gray-300"
           />
         </div>
 
         <button
           type="submit"
           disabled={isLoading}
-          className="w-full bg-[#1586D6] text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300 font-medium mt-6 flex items-center justify-center"
+          className="w-full bg-accent text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300 font-medium mt-6 flex items-center justify-center"
         >
           {isLoading ? <span className="animate-spin mr-2">⟳</span> : <FaEnvelope className="mr-2" />}
           {isLoading ? "Sending..." : "Send Reset Instructions"}
@@ -88,7 +88,7 @@ export function ForgotPasswordForm({ onBackToLogin }: ForgotPasswordFormProps) {
         <button
           type="button"
           onClick={onBackToLogin}
-          className="w-full text-[#1586D6] hover:text-blue-600 transition duration-300 font-medium mt-4 flex items-center justify-center"
+          className="w-full text-accent hover:text-blue-600 transition duration-300 font-medium mt-4 flex items-center justify-center"
         >
           <FaArrowLeft className="mr-2" />
           Back to Login

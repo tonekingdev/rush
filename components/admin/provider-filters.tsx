@@ -40,7 +40,7 @@ export function ProviderFilters({ filters, onFiltersChange }: ProviderFiltersPro
             value={filters.search}
             onChange={(e) => handleFilterChange("search", e.target.value)}
             placeholder="Name, email, practice..."
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6]"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
           />
         </div>
 
@@ -52,7 +52,7 @@ export function ProviderFilters({ filters, onFiltersChange }: ProviderFiltersPro
             id="status"
             value={filters.status}
             onChange={(e) => handleFilterChange("status", e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6]"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
           >
             <option value="">All Statuses</option>
             <option value="pending">Pending</option>
@@ -70,7 +70,7 @@ export function ProviderFilters({ filters, onFiltersChange }: ProviderFiltersPro
             id="specialty"
             value={filters.specialty}
             onChange={(e) => handleFilterChange("specialty", e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6]"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
           >
             <option value="">All Specialties</option>
             <option value="Family Medicine">Family Medicine</option>

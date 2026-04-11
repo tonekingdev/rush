@@ -97,7 +97,7 @@ export default function ComingSoon() {
                     autoComplete="email"
                     required
                     ref={emailInputRef}
-                    className="block w-full appearance-none rounded-md border border-input bg-background px-3 py-2 text-foreground shadow-sm placeholder:text-muted-foreground focus:border-[#1586D6] focus:outline-none focus:ring-[#1586D6] sm:text-sm"
+                    className="block w-full appearance-none rounded-md border border-input bg-background px-3 py-2 text-foreground shadow-sm placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-accent sm:text-sm"
                   />
                 </div>
               </div>
@@ -105,7 +105,7 @@ export default function ComingSoon() {
               <div>
                 <button
                   type="submit"
-                  className="flex w-full justify-center rounded-md bg-[#1586D6] px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:ring-offset-2"
+                  className="flex w-full justify-center rounded-md bg-accent px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
                 >
                   Notify me when RUSH launches
                 </button>
@@ -121,7 +121,7 @@ export default function ComingSoon() {
               <p className="text-center text-muted-foreground">{message}</p>
               <Link
                 href="/"
-                className="flex w-full justify-center rounded-md bg-[#1586D6] px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:ring-offset-2"
+                className="flex w-full justify-center rounded-md bg-accent px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
               >
                 Go Back Home
               </Link>
@@ -138,7 +138,7 @@ export default function ComingSoon() {
       >
         <Link
           href="/survey/provider"
-          className="text-[#1586D6] hover:text-blue-600"
+          className="text-accent hover:text-blue-600"
         >
           Sign up as a healthcare professional
         </Link>

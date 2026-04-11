@@ -129,7 +129,7 @@ export default function PricingSection() {
 
           <div className="flex items-center justify-center py-12">
             <FaSpinner
-              className="animate-spin text-4xl text-[#1586D6]"
+              className="animate-spin text-4xl text-accent"
               aria-hidden="true"
             />
             <span className="ml-3 text-muted-foreground">
@@ -173,7 +173,7 @@ export default function PricingSection() {
               </p>
               <button
                 onClick={() => window.location.reload()}
-                className="rounded-lg bg-[#1586D6] px-4 py-2 text-white transition-colors hover:bg-blue-700"
+                className="rounded-lg bg-accent px-4 py-2 text-white transition-colors hover:bg-blue-700"
               >
                 Try Again
               </button>
@@ -221,11 +221,10 @@ export default function PricingSection() {
                 <div
                   key={plan.id}
                   onClick={() => handlePlanClick(plan)}
-                  className={`relative cursor-pointer rounded-2xl border-2 bg-card shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl ${
-                    plan.is_popular
-                      ? "border-[#1586D6] ring-2 ring-[#1586D6]/20"
-                      : "border-border hover:border-[#1586D6]"
-                  }`}
+                  className={`relative cursor-pointer rounded-2xl border-2 bg-card shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl ${plan.is_popular
+                      ? "border-accent ring-2 ring-accent/20"
+                      : "border-border hover:border-accent"
+                    }`}
                   role="button"
                   tabIndex={0}
                   onKeyDown={(e) => {
@@ -237,7 +236,7 @@ export default function PricingSection() {
                 >
                   {plan.is_popular && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 transform">
-                      <div className="flex items-center rounded-full bg-[#1586D6] px-4 py-1 text-sm font-medium text-white">
+                      <div className="flex items-center rounded-full bg-accent px-4 py-1 text-sm font-medium text-white">
                         <FaStar className="mr-1 h-3 w-3" aria-hidden="true" />
                         Most Popular
                       </div>
@@ -268,11 +267,10 @@ export default function PricingSection() {
                       </p>
 
                       <button
-                        className={`w-full rounded-lg px-6 py-3 font-semibold transition-colors duration-300 ${
-                          plan.is_popular
-                            ? "bg-[#1586D6] text-white hover:bg-blue-700"
+                        className={`w-full rounded-lg px-6 py-3 font-semibold transition-colors duration-300 ${plan.is_popular
+                            ? "bg-accent text-white hover:bg-blue-700"
                             : "bg-secondary text-foreground hover:bg-secondary/80"
-                        }`}
+                          }`}
                       >
                         View Details
                       </button>
@@ -317,7 +315,7 @@ export default function PricingSection() {
                     {selectedPlan.service_tier}
                   </h3>
                   {selectedPlan.is_popular && (
-                    <div className="inline-flex items-center rounded-full bg-[#1586D6] px-3 py-1 text-sm font-medium text-white">
+                    <div className="inline-flex items-center rounded-full bg-accent px-3 py-1 text-sm font-medium text-white">
                       <FaStar className="mr-1 h-3 w-3" aria-hidden="true" />
                       Most Popular
                     </div>
@@ -403,7 +401,7 @@ export default function PricingSection() {
               <div className="text-center">
                 <Link
                   href="/comingsoon"
-                  className="inline-block w-full rounded-lg bg-[#1586D6] px-8 py-4 text-lg font-semibold text-white transition-colors duration-300 hover:bg-blue-700"
+                  className="inline-block w-full rounded-lg bg-accent px-8 py-4 text-lg font-semibold text-white transition-colors duration-300 hover:bg-blue-700"
                 >
                   Choose This Plan
                 </Link>

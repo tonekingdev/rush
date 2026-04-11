@@ -2,11 +2,11 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { 
-  FaUserEdit, 
-  FaFileAlt, 
-  FaEnvelope, 
-  FaCheckCircle, 
+import {
+  FaUserEdit,
+  FaFileAlt,
+  FaEnvelope,
+  FaCheckCircle,
   FaTimesCircle,
   FaUser,
   FaSync
@@ -28,11 +28,11 @@ export function ActivityLog() {
   const fetchActivities = async () => {
     setIsLoading(true)
     setError(null)
-    
+
     try {
       const response = await fetch('/api/admin/activity-log', { credentials: 'include' })
       const data = await response.json()
-      
+
       if (data.success) {
         setActivities(data.activities)
       } else {
@@ -90,9 +90,9 @@ export function ActivityLog() {
     return (
       <div className="flex flex-col items-center justify-center py-4 text-center">
         <p className="text-red-500 mb-4">{error}</p>
-        <button 
+        <button
           onClick={fetchActivities}
-          className="px-4 py-2 bg-[#1586D6] text-white rounded-lg hover:bg-blue-600 transition duration-200 flex items-center"
+          className="px-4 py-2 bg-accent text-white rounded-lg hover:bg-blue-600 transition duration-200 flex items-center"
         >
           <FaSync className="mr-2" /> Retry
         </button>

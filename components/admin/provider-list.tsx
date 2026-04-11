@@ -164,7 +164,7 @@ export function ProviderList({ providers, onStatusUpdate }: ProviderListProps) {
                   <div className="flex space-x-2">
                     <button
                       onClick={() => setSelectedProvider(provider)}
-                      className="text-[#1586D6] hover:text-blue-700"
+                      className="text-accent hover:text-blue-700"
                       title="View Details"
                     >
                       <FaEye className="h-4 w-4" />

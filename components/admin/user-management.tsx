@@ -210,7 +210,7 @@ export function UserManagement() {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-12">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1586D6]"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent"></div>
       </div>
     )
   }
@@ -254,7 +254,7 @@ export function UserManagement() {
           {user?.role === "super_admin" && (
             <button
               onClick={() => setShowCreateModal(true)}
-              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-[#1586D6] hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1586D6]"
+              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-accent hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent"
             >
               <FaPlus className="h-4 w-4 mr-2" />
               Create Admin User
@@ -281,7 +281,7 @@ export function UserManagement() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               onKeyPress={(e) => e.key === "Enter" && handleSearch()}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
             />
           </div>
 
@@ -291,7 +291,7 @@ export function UserManagement() {
               setRoleFilter(e.target.value)
               handleFilterChange()
             }}
-            className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+            className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
           >
             <option value="all">All Roles</option>
             <option value="admin">Admins</option>
@@ -305,7 +305,7 @@ export function UserManagement() {
               setStatusFilter(e.target.value)
               handleFilterChange()
             }}
-            className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+            className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
           >
             <option value="all">All Status</option>
             <option value="active">Active</option>
@@ -315,7 +315,7 @@ export function UserManagement() {
 
           <button
             onClick={handleSearch}
-            className="px-4 py-2 bg-[#1586D6] text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:ring-offset-2"
+            className="px-4 py-2 bg-accent text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
           >
             Search
           </button>

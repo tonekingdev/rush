@@ -25,7 +25,7 @@ export function ApplicationsTable() {
   const [totalPages, setTotalPages] = useState(1)
   const [sortField, setSortField] = useState<SortField>('date')
   const [sortDirection, setSortDirection] = useState<SortDirection>('desc')
-  
+
   useEffect(() => {
     const fetchApplications = async () => {
       try {
@@ -33,7 +33,7 @@ export function ApplicationsTable() {
           `/api/applications.php?page=${currentPage}&search=${searchTerm}&sort=${sortField}&direction=${sortDirection}`
         )
         const data = await response.json()
-        
+
         if (data.success) {
           setApplications(data.applications)
           setTotalPages(data.totalPages)
@@ -44,10 +44,10 @@ export function ApplicationsTable() {
         setIsLoading(false)
       }
     }
-    
+
     fetchApplications()
   }, [currentPage, searchTerm, sortField, sortDirection])
-  
+
   const handleSort = (field: SortField) => {
     if (sortField === field) {
       setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc')
@@ -56,16 +56,16 @@ export function ApplicationsTable() {
       setSortDirection('asc')
     }
   }
-  
+
   const getSortIcon = (field: SortField) => {
     if (sortField !== field) {
       return <FaSort className="ml-1 h-3 w-3 inline" />
     }
-    return sortDirection === 'asc' ? 
-      <FaSortUp className="ml-1 h-3 w-3 inline text-blue-500" /> : 
+    return sortDirection === 'asc' ?
+      <FaSortUp className="ml-1 h-3 w-3 inline text-blue-500" /> :
       <FaSortDown className="ml-1 h-3 w-3 inline text-blue-500" />
   }
-  
+
   const getStatusClass = (status: string) => {
     switch (status.toLowerCase()) {
       case 'approved':
@@ -80,7 +80,7 @@ export function ApplicationsTable() {
         return 'bg-gray-100 text-gray-800'
     }
   }
-  
+
   if (isLoading) {
     return (
       <div className="bg-white rounded-lg shadow overflow-hidden">
@@ -95,28 +95,28 @@ export function ApplicationsTable() {
       </div>
     )
   }
-  
+
   return (
     <div className="bg-white rounded-lg shadow overflow-hidden">
       <div className="p-4 border-b">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
           <h2 className="text-lg font-semibold text-gray-800 mb-4 md:mb-0">Provider Applications</h2>
-          
+
           <div className="flex items-center">
             <div className="relative">
               <input
                 type="text"
                 placeholder="Search applications..."
-                className="pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1586D6]"
+                className="pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
               <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             </div>
-            
-            <Link 
-              href="/api/admin/export-applications" 
-              className="ml-4 px-4 py-2 bg-[#1586D6] text-white rounded-lg hover:bg-blue-600 transition duration-200 flex items-center"
+
+            <Link
+              href="/api/admin/export-applications"
+              className="ml-4 px-4 py-2 bg-accent text-white rounded-lg hover:bg-blue-600 transition duration-200 flex items-center"
             >
               <FaFileDownload className="mr-2" />
               Export
@@ -124,18 +124,18 @@ export function ApplicationsTable() {
           </div>
         </div>
       </div>
-      
+
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
-              <th 
+              <th
                 className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
                 onClick={() => handleSort('name')}
               >
                 Name {getSortIcon('name')}
               </th>
-              <th 
+              <th
                 className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
                 onClick={() => handleSort('email')}
               >
@@ -144,13 +144,13 @@ export function ApplicationsTable() {
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Phone
               </th>
-              <th 
+              <th
                 className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
                 onClick={() => handleSort('status')}
               >
                 Status {getSortIcon('status')}
               </th>
-              <th 
+              <th
                 className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
                 onClick={() => handleSort('date')}
               >
@@ -183,9 +183,9 @@ export function ApplicationsTable() {
                     <div className="text-sm text-gray-500">{application.date}</div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                    <Link 
+                    <Link
                       href={`/admin/dashboard/applications/${application.id}`}
-                      className="text-[#1586D6] hover:text-blue-800 mr-4"
+                      className="text-accent hover:text-blue-800 mr-4"
                     >
                       <FaEye className="inline mr-1" /> View
                     </Link>
@@ -202,34 +202,32 @@ export function ApplicationsTable() {
           </tbody>
         </table>
       </div>
-      
+
       {/* Pagination */}
       {totalPages > 1 && (
         <div className="px-6 py-4 flex items-center justify-between border-t">
           <button
             onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
             disabled={currentPage === 1}
-            className={`px-3 py-1 rounded ${
-              currentPage === 1 
-                ? 'bg-gray-100 text-gray-400 cursor-not-allowed' 
+            className={`px-3 py-1 rounded ${currentPage === 1
+                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
                 : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-            }`}
+              }`}
           >
             Previous
           </button>
-          
+
           <div className="text-sm text-gray-700">
             Page {currentPage} of {totalPages}
           </div>
-          
+
           <button
             onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
             disabled={currentPage === totalPages}
-            className={`px-3 py-1 rounded ${
-              currentPage === totalPages 
-                ? 'bg-gray-100 text-gray-400 cursor-not-allowed' 
+            className={`px-3 py-1 rounded ${currentPage === totalPages
+                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
                 : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-            }`}
+              }`}
           >
             Next
           </button>

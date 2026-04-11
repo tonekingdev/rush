@@ -21,9 +21,9 @@ export default function Home() {
             <FadeInView>
               <p className="mt-4 text-lg text-gray-600">Connecting you with certified healthcare professionals for in-home care - fast, safe, and convenient.</p>
               <div className="mt-6 flex justify-center space-x-4">
-                <Link 
-                  href="/comingsoon" 
-                  className="px-4 py-2 bg-[#1586D6] text-white rounded-full text-base font-semibold relative overflow-hidden group whitespace-nowrap"
+                <Link
+                  href="/comingsoon"
+                  className="px-4 py-2 bg-accent text-white rounded-full text-base font-semibold relative overflow-hidden group whitespace-nowrap"
                 >
                   <span className="relative z-10 transition-transform duration-650 ease-in-out group-hover:-translate-y-full block">
                     Get Immediate Care
@@ -32,9 +32,9 @@ export default function Home() {
                     Get Started →
                   </span>
                 </Link>
-                <Link 
+                <Link
                   href="/survey/provider"
-                  className='px-4 py-2 bg-white text-[#1586D6] border border-[#1586D6] rounded-full text-base font-semibold relative overflow-hidden group whitespace-nowrap'
+                  className='px-4 py-2 bg-white text-accent border border-accent rounded-full text-base font-semibold relative overflow-hidden group whitespace-nowrap'
                 >
                   <span className="relative z-10 transition-transform duration-650 ease-in-out group-hover:-translate-y-full block">
                     Become a Provider
@@ -47,17 +47,17 @@ export default function Home() {
             </FadeInView>
           </div>
           <SlideInView>
-            <Image 
-              src="/img/landing.jpg" 
-              alt="Healthcare professional" 
-              width={500} 
-              height={500} 
+            <Image
+              src="/img/landing.jpg"
+              alt="Healthcare professional"
+              width={500}
+              height={500}
               className="rounded-lg shadow-lg"
             />
           </SlideInView>
         </div>
       </section>
-      
+
       {/* How it works section */}
       <section id="how-it-works" className="bg-white py-16">
         <div className="max-w-5xl mx-auto px-4 text-center">
@@ -72,8 +72,8 @@ export default function Home() {
               {/* Step 1 */}
               <div className="flex flex-col items-center">
                 <div className="p-4 bg-blue-100 rounded-full">
-                  <FaSearch 
-                    className='text-4xl text-[#1586D6]'
+                  <FaSearch
+                    className='text-4xl text-accent'
                   />
                 </div>
                 <h3 className="mt-4 text-xl font-semibold">Search for Care</h3>
@@ -84,7 +84,7 @@ export default function Home() {
               {/* Step 2 */}
               <div className="flex flex-col items-center">
                 <div className="p-4 bg-green-100 rounded-full">
-                  <TbUserHeart 
+                  <TbUserHeart
                     className='text-4xl text-green-600'
                   />
                 </div>
@@ -96,7 +96,7 @@ export default function Home() {
               {/* Step 3 */}
               <div className="flex flex-col items-center">
                 <div className="p-4 bg-yellow-100 rounded-full">
-                  <RiHomeHeartLine 
+                  <RiHomeHeartLine
                     className='text-4xl text-yellow-500'
                   />
                 </div>
@@ -124,8 +124,8 @@ export default function Home() {
               {/* Benefit 1 */}
               <div className="flex flex-col items-center">
                 <div className="p-4 bg-blue-100 rounded-full">
-                  <IoTimeOutline 
-                    className='text-4xl text-[#1586D6]'
+                  <IoTimeOutline
+                    className='text-4xl text-accent'
                   />
                 </div>
                 <h3 className="mt-4 text-xl font-semibold">Convenience</h3>
@@ -136,7 +136,7 @@ export default function Home() {
               {/* Benefit 2 */}
               <div className="flex flex-col items-center">
                 <div className="p-4 bg-green-100 rounded-full">
-                  <LuShieldCheck 
+                  <LuShieldCheck
                     className='text-4xl text-green-600'
                   />
                 </div>
@@ -150,7 +150,7 @@ export default function Home() {
               {/* Benefit 3 */}
               <div className="flex flex-col items-center">
                 <div className="p-4 bg-yellow-100 rounded-full">
-                  <RiMoneyDollarCircleLine 
+                  <RiMoneyDollarCircleLine
                     className='text-4xl text-yellow-500'
                   />
                 </div>
@@ -165,7 +165,7 @@ export default function Home() {
           </FadeInView>
         </div>
       </section>
-      
+
       {/* For Professionals section */}
       <section id="for-professionals" className="bg-white py-16">
         <div className="max-w-5xl mx-auto px-4 text-center">
@@ -184,8 +184,8 @@ export default function Home() {
               {/* Feature 1 */}
               <div className="flex flex-col items-center">
                 <div className="p-4 bg-blue-100 rounded-full">
-                  <LuCalendarCheck 
-                    className='text-4xl text-[#1586D6]'
+                  <LuCalendarCheck
+                    className='text-4xl text-accent'
                   />
                 </div>
                 <h3 className="mt-4 text-xl font-semibold">
@@ -198,7 +198,7 @@ export default function Home() {
               {/* Feature 2 */}
               <div className="flex flex-col items-center">
                 <div className="p-4 bg-green-100 rounded-full">
-                  <RiCoinsLine 
+                  <RiCoinsLine
                     className='text-4xl text-green-600'
                   />
                 </div>
@@ -212,7 +212,7 @@ export default function Home() {
               {/* Feature 3 */}
               <div className="flex flex-col items-center">
                 <div className="p-4 bg-yellow-100 rounded-full">
-                  <RiSecurePaymentLine 
+                  <RiSecurePaymentLine
                     className='text-4xl text-yellow-500'
                   />
                 </div>
@@ -243,7 +243,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#1586D6]">
+      <section className="py-16 bg-accent">
         <div className="max-w-5xl mx-auto px-4 text-center">
           <DropInView>
             <h2 className='text-3xl font-bold text-white font-poppins'>
@@ -260,13 +260,13 @@ export default function Home() {
               <div className="space-x-4 space-y-4 md:space-y-0 flex flex-col md:flex-row justify-center">
                 <Link
                   href='/comingsoon'
-                  className='px-6 py-3 bg-white text-[#1586d6] rounded-full font-semibold hover:bg-blue-50 duration-500'
+                  className='px-6 py-3 bg-white text-accent rounded-full font-semibold hover:bg-blue-50 duration-500'
                 >
                   Download on App Store
                 </Link>
                 <Link
                   href='/comingsoon'
-                  className='px-6 py-3 bg-white text-[#1586d6] rounded-full font-semibold hover:bg-blue-50 duration-500'
+                  className='px-6 py-3 bg-white text-accent rounded-full font-semibold hover:bg-blue-50 duration-500'
                 >
                   Get it on Google Play
                 </Link>

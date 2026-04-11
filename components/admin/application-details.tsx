@@ -318,7 +318,7 @@ export function ApplicationDetails({ applicationId }: ApplicationDetailsProps) {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1586D6]"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent"></div>
       </div>
     )
   }
@@ -421,9 +421,8 @@ export function ApplicationDetails({ applicationId }: ApplicationDetailsProps) {
             {providerCreationMessage && (
               <div className="mt-3 p-3 bg-white border border-green-300 rounded-md">
                 <p
-                  className={`text-sm ${
-                    providerCreationMessage.startsWith("Error") ? "text-red-600" : "text-green-700"
-                  }`}
+                  className={`text-sm ${providerCreationMessage.startsWith("Error") ? "text-red-600" : "text-green-700"
+                    }`}
                 >
                   {providerCreationMessage}
                 </p>
@@ -442,11 +441,10 @@ export function ApplicationDetails({ applicationId }: ApplicationDetailsProps) {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`py-4 px-1 border-b-2 font-medium text-sm flex items-center space-x-2 ${
-                  activeTab === tab.id
-                    ? "border-[#1586D6] text-[#1586D6]"
+                className={`py-4 px-1 border-b-2 font-medium text-sm flex items-center space-x-2 ${activeTab === tab.id
+                    ? "border-accent text-accent"
                     : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
-                }`}
+                  }`}
               >
                 <Icon className="h-4 w-4" />
                 <span>{tab.label}</span>

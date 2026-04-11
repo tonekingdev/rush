@@ -93,7 +93,7 @@ export function ResetPasswordForm() {
               required
               minLength={8}
               placeholder="••••••••"
-              className="w-full px-4 py-3 pr-12 text-base border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1586D6] bg-white text-gray-900 border-gray-300"
+              className="w-full px-4 py-3 pr-12 text-base border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent bg-white text-gray-900 border-gray-300"
             />
             <button
               type="button"
@@ -118,7 +118,7 @@ export function ResetPasswordForm() {
               required
               minLength={8}
               placeholder="••••••••"
-              className="w-full px-4 py-3 pr-12 text-base border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1586D6] bg-white text-gray-900 border-gray-300"
+              className="w-full px-4 py-3 pr-12 text-base border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent bg-white text-gray-900 border-gray-300"
             />
             <button
               type="button"
@@ -143,7 +143,7 @@ export function ResetPasswordForm() {
         <button
           type="submit"
           disabled={isLoading || !token}
-          className="w-full bg-[#1586D6] text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300 font-medium mt-6 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-accent text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300 font-medium mt-6 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isLoading ? <span className="animate-spin mr-2">⟳</span> : <FaLock className="mr-2" />}
           {isLoading ? "Resetting..." : "Reset Password"}

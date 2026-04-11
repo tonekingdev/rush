@@ -46,7 +46,7 @@ export function ApplicationFilters({ filters, onFiltersChange }: ApplicationFilt
             value={filters.search}
             onChange={(e) => handleFilterChange("search", e.target.value)}
             placeholder="Name, email, phone, ID..."
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6]"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
           />
         </div>
 
@@ -58,7 +58,7 @@ export function ApplicationFilters({ filters, onFiltersChange }: ApplicationFilt
             id="status"
             value={filters.status}
             onChange={(e) => handleFilterChange("status", e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6]"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
           >
             <option value="">All Statuses</option>
             <option value="pending">Pending</option>
@@ -76,7 +76,7 @@ export function ApplicationFilters({ filters, onFiltersChange }: ApplicationFilt
             id="completion"
             value={filters.completion}
             onChange={(e) => handleFilterChange("completion", e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6]"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
           >
             <option value="">All Applications</option>
             <option value="complete">Complete</option>
@@ -92,7 +92,7 @@ export function ApplicationFilters({ filters, onFiltersChange }: ApplicationFilt
             id="licenseType"
             value={filters.licenseType}
             onChange={(e) => handleFilterChange("licenseType", e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6]"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
           >
             <option value="">All License Types</option>
             <option value="RN">Registered Nurse (RN)</option>
@@ -120,7 +120,7 @@ export function ApplicationFilters({ filters, onFiltersChange }: ApplicationFilt
             id="dateFrom"
             value={filters.dateFrom}
             onChange={(e) => handleFilterChange("dateFrom", e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6]"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
           />
         </div>
 
@@ -133,7 +133,7 @@ export function ApplicationFilters({ filters, onFiltersChange }: ApplicationFilt
             id="dateTo"
             value={filters.dateTo}
             onChange={(e) => handleFilterChange("dateTo", e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6]"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
           />
         </div>
       </div>

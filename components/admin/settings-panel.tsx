@@ -251,8 +251,8 @@ export function SettingsPanel() {
             <button
               key={tab.id}
               className={`px-4 py-2 text-sm font-medium whitespace-nowrap ${activeTab === tab.id
-                  ? "border-b-2 border-[#1586D6] text-[#1586D6]"
-                  : "text-gray-500 hover:text-gray-700"
+                ? "border-b-2 border-accent text-accent"
+                : "text-gray-500 hover:text-gray-700"
                 }`}
               onClick={() => setActiveTab(tab.id)}
             >
@@ -276,7 +276,7 @@ export function SettingsPanel() {
                   id="siteName"
                   value={settings.siteName}
                   onChange={(e) => setSettings((prev) => ({ ...prev, siteName: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
 
@@ -289,7 +289,7 @@ export function SettingsPanel() {
                   id="siteEmail"
                   value={settings.siteEmail}
                   onChange={(e) => setSettings((prev) => ({ ...prev, siteEmail: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
 
@@ -302,7 +302,7 @@ export function SettingsPanel() {
                   id="sitePhone"
                   value={settings.sitePhone}
                   onChange={(e) => setSettings((prev) => ({ ...prev, sitePhone: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
 
@@ -315,7 +315,7 @@ export function SettingsPanel() {
                   value={settings.siteAddress}
                   onChange={(e) => setSettings((prev) => ({ ...prev, siteAddress: e.target.value }))}
                   rows={3}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
             </div>
@@ -332,7 +332,7 @@ export function SettingsPanel() {
                   id="emailNotifications"
                   checked={settings.emailNotifications}
                   onChange={(e) => setSettings((prev) => ({ ...prev, emailNotifications: e.target.checked }))}
-                  className="rounded border-gray-300 text-[#1586D6] focus:ring-[#1586D6]"
+                  className="rounded border-gray-300 text-accent focus:ring-accent"
                 />
                 <label htmlFor="emailNotifications" className="ml-2 text-sm text-gray-700">
                   Enable email notifications for new applications
@@ -345,7 +345,7 @@ export function SettingsPanel() {
                   id="autoApproval"
                   checked={settings.autoApproval}
                   onChange={(e) => setSettings((prev) => ({ ...prev, autoApproval: e.target.checked }))}
-                  className="rounded border-gray-300 text-[#1586D6] focus:ring-[#1586D6]"
+                  className="rounded border-gray-300 text-accent focus:ring-accent"
                 />
                 <label htmlFor="autoApproval" className="ml-2 text-sm text-gray-700">
                   Enable automatic approval for applications
@@ -358,7 +358,7 @@ export function SettingsPanel() {
                   id="requireDocuments"
                   checked={settings.requireDocuments}
                   onChange={(e) => setSettings((prev) => ({ ...prev, requireDocuments: e.target.checked }))}
-                  className="rounded border-gray-300 text-[#1586D6] focus:ring-[#1586D6]"
+                  className="rounded border-gray-300 text-accent focus:ring-accent"
                 />
                 <label htmlFor="requireDocuments" className="ml-2 text-sm text-gray-700">
                   Require document uploads for applications
@@ -381,7 +381,7 @@ export function SettingsPanel() {
                   id="smtpHost"
                   value={settings.smtpHost}
                   onChange={(e) => setSettings((prev) => ({ ...prev, smtpHost: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                   placeholder="smtp.gmail.com"
                 />
               </div>
@@ -395,7 +395,7 @@ export function SettingsPanel() {
                   id="smtpPort"
                   value={settings.smtpPort}
                   onChange={(e) => setSettings((prev) => ({ ...prev, smtpPort: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
 
@@ -408,7 +408,7 @@ export function SettingsPanel() {
                   id="smtpUsername"
                   value={settings.smtpUsername}
                   onChange={(e) => setSettings((prev) => ({ ...prev, smtpUsername: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
 
@@ -421,7 +421,7 @@ export function SettingsPanel() {
                   id="smtpPassword"
                   value={settings.smtpPassword}
                   onChange={(e) => setSettings((prev) => ({ ...prev, smtpPassword: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
 
@@ -433,7 +433,7 @@ export function SettingsPanel() {
                   id="smtpEncryption"
                   value={settings.smtpEncryption}
                   onChange={(e) => setSettings((prev) => ({ ...prev, smtpEncryption: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 >
                   <option value="tls">TLS</option>
                   <option value="ssl">SSL</option>
@@ -458,7 +458,7 @@ export function SettingsPanel() {
                 onChange={(e) => setSettings((prev) => ({ ...prev, maxFileSize: Number.parseInt(e.target.value) }))}
                 min="1"
                 max="100"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1586D6] focus:border-transparent"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
               />
             </div>
 
@@ -472,7 +472,7 @@ export function SettingsPanel() {
                       id={`fileType-${fileType}`}
                       checked={settings.allowedFileTypes.includes(fileType)}
                       onChange={(e) => handleFileTypeChange(fileType, e.target.checked)}
-                      className="rounded border-gray-300 text-[#1586D6] focus:ring-[#1586D6]"
+                      className="rounded border-gray-300 text-accent focus:ring-accent"
                     />
                     <label htmlFor={`fileType-${fileType}`} className="ml-2 text-sm text-gray-700 uppercase">
                       {fileType}
@@ -489,7 +489,7 @@ export function SettingsPanel() {
           <button
             type="submit"
             disabled={isSaving}
-            className="flex items-center px-6 py-2 bg-[#1586D6] text-white rounded-md hover:bg-blue-600 transition duration-200 disabled:opacity-50"
+            className="flex items-center px-6 py-2 bg-accent text-white rounded-md hover:bg-blue-600 transition duration-200 disabled:opacity-50"
           >
             {isSaving ? <FaSpinner className="mr-2 animate-spin" /> : <FaSave className="mr-2" />}
             {isSaving ? "Saving..." : "Save Settings"}

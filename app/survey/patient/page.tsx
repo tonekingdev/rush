@@ -69,7 +69,7 @@ const PatientSurvey = () => {
           <div className="text-center mb-12">
             <h1 className="text-3xl font-bold text-gray-900 mb-6">Patient Registration</h1>
             <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-              <h2 className="text-2xl font-semibold text-[#1586D6] mb-4">What is RUSH?</h2>
+              <h2 className="text-2xl font-semibold text-accent mb-4">What is RUSH?</h2>
               <p className="text-gray-600 leading-relaxed">
                 RUSH is a convenient, on-demand platform that connects you with licensed healthcare professionals who
                 can provide non-emergency medical services directly in the comfort of your home. Whether you need help
