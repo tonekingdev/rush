@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
-import { FaTimes, FaEnvelope, FaExclamationTriangle, FaCheckCircle, FaSpinner } from "react-icons/fa"
+import { X, Mail, TriangleAlert, CircleCheck, LoaderCircle } from "lucide-react"
 
 interface SendCompletionLinkModalProps {
   isOpen: boolean
@@ -136,7 +136,7 @@ export function SendCompletionLinkModal({ isOpen, onClose, provider }: SendCompl
           {/* Header */}
           <div className="flex justify-between items-center mb-6">
             <div className="flex items-center space-x-3">
-              <FaEnvelope className="w-6 h-6 text-blue-600" />
+              <Mail className="w-6 h-6 text-blue-600" />
               <h3 className="text-lg font-medium text-gray-900">Send Completion Link</h3>
             </div>
             <button
@@ -144,13 +144,13 @@ export function SendCompletionLinkModal({ isOpen, onClose, provider }: SendCompl
               disabled={loading}
               className="text-gray-400 hover:text-gray-600 disabled:opacity-50"
             >
-              <FaTimes className="w-5 h-5" />
+              <X className="w-5 h-5" />
             </button>
           </div>
 
           {success ? (
             <div className="text-center py-8">
-              <FaCheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+              <CircleCheck className="w-16 h-16 text-green-500 mx-auto mb-4" />
               <h4 className="text-xl font-semibold text-gray-900 mb-2">Link Sent Successfully!</h4>
               <p className="text-gray-600">The completion link has been sent to {provider.email}</p>
             </div>
@@ -175,7 +175,7 @@ export function SendCompletionLinkModal({ isOpen, onClose, provider }: SendCompl
               {error && (
                 <div className="mb-6 bg-red-50 border border-red-200 rounded-lg p-4">
                   <div className="flex items-center">
-                    <FaExclamationTriangle className="w-5 h-5 text-red-500 mr-2" />
+                    <TriangleAlert className="w-5 h-5 text-red-500 mr-2" />
                     <span className="text-red-700">{error}</span>
                   </div>
                 </div>
@@ -207,7 +207,7 @@ export function SendCompletionLinkModal({ isOpen, onClose, provider }: SendCompl
               {/* Warning */}
               <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
                 <div className="flex items-start">
-                  <FaExclamationTriangle className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" />
+                  <TriangleAlert className="w-5 h-5 text-yellow-500 mr-2 mt-0.5" />
                   <div className="text-sm">
                     <p className="text-yellow-800 font-medium mb-1">Important Notes:</p>
                     <ul className="text-yellow-700 space-y-1">
@@ -237,7 +237,7 @@ export function SendCompletionLinkModal({ isOpen, onClose, provider }: SendCompl
                   disabled={loading || selectedFields.length === 0}
                   className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
                 >
-                  {loading && <FaSpinner className="w-4 h-4 animate-spin" />}
+                  {loading && <LoaderCircle className="w-4 h-4 animate-spin" />}
                   <span>{loading ? "Sending..." : "Send Completion Link"}</span>
                 </button>
               </div>
