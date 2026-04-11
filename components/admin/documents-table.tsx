@@ -1,8 +1,10 @@
+// components/admin/documents-table.tsx
+
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
 import Link from "next/link"
-import { FaFileAlt, FaEye, FaDownload, FaCheck, FaTimes, FaSearch, FaSort, FaSortUp, FaSortDown } from "react-icons/fa"
+import { File, Eye, Download, Check, X, Search, ArrowUpDown, ArrowDownWideNarrow, ArrowUpWideNarrow } from "lucide-react"
 
 interface Document {
   id: string
@@ -76,12 +78,12 @@ export function DocumentsTable({ applicationId }: DocumentsTableProps) {
 
   const getSortIcon = (field: SortField) => {
     if (sortField !== field) {
-      return <FaSort className="ml-1 h-3 w-3 inline" />
+      return <ArrowUpDown className="ml-1 h-3 w-3 inline" />
     }
     return sortDirection === "asc" ? (
-      <FaSortUp className="ml-1 h-3 w-3 inline text-blue-500" />
+      <ArrowUpWideNarrow className="ml-1 h-3 w-3 inline text-blue-500" />
     ) : (
-      <FaSortDown className="ml-1 h-3 w-3 inline text-blue-500" />
+      <ArrowDownWideNarrow className="ml-1 h-3 w-3 inline text-blue-500" />
     )
   }
 
@@ -198,7 +200,7 @@ export function DocumentsTable({ applicationId }: DocumentsTableProps) {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
           </div>
         </div>
       </div>
@@ -258,7 +260,7 @@ export function DocumentsTable({ applicationId }: DocumentsTableProps) {
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="flex items-center">
                       <div className="flex h-10 w-10 items-center justify-center rounded-md bg-blue-100 text-blue-800 mr-3">
-                        <FaFileAlt className="h-5 w-5" />
+                        <File className="h-5 w-5" />
                       </div>
                       <div>
                         <div className="text-sm font-medium text-gray-900">{document.name}</div>
@@ -296,14 +298,14 @@ export function DocumentsTable({ applicationId }: DocumentsTableProps) {
                         className="text-gray-500 hover:text-gray-700"
                         title="View"
                       >
-                        <FaEye className="h-4 w-4" />
+                        <Eye className="h-4 w-4" />
                       </button>
                       <button
                         onClick={() => handleDownload(document.id)}
                         className="text-gray-500 hover:text-gray-700"
                         title="Download"
                       >
-                        <FaDownload className="h-4 w-4" />
+                        <Download className="h-4 w-4" />
                       </button>
                       {document.status === "pending" && (
                         <>
@@ -312,14 +314,14 @@ export function DocumentsTable({ applicationId }: DocumentsTableProps) {
                             className="text-green-600 hover:text-green-800"
                             title="Verify"
                           >
-                            <FaCheck className="h-4 w-4" />
+                            <Check className="h-4 w-4" />
                           </button>
                           <button
                             onClick={() => handleReject(document.id)}
                             className="text-red-600 hover:text-red-800"
                             title="Reject"
                           >
-                            <FaTimes className="h-4 w-4" />
+                            <X className="h-4 w-4" />
                           </button>
                         </>
                       )}
@@ -345,8 +347,8 @@ export function DocumentsTable({ applicationId }: DocumentsTableProps) {
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
             disabled={currentPage === 1}
             className={`px-3 py-1 rounded ${currentPage === 1
-                ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+              ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+              : "bg-gray-200 text-gray-700 hover:bg-gray-300"
               }`}
           >
             Previous
@@ -360,8 +362,8 @@ export function DocumentsTable({ applicationId }: DocumentsTableProps) {
             onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
             disabled={currentPage === totalPages}
             className={`px-3 py-1 rounded ${currentPage === totalPages
-                ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+              ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+              : "bg-gray-200 text-gray-700 hover:bg-gray-300"
               }`}
           >
             Next
