@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { FaBell, FaUser } from "react-icons/fa"
 import { Menu, Bell, User } from 'lucide-react'
 
 export function AdminHeader() {
@@ -53,7 +52,7 @@ export function AdminHeader() {
               onClick={() => setIsProfileOpen(!isProfileOpen)}
             >
               <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white">
-                <FaUser className="h-4 w-4" />
+                <User className="size-4" />
               </div>
               <span className="hidden md:inline-block font-medium">Admin</span>
             </button>
