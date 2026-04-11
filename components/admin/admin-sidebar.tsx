@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { useAuth } from "@/components/admin/auth-guard"
-import { useAuth as useAuthContext } from "@/app/context/auth-context"
+import { useAuth as useAuthContext } from "@/context/auth-context"
 import { Home, ClipboardList, Stethoscope, FileBadge, Mail, Users, Cog, UsersRound, Power, CircleQuestionMark, DollarSign, CalendarCheck } from "lucide-react"
 
 export function AdminSidebar() {

@@ -2,7 +2,7 @@
 
 import { PricingManagement } from "@/components/admin/pricing-management"
 import { FadeInView } from "@/components/FadeInView"
-import { useAuth } from "@/app/context/auth-context"
+import { useAuth } from "@/context/auth-context"
 
 export default function PricingPage() {
   const { hasPricingAccess } = useAuth()
