@@ -4,6 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { SlMenu } from "react-icons/sl"
 import { FaBell, FaUser } from "react-icons/fa"
+import { Menu, Bell, User } from 'lucide-react'
 
 export function AdminHeader() {
   const [isProfileOpen, setIsProfileOpen] = useState(false)
@@ -34,7 +35,7 @@ export function AdminHeader() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <span className="sr-only">Open menu</span>
-            <SlMenu className="h-6 w-6" aria-hidden="true" />
+            <Menu className="size-6" aria-hidden="true" />
           </button>
         </div>
 
