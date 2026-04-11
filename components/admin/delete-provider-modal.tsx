@@ -11,7 +11,7 @@ interface Provider {
   specialty: string
   status: string
   created_at: string
-  updated_at?: string // Add this field
+  updated_at?: string
   license_number?: string
   license_type?: string
   practice_name?: string
