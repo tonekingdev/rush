@@ -1,7 +1,9 @@
+// components/admin/pricing-management.tsx
+
 "use client"
 
 import { useState, useEffect } from "react"
-import { FaPlus, FaEdit, FaTrash, FaSave, FaTimes, FaSpinner, FaStar, FaToggleOn, FaToggleOff } from "react-icons/fa"
+import { Plus, Edit, Trash, Save, X, LoaderCircle, Star, ToggleRight, ToggleLeft } from "lucide-react"
 
 interface PricePlan {
   id: number
@@ -249,7 +251,7 @@ export function PricingManagement({ hasAccess }: PricingManagementProps) {
       <div className="bg-white rounded-lg shadow p-6">
         <div className="text-center py-8">
           <div className="text-gray-400 mb-4">
-            <FaTimes className="h-12 w-12 mx-auto" />
+            <X className="h-12 w-12 mx-auto" />
           </div>
           <h3 className="text-lg font-medium text-gray-900 mb-2">Access Restricted</h3>
           <p className="text-gray-600">You don&apos;t have permission to manage pricing plans.</p>
@@ -262,7 +264,7 @@ export function PricingManagement({ hasAccess }: PricingManagementProps) {
     return (
       <div className="bg-white rounded-lg shadow p-6">
         <div className="flex justify-center items-center py-12">
-          <FaSpinner className="animate-spin text-4xl text-accent" />
+          <LoaderCircle className="animate-spin text-4xl text-accent" />
           <span className="ml-3 text-gray-600">Loading pricing plans...</span>
         </div>
       </div>
@@ -279,7 +281,7 @@ export function PricingManagement({ hasAccess }: PricingManagementProps) {
             disabled={isCreating || editingPlan !== null}
             className="bg-accent text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <FaPlus className="h-4 w-4 mr-2" />
+            <Plus className="h-4 w-4 mr-2" />
             Add New Plan
           </button>
         </div>
@@ -386,12 +388,12 @@ export function PricingManagement({ hasAccess }: PricingManagementProps) {
               >
                 {saving ? (
                   <>
-                    <FaSpinner className="animate-spin h-4 w-4 mr-2" />
+                    <LoaderCircle className="animate-spin h-4 w-4 mr-2" />
                     Saving...
                   </>
                 ) : (
                   <>
-                    <FaSave className="h-4 w-4 mr-2" />
+                    <Save className="h-4 w-4 mr-2" />
                     Save Plan
                   </>
                 )}
@@ -428,7 +430,7 @@ export function PricingManagement({ hasAccess }: PricingManagementProps) {
                       <div>
                         <div className="text-sm font-medium text-gray-900 flex items-center">
                           {plan.service_tier}
-                          {plan.is_popular && <FaStar className="h-4 w-4 text-yellow-400 ml-2" />}
+                          {plan.is_popular && <Star className="h-4 w-4 text-yellow-400 ml-2" />}
                         </div>
                         {plan.notes && (
                           <div className="text-xs text-gray-500 mt-1">
@@ -452,15 +454,15 @@ export function PricingManagement({ hasAccess }: PricingManagementProps) {
                         } hover:opacity-75 disabled:opacity-50`}
                     >
                       {togglingPlan === plan.id ? (
-                        <FaSpinner className="animate-spin h-5 w-5 mr-1" />
+                        <LoaderCircle className="animate-spin h-5 w-5 mr-1" />
                       ) : plan.enabled ? (
                         <>
-                          <FaToggleOn className="h-5 w-5 mr-1" />
+                          <ToggleRight className="h-5 w-5 mr-1" />
                           <span className="text-sm">Enabled</span>
                         </>
                       ) : (
                         <>
-                          <FaToggleOff className="h-5 w-5 mr-1" />
+                          <ToggleLeft className="h-5 w-5 mr-1" />
                           <span className="text-sm">Disabled</span>
                         </>
                       )}
@@ -474,7 +476,7 @@ export function PricingManagement({ hasAccess }: PricingManagementProps) {
                         className="text-accent hover:text-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
                         title="Edit Plan"
                       >
-                        <FaEdit className="h-4 w-4" />
+                        <Edit className="h-4 w-4" />
                       </button>
                       <button
                         onClick={() => handleDelete(plan.id)}
@@ -483,9 +485,9 @@ export function PricingManagement({ hasAccess }: PricingManagementProps) {
                         title="Delete Plan"
                       >
                         {deletingPlan === plan.id ? (
-                          <FaSpinner className="animate-spin h-4 w-4" />
+                          <LoaderCircle className="animate-spin h-4 w-4" />
                         ) : (
-                          <FaTrash className="h-4 w-4" />
+                          <Trash className="h-4 w-4" />
                         )}
                       </button>
                     </div>
