@@ -1,8 +1,8 @@
 "use client"
 
 import { useState, Suspense } from "react"
-import { LoginForm } from "@/app/components/admin/login-form"
-import { ForgotPasswordForm } from "@/app/components/admin/forgot-password-form"
+import { LoginForm } from "@/components/admin/login-form"
+import { ForgotPasswordForm } from "@/components/admin/forgot-password-form"
 
 function AdminLoginContent() {
   const [showForgotPassword, setShowForgotPassword] = useState(false)

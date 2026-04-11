@@ -1,9 +1,9 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
-import { useAuth } from "@/app/components/admin/auth-guard"
+import { useAuth } from "@/components/admin/auth-guard"
 import { FaSearch, FaUser, FaUserMd, FaUserShield, FaPlus } from "react-icons/fa"
-import { CreateUserModal } from "@/app/components/admin/create-user-modal"
+import { CreateUserModal } from "@/components/admin/create-user-modal"
 
 interface PlatformUser {
   id: number

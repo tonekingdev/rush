@@ -1,6 +1,6 @@
 "use client"
 
-import { PricingManagement } from "@/app/components/admin/pricing-management"
+import { PricingManagement } from "@/components/admin/pricing-management"
 import { FadeInView } from "@/app/components/FadeInView"
 import { useAuth } from "@/app/context/auth-context"
 

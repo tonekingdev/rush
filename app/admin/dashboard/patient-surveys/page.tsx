@@ -1,6 +1,6 @@
 "use client"
 
-import { PatientSurveyManagement } from "@/app/components/admin/patient-survey-management"
+import { PatientSurveyManagement } from "@/components/admin/patient-survey-management"
 
 export default function PatientSurveysPage() {
   return (

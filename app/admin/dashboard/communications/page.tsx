@@ -1,4 +1,4 @@
-import CommunicationsTable from "@/app/components/admin/communications-table"
+import CommunicationsTable from "@/components/admin/communications-table"
 
 export default function CommunicationsPage() {
   return (

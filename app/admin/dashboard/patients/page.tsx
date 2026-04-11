@@ -1,6 +1,6 @@
 "use client"
 
-import { PatientManagement } from "@/app/components/admin/patient-management"
+import { PatientManagement } from "@/components/admin/patient-management"
 
 export default function PatientsPage() {
   return (

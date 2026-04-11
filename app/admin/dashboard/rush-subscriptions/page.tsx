@@ -1,6 +1,6 @@
 "use client"
 
-import { RushSubscriptionManagement } from "@/app/components/admin/rush-subscription-management"
+import { RushSubscriptionManagement } from "@/components/admin/rush-subscription-management"
 import { FadeInView } from "@/app/components/FadeInView"
 
 export default function RushSubscriptionsPage() {

@@ -1,6 +1,6 @@
 "use client"
 
-import { ApplicationManagement } from "@/app/components/admin/application-management"
+import { ApplicationManagement } from "@/components/admin/application-management"
 
 export default function ApplicationsPage() {
   return (

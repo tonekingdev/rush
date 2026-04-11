@@ -4,8 +4,8 @@ import type React from "react"
 
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
-import { AdminSidebar } from "@/app/components/admin/admin-sidebar"
-import { AdminHeader } from "@/app/components/admin/admin-header"
+import { AdminSidebar } from "@/components/admin/admin-sidebar"
+import { AdminHeader } from "@/components/admin/admin-header"
 import { AuthProvider } from "@/app/context/auth-context"
 
 export default function DashboardLayout({

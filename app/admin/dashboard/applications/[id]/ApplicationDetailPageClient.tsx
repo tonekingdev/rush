@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react"
 import { useParams } from "next/navigation"
-import { ApplicationDetails } from "@/app/components/admin/application-details"
-import ApplicationNotes from "@/app/components/admin/application-notes"
-import ApplicationDocuments from "@/app/components/admin/application-documents"
-import { ApplicationCompletionLinks } from "@/app/components/admin/application-completion-links"
+import { ApplicationDetails } from "@/components/admin/application-details"
+import ApplicationNotes from "@/components/admin/application-notes"
+import ApplicationDocuments from "@/components/admin/application-documents"
+import { ApplicationCompletionLinks } from "@/components/admin/application-completion-links"
 
 interface ProviderData {
   id: number

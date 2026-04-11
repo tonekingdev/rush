@@ -1,6 +1,6 @@
 "use client"
 
-import { ProviderManagement } from "@/app/components/admin/provider-management"
+import { ProviderManagement } from "@/components/admin/provider-management"
 
 export default function ProvidersPage() {
   return (

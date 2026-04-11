@@ -1,8 +1,8 @@
 "use client"
 
-import { DashboardStats } from "@/app/components/admin/dashboard-stats"
-import { RecentApplications } from "@/app/components/admin/recent-applications"
-import { ApplicationStatusChart } from "@/app/components/admin/application-status-chart"
+import { DashboardStats } from "@/components/admin/dashboard-stats"
+import { RecentApplications } from "@/components/admin/recent-applications"
+import { ApplicationStatusChart } from "@/components/admin/application-status-chart"
 import { FadeInView } from "@/app/components/FadeInView"
 
 export default function DashboardPage() {
