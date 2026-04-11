@@ -5,20 +5,7 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { useAuth } from "@/components/admin/auth-guard"
 import { useAuth as useAuthContext } from "@/app/context/auth-context"
-import {
-  FaHome,
-  FaClipboardList,
-  FaUserMd,
-  FaFileAlt,
-  FaEnvelope,
-  FaUsers,
-  FaUserFriends,
-  FaCog,
-  FaSignOutAlt,
-  FaQuestionCircle,
-  FaDollarSign,
-  FaCalendarCheck,
-} from "react-icons/fa"
+import { Home, ClipboardList, Stethoscope, FileBadge, Mail, Users, Cog, UsersRound, Power, CircleQuestionMark, DollarSign, CalendarCheck } from "lucide-react"
 
 export function AdminSidebar() {
   const pathname = usePathname()
@@ -38,22 +25,22 @@ export function AdminSidebar() {
     {
       name: "Dashboard",
       href: "/admin/dashboard",
-      icon: FaHome,
+      icon: Home,
     },
     {
       name: "Applications",
       href: "/admin/dashboard/applications",
-      icon: FaClipboardList,
+      icon: ClipboardList,
     },
     {
       name: "NP Intakes",
       href: "/admin/dashboard/in-takes",
-      icon: FaUserMd
+      icon: Stethoscope
     },
     {
       name: "Providers",
       href: "/admin/dashboard/providers",
-      icon: FaUserMd,
+      icon: Stethoscope,
     },
   ]
 
@@ -62,7 +49,7 @@ export function AdminSidebar() {
     navItems.push({
       name: "Pricing Management",
       href: "/admin/dashboard/pricing",
-      icon: FaDollarSign,
+      icon: DollarSign,
     })
   }
 
@@ -70,27 +57,27 @@ export function AdminSidebar() {
     {
       name: "RUSH Subscriptions",
       href: "/admin/dashboard/rush-subscriptions",
-      icon: FaCalendarCheck,
+      icon: CalendarCheck,
     },
     {
       name: "Patient Surveys",
       href: "/admin/dashboard/patient-surveys",
-      icon: FaClipboardList,
+      icon: ClipboardList,
     },
     {
       name: "Patients",
       href: "/admin/dashboard/patients",
-      icon: FaUserFriends,
+      icon: UsersRound,
     },
     {
       name: "Documents",
       href: "/admin/dashboard/documents",
-      icon: FaFileAlt,
+      icon: FileBadge,
     },
     {
       name: "Communications",
       href: "/admin/dashboard/communications",
-      icon: FaEnvelope,
+      icon: Mail,
     },
   )
 
@@ -99,7 +86,7 @@ export function AdminSidebar() {
     navItems.push({
       name: "User Management",
       href: "/admin/dashboard/users",
-      icon: FaUsers,
+      icon: Users,
     })
   }
 
@@ -107,12 +94,12 @@ export function AdminSidebar() {
     {
       name: "Settings",
       href: "/admin/dashboard/settings",
-      icon: FaCog,
+      icon: Cog,
     },
     {
       name: "Help & Documentation",
       href: "/admin/dashboard/help",
-      icon: FaQuestionCircle,
+      icon: CircleQuestionMark,
     },
   )
 
@@ -147,7 +134,7 @@ export function AdminSidebar() {
             onClick={logout}
             className="flex items-center w-full px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded-md"
           >
-            <FaSignOutAlt className="mr-3 h-5 w-5 text-gray-400" />
+            <Power className="mr-3 h-5 w-5 text-gray-400" />
             Sign out
           </button>
         </div>
