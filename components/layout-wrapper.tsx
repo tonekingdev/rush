@@ -2,10 +2,10 @@
 
 import type React from "react"
 import { usePathname } from "next/navigation"
-import Header from "./header"
-import Footer from "./footer"
+import Header from "../app/components/header"
+import Footer from "../app/components/footer"
 import BackToTop from "./BackToTop"
-import LaunchNotification from "./LaunchNotification"
+import LaunchNotification from "../app/components/LaunchNotification"
 
 interface LayoutWrapperProps {
   children: React.ReactNode
