@@ -1,6 +1,6 @@
 'use client';
 
-import { FadeInView } from '@/app/components/FadeInView';
+import { FadeInView } from '@/components/FadeInView';
 import { useParams, useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
 

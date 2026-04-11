@@ -1,6 +1,6 @@
 import React from "react"
 import Link from "next/link"
-import { FadeInView } from "../components/FadeInView"
+import { FadeInView } from "../../components/FadeInView"
 
 export default function RegistrationSuccess() {
   return (

@@ -7,7 +7,7 @@ import ProfessionalCredentials from "./components/ProfessionalCredentials"
 import WorkHistory from "./components/WorkHistory"
 import References from "./components/References"
 import FormsAndAgreements from "./components/FormsAndAgreements"
-import { FadeInView } from "@/app/components/FadeInView"
+import { FadeInView } from "@/components/FadeInView"
 import { Button } from "@/components/ui/button"
 import { Save, RotateCcw } from "lucide-react"
 import { toast } from "sonner"
@@ -746,9 +746,8 @@ function ProviderApplicationPageContent() {
             {stepTitles.map((title, index) => (
               <div key={index} className="flex flex-col items-center">
                 <div
-                  className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium ${
-                    index + 1 <= currentStep ? "bg-blue-600 text-white" : "bg-gray-300 text-gray-600"
-                  }`}
+                  className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium ${index + 1 <= currentStep ? "bg-blue-600 text-white" : "bg-gray-300 text-gray-600"
+                    }`}
                 >
                   {index + 1}
                 </div>

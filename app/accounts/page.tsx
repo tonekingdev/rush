@@ -6,9 +6,9 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { FaTrash, FaShieldAlt, FaHome, FaEnvelope, FaUser, FaExclamationTriangle, FaCheckCircle } from "react-icons/fa"
-import { FadeInView } from "../components/FadeInView"
-import { SlideInView } from "../components/SlideInView"
-import { DropInView } from "../components/DropInView"
+import { FadeInView } from "../../components/FadeInView"
+import { SlideInView } from "../../components/SlideInView"
+import { DropInView } from "../../components/DropInView"
 
 interface FormData {
   firstName: string
@@ -157,7 +157,7 @@ export default function AccountDeletionPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
-     {/* Main Content */}
+      {/* Main Content */}
       <main className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Page Header */}
         <FadeInView>
@@ -327,13 +327,13 @@ export default function AccountDeletionPage() {
 
         {/* Back to Home */}
         <div className="p-4 mt-6 flex items-center justify-center">
-            <Link
-                href="/"
-                className="bg-[#1586D6] text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 font-medium flex items-center"
-            >
-                <FaHome className="mr-2" />
-                Back to Home
-            </Link>
+          <Link
+            href="/"
+            className="bg-[#1586D6] text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 font-medium flex items-center"
+          >
+            <FaHome className="mr-2" />
+            Back to Home
+          </Link>
         </div>
       </main>
     </div>

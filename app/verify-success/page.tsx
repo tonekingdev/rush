@@ -1,5 +1,5 @@
 import React from "react"
-import { FadeInView } from "../components/FadeInView"
+import { FadeInView } from "../../components/FadeInView"
 
 export default function VerifySuccess() {
   // Matches your app.json "scheme": "rushfrontend"
@@ -21,7 +21,7 @@ export default function VerifySuccess() {
               <p className="mt-3 text-base text-gray-500">
                 Your account is activated and ready to use.
               </p>
-              
+
               <div className="mt-8 p-5 bg-blue-50 rounded-xl border border-blue-100">
                 <p className="text-sm text-blue-800 font-semibold uppercase tracking-wider">Return to App</p>
                 <p className="mt-2 text-xs text-blue-600 leading-relaxed">
@@ -37,7 +37,7 @@ export default function VerifySuccess() {
                   Open R.U.S.H. App
                 </a>
               </div>
-              
+
               <p className="mt-10 text-[10px] text-gray-400 font-medium uppercase tracking-[0.2em]">
                 R.U.S.H. Team
               </p>

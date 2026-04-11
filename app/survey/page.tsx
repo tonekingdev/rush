@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { FadeInView } from "../components/FadeInView"
+import { FadeInView } from "../../components/FadeInView"
 import { FaUserMd, FaUsers } from "react-icons/fa"
 import Link from "next/link"
 import { Container } from "@/components/ui/container"

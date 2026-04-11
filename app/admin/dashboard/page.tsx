@@ -3,7 +3,7 @@
 import { DashboardStats } from "@/components/admin/dashboard-stats"
 import { RecentApplications } from "@/components/admin/recent-applications"
 import { ApplicationStatusChart } from "@/components/admin/application-status-chart"
-import { FadeInView } from "@/app/components/FadeInView"
+import { FadeInView } from "@/components/FadeInView"
 
 export default function DashboardPage() {
 

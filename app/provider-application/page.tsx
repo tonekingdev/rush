@@ -2,7 +2,7 @@
 "use client"
 import { useState } from "react"
 import { useForm, type SubmitHandler } from "react-hook-form"
-import { FadeInView } from "../components/FadeInView"
+import { FadeInView } from "../../components/FadeInView"
 import type React from "react"
 
 type FormInputs = {
@@ -766,14 +766,14 @@ const ProviderApplication: React.FC = () => {
                       {errors[
                         `reference${index}Relationship` as "reference1Relationship" | "reference2Relationship"
                       ] && (
-                        <p className="mt-1 text-sm text-red-600">
-                          {
-                            errors[
-                              `reference${index}Relationship` as "reference1Relationship" | "reference2Relationship"
-                            ]?.message
-                          }
-                        </p>
-                      )}
+                          <p className="mt-1 text-sm text-red-600">
+                            {
+                              errors[
+                                `reference${index}Relationship` as "reference1Relationship" | "reference2Relationship"
+                              ]?.message
+                            }
+                          </p>
+                        )}
                     </div>
                     <div>
                       <label htmlFor={`reference${index}Phone`} className="block text-sm font-medium text-gray-700">

@@ -3,7 +3,7 @@
 import type React from "react"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { FadeInView } from "../components/FadeInView"
+import { FadeInView } from "../../components/FadeInView"
 
 const InsurancePreRegistration = () => {
   const router = useRouter()

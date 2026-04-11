@@ -1,5 +1,5 @@
 import React from "react"
-import { FadeInView } from "../components/FadeInView"
+import { FadeInView } from "../../components/FadeInView"
 
 export default function VerifyFailed() {
   const APP_SCHEME = "rushfrontend://login?error=expired"
@@ -29,7 +29,7 @@ export default function VerifyFailed() {
                   Return to App
                 </a>
               </div>
-              
+
               <p className="mt-6 text-sm">
                 <a href="mailto:support@rushhealthc.com" className="text-blue-600 font-medium hover:underline">
                   Contact Support

@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { FadeInView } from "../../components/FadeInView"
+import { FadeInView } from "../../../components/FadeInView"
 import PatientInfo from "./components/PatientInfo"
 import HealthcareNeeds from "./components/HealthcareNeeds"
 import MedicalHistory from "./components/MedicalHistory"

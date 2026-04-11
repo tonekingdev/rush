@@ -6,7 +6,7 @@ import type { Stripe } from "@stripe/stripe-js"
 import { loadStripe } from "@stripe/stripe-js"
 import { plans } from "../constants/plans"
 import { FaCheck } from "react-icons/fa"
-import { FadeInView } from "../components/FadeInView"
+import { FadeInView } from "../../components/FadeInView"
 
 export default function PreRegister() {
   const [selectedPlan, setSelectedPlan] = useState("")
@@ -79,11 +79,9 @@ export default function PreRegister() {
             {plans.map((plan) => (
               <div
                 key={plan.id}
-                className={`relative flex flex-col rounded-2xl ${
-                  selectedPlan === plan.id ? "ring-4 ring-[#1586D6]" : "ring-1 ring-gray-200"
-                } ${
-                  plan.popular ? "scale-105 shadow-xl" : "shadow-md"
-                } bg-white transition-all duration-200 hover:shadow-xl`}
+                className={`relative flex flex-col rounded-2xl ${selectedPlan === plan.id ? "ring-4 ring-[#1586D6]" : "ring-1 ring-gray-200"
+                  } ${plan.popular ? "scale-105 shadow-xl" : "shadow-md"
+                  } bg-white transition-all duration-200 hover:shadow-xl`}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-0 right-0 mx-auto w-32 rounded-full bg-[#1586D6] py-1 text-center text-sm font-semibold text-white">
@@ -115,11 +113,10 @@ export default function PreRegister() {
 
                   <button
                     onClick={() => setSelectedPlan(plan.id)}
-                    className={`mt-8 w-full rounded-lg px-4 py-2 text-center text-sm font-semibold transition-colors ${
-                      selectedPlan === plan.id
+                    className={`mt-8 w-full rounded-lg px-4 py-2 text-center text-sm font-semibold transition-colors ${selectedPlan === plan.id
                         ? "bg-[#1586D6] text-white"
                         : "bg-gray-100 text-gray-600 hover:bg-[#1586D6] hover:text-white"
-                    }`}
+                      }`}
                   >
                     {selectedPlan === plan.id ? "Selected" : "Select Plan"}
                   </button>

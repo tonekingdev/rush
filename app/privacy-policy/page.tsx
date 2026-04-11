@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { FaHome, FaShieldAlt, FaEnvelope, FaPhone } from "react-icons/fa"
-import { FadeInView } from "../components/FadeInView"
-import { SlideInView } from "../components/SlideInView"
-import { DropInView } from "../components/DropInView"
+import { FadeInView } from "../../components/FadeInView"
+import { SlideInView } from "../../components/SlideInView"
+import { DropInView } from "../../components/DropInView"
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
