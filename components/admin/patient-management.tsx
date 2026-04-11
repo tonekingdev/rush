@@ -1,7 +1,9 @@
+// components/admin/patient-management.tsx
+
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
-import { FaEye, FaEdit, FaSearch, FaUser } from "react-icons/fa"
+import { Eye, Edit, Search, User } from "lucide-react"
 
 interface Patient {
   id: number
@@ -137,7 +139,7 @@ export function PatientManagement() {
         <div className="mb-6 flex flex-col sm:flex-row gap-4">
           <div className="flex-1">
             <div className="relative">
-              <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
               <input
                 type="text"
                 placeholder="Search by name, email, or patient ID..."
@@ -192,7 +194,7 @@ export function PatientManagement() {
                     <div className="flex items-center">
                       <div className="flex-shrink-0 h-10 w-10">
                         <div className="h-10 w-10 rounded-full bg-accent flex items-center justify-center">
-                          <FaUser className="h-5 w-5 text-white" />
+                          <User className="h-5 w-5 text-white" />
                         </div>
                       </div>
                       <div className="ml-4">
@@ -225,10 +227,10 @@ export function PatientManagement() {
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                     <div className="flex space-x-2">
                       <button className="text-blue-600 hover:text-blue-700" title="View Details">
-                        <FaEye className="h-4 w-4" />
+                        <Eye className="h-4 w-4" />
                       </button>
                       <button className="text-green-600 hover:text-green-700" title="Edit Patient">
-                        <FaEdit className="h-4 w-4" />
+                        <Edit className="h-4 w-4" />
                       </button>
                     </div>
                   </td>
@@ -240,7 +242,7 @@ export function PatientManagement() {
 
         {patients.length === 0 && !loading && (
           <div className="text-center py-12">
-            <FaUser className="mx-auto h-12 w-12 text-gray-400" />
+            <User className="mx-auto h-12 w-12 text-gray-400" />
             <h3 className="mt-2 text-sm font-medium text-gray-900">No patients found</h3>
             <p className="mt-1 text-sm text-gray-500">Patients will appear here after approving patient surveys.</p>
           </div>
