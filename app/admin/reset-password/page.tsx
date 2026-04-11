@@ -3,7 +3,7 @@ import { ResetPasswordForm } from "@/components/admin/reset-password-form"
 
 function ResetPasswordContent() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-4 bg-gradient-to-b from-blue-50 to-white">
+    <main className="flex min-h-screen flex-col items-center justify-center p-4 bg-linear-to-b from-blue-50 to-white">
       <div className="w-full max-w-md">
         <ResetPasswordForm />
       </div>

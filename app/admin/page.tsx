@@ -20,7 +20,7 @@ function AdminLoginContent() {
 
 export default function AdminLoginPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-4 bg-gradient-to-b from-blue-50 to-white">
+    <main className="flex min-h-screen flex-col items-center justify-center p-4 bg-linear-to-b from-blue-50 to-white">
       <Suspense
         fallback={
           <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-xl">

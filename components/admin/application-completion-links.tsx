@@ -83,7 +83,7 @@ export function ApplicationCompletionLinks({ applicationId, providerData }: Appl
 
   return (
     <div className="bg-white shadow rounded-lg overflow-hidden">
-      <div className="px-4 py-5 sm:px-6 bg-gradient-to-r from-orange-50 to-orange-100 border-b">
+      <div className="px-4 py-5 sm:px-6 bg-linear-to-r from-orange-50 to-orange-100 border-b">
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <FaEnvelope className="h-5 w-5 text-orange-600" />
@@ -170,8 +170,8 @@ export function ApplicationCompletionLinks({ applicationId, providerData }: Appl
                             ? link.missing_fields.map((field) => field.replace(/_/g, " ")).join(", ")
                             : typeof link.missing_fields === "string"
                               ? JSON.parse(link.missing_fields)
-                                  .map((field: string) => field.replace(/_/g, " "))
-                                  .join(", ")
+                                .map((field: string) => field.replace(/_/g, " "))
+                                .join(", ")
                               : "Unknown fields"}
                         </div>
                       </td>

@@ -185,7 +185,7 @@ export default function DemoPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
+    <div className="min-h-screen bg-linear-to-br from-blue-50 to-white">
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -252,7 +252,7 @@ export default function DemoPage() {
                 href="https://www.instagram.com/r.u.s.h.healthc/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col items-center p-6 bg-gradient-to-br from-pink-500 to-purple-600 text-white rounded-xl hover:shadow-lg transform hover:scale-105 transition duration-300"
+                className="group flex flex-col items-center p-6 bg-linear-to-br from-pink-500 to-purple-600 text-white rounded-xl hover:shadow-lg transform hover:scale-105 transition duration-300"
               >
                 <FaInstagram className="text-4xl mb-3" />
                 <span className="font-semibold text-lg">Instagram</span>
@@ -378,8 +378,8 @@ export default function DemoPage() {
               {submitMessage && (
                 <div
                   className={`p-4 rounded-lg text-center ${submitMessage.includes("Thank you")
-                      ? "bg-green-50 text-green-800 border border-green-200"
-                      : "bg-red-50 text-red-800 border border-red-200"
+                    ? "bg-green-50 text-green-800 border border-green-200"
+                    : "bg-red-50 text-red-800 border border-red-200"
                     }`}
                 >
                   {submitMessage}
