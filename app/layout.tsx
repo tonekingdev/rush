@@ -62,7 +62,7 @@ export const metadata: Metadata = {
       "Connect with certified healthcare professionals for in-home care. Fast, safe, and convenient on-demand healthcare services.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/img/og-image.png",
         width: 1200,
         height: 630,
         alt: "R.U.S.H. Healthcare - Professional Home Healthcare Services",
