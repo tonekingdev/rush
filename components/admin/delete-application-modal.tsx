@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { X, Trash, TriangleAlert } from "lucide-react"
-import { FaTimes, FaTrash, FaExclamationTriangle } from "react-icons/fa"
 
 interface Application {
   id: number
