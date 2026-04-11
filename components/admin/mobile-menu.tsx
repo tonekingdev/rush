@@ -1,21 +1,11 @@
-// app/components/admin/mobile-menu.tsx
+// components/admin/mobile-menu.tsx
+
 "use client"
 
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import {
-  FaHome,
-  FaClipboardList,
-  FaUserMd,
-  FaFileAlt,
-  FaEnvelope,
-  FaCog,
-  FaSignOutAlt,
-  FaUsers,
-  FaBars,
-  FaTimes
-} from "react-icons/fa"
+import { Home, ClipboardList, Stethoscope, File, Mail, Cog, Power, Users, Menu, X } from "lucide-react"
 import { useAuth } from "./auth-provider"
 
 export function MobileMenu() {
@@ -39,7 +29,7 @@ export function MobileMenu() {
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-4 right-4 z-50 bg-accent text-white p-3 rounded-full shadow-lg"
       >
-        {isOpen ? <FaTimes className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
+        {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
       </button>
 
       {isOpen && (
@@ -51,7 +41,7 @@ export function MobileMenu() {
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-bold">Menu</h2>
               <button onClick={() => setIsOpen(false)}>
-                <FaTimes className="h-5 w-5" />
+                <X className="h-5 w-5" />
               </button>
             </div>
 
@@ -63,7 +53,7 @@ export function MobileMenu() {
                     className={`flex items-center px-4 py-3 rounded-md ${isActive('/admin/dashboard')} hover:bg-blue-700`}
                     onClick={() => setIsOpen(false)}
                   >
-                    <FaHome className="mr-3" />
+                    <Home className="mr-3" />
                     Dashboard
                   </Link>
                 </li>
@@ -73,7 +63,7 @@ export function MobileMenu() {
                     className={`flex items-center px-4 py-3 rounded-md ${isActive('/admin/dashboard/applications')} hover:bg-blue-700`}
                     onClick={() => setIsOpen(false)}
                   >
-                    <FaClipboardList className="mr-3" />
+                    <ClipboardList className="mr-3" />
                     Applications
                   </Link>
                 </li>
@@ -83,7 +73,7 @@ export function MobileMenu() {
                     className={`flex items-center px-4 py-3 rounded-md ${isActive('/admin/dashboard/providers')} hover:bg-blue-700`}
                     onClick={() => setIsOpen(false)}
                   >
-                    <FaUserMd className="mr-3" />
+                    <Stethoscope className="mr-3" />
                     Providers
                   </Link>
                 </li>
@@ -93,7 +83,7 @@ export function MobileMenu() {
                     className={`flex items-center px-4 py-3 rounded-md ${isActive('/admin/dashboard/documents')} hover:bg-blue-700`}
                     onClick={() => setIsOpen(false)}
                   >
-                    <FaFileAlt className="mr-3" />
+                    <File className="mr-3" />
                     Documents
                   </Link>
                 </li>
@@ -103,7 +93,7 @@ export function MobileMenu() {
                     className={`flex items-center px-4 py-3 rounded-md ${isActive('/admin/dashboard/communications')} hover:bg-blue-700`}
                     onClick={() => setIsOpen(false)}
                   >
-                    <FaEnvelope className="mr-3" />
+                    <Mail className="mr-3" />
                     Communications
                   </Link>
                 </li>
@@ -113,7 +103,7 @@ export function MobileMenu() {
                     className={`flex items-center px-4 py-3 rounded-md ${isActive('/admin/dashboard/users')} hover:bg-blue-700`}
                     onClick={() => setIsOpen(false)}
                   >
-                    <FaUsers className="mr-3" />
+                    <Users className="mr-3" />
                     Users
                   </Link>
                 </li>
@@ -123,7 +113,7 @@ export function MobileMenu() {
                     className={`flex items-center px-4 py-3 rounded-md ${isActive('/admin/dashboard/settings')} hover:bg-blue-700`}
                     onClick={() => setIsOpen(false)}
                   >
-                    <FaCog className="mr-3" />
+                    <Cog className="mr-3" />
                     Settings
                   </Link>
                 </li>
@@ -136,7 +126,7 @@ export function MobileMenu() {
                     }}
                     className="flex items-center px-4 py-3 rounded-md hover:bg-blue-700"
                   >
-                    <FaSignOutAlt className="mr-3" />
+                    <Power className="mr-3" />
                     Logout
                   </a>
                 </li>
