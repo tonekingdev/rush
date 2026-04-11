@@ -1,7 +1,9 @@
+// components/admin/patient-survey-management.tsx
+
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
-import { FaEye, FaCheck, FaTimes, FaSearch } from "react-icons/fa"
+import { Eye, Check, X, Search } from "lucide-react"
 
 interface PatientSurvey {
   id: number
@@ -151,7 +153,7 @@ export function PatientSurveyManagement() {
         <div className="mb-6 flex flex-col sm:flex-row gap-4">
           <div className="flex-1">
             <div className="relative">
-              <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
               <input
                 type="text"
                 placeholder="Search by name, email, or phone..."
@@ -232,7 +234,7 @@ export function PatientSurveyManagement() {
                         className="text-blue-600 hover:text-blue-700"
                         title="View Details"
                       >
-                        <FaEye className="h-4 w-4" />
+                        <Eye className="h-4 w-4" />
                       </button>
                       {survey.status === "pending" && (
                         <>
@@ -241,14 +243,14 @@ export function PatientSurveyManagement() {
                             className="text-green-600 hover:text-green-700"
                             title="Approve"
                           >
-                            <FaCheck className="h-4 w-4" />
+                            <Check className="h-4 w-4" />
                           </button>
                           <button
                             onClick={() => handleStatusUpdate(survey.id, "rejected")}
                             className="text-red-600 hover:text-red-700"
                             title="Reject"
                           >
-                            <FaTimes className="h-4 w-4" />
+                            <X className="h-4 w-4" />
                           </button>
                         </>
                       )}
@@ -295,7 +297,7 @@ export function PatientSurveyManagement() {
               <div className="flex justify-between items-center mb-6">
                 <h3 className="text-lg font-medium text-gray-900">Patient Survey Details</h3>
                 <button onClick={() => setShowModal(false)} className="text-gray-400 hover:text-gray-600">
-                  <FaTimes className="h-6 w-6" />
+                  <X className="h-6 w-6" />
                 </button>
               </div>
 
