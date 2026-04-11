@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
-import { FaEnvelope, FaExclamationCircle, FaSpinner, FaClock, FaCheckCircle } from "react-icons/fa"
+import { Mail, TriangleAlert, LoaderCircle, Clock, CircleCheck } from "lucide-react"
 import { SendCompletionLinkModal } from "./send-completion-link-modal"
 
 interface CompletionLink {
@@ -86,7 +86,7 @@ export function ApplicationCompletionLinks({ applicationId, providerData }: Appl
       <div className="px-4 py-5 sm:px-6 bg-linear-to-r from-orange-50 to-orange-100 border-b">
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <FaEnvelope className="h-5 w-5 text-orange-600" />
+            <Mail className="h-5 w-5 text-orange-600" />
             <h3 className="text-lg font-medium text-gray-900">Completion Links</h3>
           </div>
           <button
@@ -95,7 +95,7 @@ export function ApplicationCompletionLinks({ applicationId, providerData }: Appl
             className="inline-flex items-center px-3 py-1.5 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 disabled:opacity-50 disabled:cursor-not-allowed"
             title={hasActiveLink ? "An active completion link already exists" : "Send a new completion link"}
           >
-            <FaExclamationCircle className="mr-1.5 h-4 w-4" />
+            <TriangleAlert className="mr-1.5 h-4 w-4" />
             Send Completion Link
           </button>
         </div>
@@ -106,7 +106,7 @@ export function ApplicationCompletionLinks({ applicationId, providerData }: Appl
 
         {loading ? (
           <div className="flex justify-center py-4">
-            <FaSpinner className="h-8 w-8 text-gray-400 animate-spin" />
+            <LoaderCircle className="h-8 w-8 text-gray-400 animate-spin" />
           </div>
         ) : completionLinks.length === 0 ? (
           <div className="text-center py-4 text-gray-500">
@@ -148,7 +148,7 @@ export function ApplicationCompletionLinks({ applicationId, providerData }: Appl
                       <td className="px-6 py-4 whitespace-nowrap">
                         {isActive && (
                           <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                            <FaClock className="mr-1 h-3 w-3" />
+                            <Clock className="mr-1 h-3 w-3" />
                             Active
                           </span>
                         )}
@@ -159,7 +159,7 @@ export function ApplicationCompletionLinks({ applicationId, providerData }: Appl
                         )}
                         {isCompleted && (
                           <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                            <FaCheckCircle className="mr-1 h-3 w-3" />
+                            <CircleCheck className="mr-1 h-3 w-3" />
                             Completed
                           </span>
                         )}
