@@ -8,7 +8,7 @@
 
 ## 🏥 About RUSH Healthcare
 
-RUSH is an innovative on-demand healthcare service that brings licensed nurses and certified medical professionals directly to your home for non-emergent medical care, support, and follow-up services. Our mission is to provide **Reliable**, **Urgent**, and **Supportive** healthcare when and where you need it most.
+RUSH is an innovative on-demand healthcare service that brings licensed nurses and certified medical professionals directly to your home for non-emergent medical care, support, and follow-up services. Our mission is to provide **Reliable**, **Urgent**, and **Supportive** **Healthcare** when and where you need it most.
 
 ---
 
