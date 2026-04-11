@@ -3,6 +3,7 @@
 
 import { useState, useEffect } from "react"
 import { FaUserPlus, FaCheckCircle, FaHourglass, FaExclamationTriangle } from "react-icons/fa"
+import { UserPlus, CircleCheck, Hourglass, TriangleAlert } from "lucide-react"
 
 interface StatsData {
   totalApplications: number
@@ -58,7 +59,7 @@ export function DashboardStats() {
       <div className="bg-white p-6 rounded-lg shadow">
         <div className="flex items-center">
           <div className="p-3 rounded-full bg-blue-100 text-accent">
-            <FaUserPlus className="h-6 w-6" />
+            <UserPlus className="h-6 w-6" />
           </div>
           <div className="ml-4">
             <p className="text-sm font-medium text-gray-500">Total Applications</p>
@@ -70,7 +71,7 @@ export function DashboardStats() {
       <div className="bg-white p-6 rounded-lg shadow">
         <div className="flex items-center">
           <div className="p-3 rounded-full bg-yellow-100 text-yellow-600">
-            <FaHourglass className="h-6 w-6" />
+            <Hourglass className="h-6 w-6" />
           </div>
           <div className="ml-4">
             <p className="text-sm font-medium text-gray-500">Pending</p>
@@ -82,7 +83,7 @@ export function DashboardStats() {
       <div className="bg-white p-6 rounded-lg shadow">
         <div className="flex items-center">
           <div className="p-3 rounded-full bg-green-100 text-green-600">
-            <FaCheckCircle className="h-6 w-6" />
+            <CircleCheck className="size-6" />
           </div>
           <div className="ml-4">
             <p className="text-sm font-medium text-gray-500">Approved</p>
@@ -94,7 +95,7 @@ export function DashboardStats() {
       <div className="bg-white p-6 rounded-lg shadow">
         <div className="flex items-center">
           <div className="p-3 rounded-full bg-red-100 text-red-600">
-            <FaExclamationTriangle className="h-6 w-6" />
+            <TriangleAlert className="h-6 w-6" />
           </div>
           <div className="ml-4">
             <p className="text-sm font-medium text-gray-500">Rejected</p>
