@@ -1,23 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
-import {
-  FaUser,
-  FaGraduationCap,
-  FaBriefcase,
-  FaUsers,
-  FaFileContract,
-  FaPhone,
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaCheckCircle,
-  FaTimesCircle,
-  FaDownload,
-  FaIdCard,
-  FaUserPlus,
-  FaSpinner,
-} from "react-icons/fa"
-import Image from "next/image"
+import { User, GraduationCap, Briefcase, Users, FileArchive, Phone, Mail, MapPin, CircleCheck, CircleX, Download, IdCard, UserPlus, LoaderCircle } from "lucide-react"
 
 interface ApplicationData {
   id: number
@@ -327,7 +311,7 @@ export function ApplicationDetails({ applicationId }: ApplicationDetailsProps) {
     return (
       <div className="bg-red-50 border border-red-200 rounded-md p-4">
         <div className="flex">
-          <FaTimesCircle className="h-5 w-5 text-red-400" />
+          <CircleX className="h-5 w-5 text-red-400" />
           <div className="ml-3">
             <h3 className="text-sm font-medium text-red-800">Error</h3>
             <div className="mt-2 text-sm text-red-700">
@@ -351,11 +335,11 @@ export function ApplicationDetails({ applicationId }: ApplicationDetailsProps) {
   const references = parseReferences(application.references_data)
 
   const tabs = [
-    { id: "personal", label: "Personal Info", icon: FaUser },
-    { id: "credentials", label: "Credentials", icon: FaGraduationCap },
-    { id: "work", label: "Work History", icon: FaBriefcase },
-    { id: "references", label: "References", icon: FaUsers },
-    { id: "forms", label: "Forms & Agreements", icon: FaFileContract },
+    { id: "personal", label: "Personal Info", icon: User },
+    { id: "credentials", label: "Credentials", icon: GraduationCap },
+    { id: "work", label: "Work History", icon: Briefcase },
+    { id: "references", label: "References", icon: Users },
+    { id: "forms", label: "Forms & Agreements", icon: FileArchive },
   ]
 
   return (
@@ -405,12 +389,12 @@ export function ApplicationDetails({ applicationId }: ApplicationDetailsProps) {
               >
                 {isCreatingProvider ? (
                   <>
-                    <FaSpinner className="animate-spin h-4 w-4 mr-2" />
+                    <LoaderCircle className="animate-spin h-4 w-4 mr-2" />
                     Creating...
                   </>
                 ) : (
                   <>
-                    <FaUserPlus className="h-4 w-4 mr-2" />
+                    <UserPlus className="h-4 w-4 mr-2" />
                     Create Provider Account
                   </>
                 )}
@@ -442,8 +426,8 @@ export function ApplicationDetails({ applicationId }: ApplicationDetailsProps) {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`py-4 px-1 border-b-2 font-medium text-sm flex items-center space-x-2 ${activeTab === tab.id
-                    ? "border-accent text-accent"
-                    : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                  ? "border-accent text-accent"
+                  : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
                   }`}
               >
                 <Icon className="h-4 w-4" />
@@ -472,7 +456,7 @@ export function ApplicationDetails({ applicationId }: ApplicationDetailsProps) {
                     />
                   ) : (
                     <div className="flex items-center justify-center h-full text-gray-400">
-                      <FaUser className="h-12 w-12" />
+                      <User className="h-12 w-12" />
                     </div>
                   )}
                 </div>
@@ -481,28 +465,28 @@ export function ApplicationDetails({ applicationId }: ApplicationDetailsProps) {
                 <h3 className="text-lg font-medium text-gray-900 mb-4">Contact Information</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex items-center space-x-3">
-                    <FaEnvelope className="h-5 w-5 text-gray-400" />
+                    <Mail className="h-5 w-5 text-gray-400" />
                     <div>
                       <p className="text-sm font-medium text-gray-900">Email</p>
                       <p className="text-sm text-gray-600">{application.email}</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <FaPhone className="h-5 w-5 text-gray-400" />
+                    <Phone className="h-5 w-5 text-gray-400" />
                     <div>
                       <p className="text-sm font-medium text-gray-900">Phone</p>
                       <p className="text-sm text-gray-600">{application.phone}</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3 md:col-span-2">
-                    <FaMapMarkerAlt className="h-5 w-5 text-gray-400" />
+                    <MapPin className="h-5 w-5 text-gray-400" />
                     <div>
                       <p className="text-sm font-medium text-gray-900">Address</p>
                       <p className="text-sm text-gray-600">{application.address}</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <FaCheckCircle className="h-5 w-5 text-gray-400" />
+                    <CircleCheck className="h-5 w-5 text-gray-400" />
                     <div>
                       <p className="text-sm font-medium text-gray-900">CNA/HHA/Caregiver Status</p>
                       <p className="text-sm text-gray-600">{application.is_cna_hha_caregiver ? "Yes" : "No"}</p>
@@ -516,7 +500,7 @@ export function ApplicationDetails({ applicationId }: ApplicationDetailsProps) {
             <div className="border-t pt-6">
               <h3 className="text-lg font-medium text-gray-900 mb-4">Driver&apos;s License</h3>
               <div className="flex items-center space-x-4">
-                <FaIdCard className="h-8 w-8 text-green-500" />
+                <IdCard className="h-8 w-8 text-green-500" />
                 <div className="flex-1">
                   {application.drivers_license_image ? (
                     <div>
@@ -811,9 +795,9 @@ export function ApplicationDetails({ applicationId }: ApplicationDetailsProps) {
                 <h4 className="text-md font-medium text-gray-900 mb-2">Liability Waiver</h4>
                 <div className="flex items-center space-x-2 mb-2">
                   {application.liability_signed ? (
-                    <FaCheckCircle className="h-5 w-5 text-green-500" />
+                    <CircleCheck className="h-5 w-5 text-green-500" />
                   ) : (
-                    <FaTimesCircle className="h-5 w-5 text-red-500" />
+                    <CircleX className="h-5 w-5 text-red-500" />
                   )}
                   <span className="text-sm text-gray-600">
                     {application.liability_signed ? "Signed" : "Not signed"}
@@ -826,7 +810,7 @@ export function ApplicationDetails({ applicationId }: ApplicationDetailsProps) {
                     rel="noopener noreferrer"
                     className="inline-flex items-center space-x-1 text-blue-600 hover:text-blue-800 text-sm"
                   >
-                    <FaDownload className="h-4 w-4" />
+                    <Download className="h-4 w-4" />
                     <span>Download PDF</span>
                   </a>
                 )}
@@ -836,9 +820,9 @@ export function ApplicationDetails({ applicationId }: ApplicationDetailsProps) {
                 <h4 className="text-md font-medium text-gray-900 mb-2">Background Check</h4>
                 <div className="flex items-center space-x-2">
                   {application.background_acknowledged ? (
-                    <FaCheckCircle className="h-5 w-5 text-green-500" />
+                    <CircleCheck className="h-5 w-5 text-green-500" />
                   ) : (
-                    <FaTimesCircle className="h-5 w-5 text-red-500" />
+                    <CircleX className="h-5 w-5 text-red-500" />
                   )}
                   <span className="text-sm text-gray-600">
                     {application.background_acknowledged ? "Acknowledged" : "Not acknowledged"}
@@ -850,9 +834,9 @@ export function ApplicationDetails({ applicationId }: ApplicationDetailsProps) {
                 <h4 className="text-md font-medium text-gray-900 mb-2">Malpractice Insurance</h4>
                 <div className="flex items-center space-x-2">
                   {application.malpractice_acknowledged ? (
-                    <FaCheckCircle className="h-5 w-5 text-green-500" />
+                    <CircleCheck className="h-5 w-5 text-green-500" />
                   ) : (
-                    <FaTimesCircle className="h-5 w-5 text-red-500" />
+                    <CircleX className="h-5 w-5 text-red-500" />
                   )}
                   <span className="text-sm text-gray-600">
                     {application.malpractice_acknowledged ? "Acknowledged" : "Not acknowledged"}
@@ -864,9 +848,9 @@ export function ApplicationDetails({ applicationId }: ApplicationDetailsProps) {
                 <h4 className="text-md font-medium text-gray-900 mb-2">Exclusion Screening</h4>
                 <div className="flex items-center space-x-2 mb-2">
                   {application.exclusion_screening_signed ? (
-                    <FaCheckCircle className="h-5 w-5 text-green-500" />
+                    <CircleCheck className="h-5 w-5 text-green-500" />
                   ) : (
-                    <FaTimesCircle className="h-5 w-5 text-red-500" />
+                    <CircleX className="h-5 w-5 text-red-500" />
                   )}
                   <span className="text-sm text-gray-600">
                     {application.exclusion_screening_signed ? "Signed" : "Not signed"}
@@ -882,7 +866,7 @@ export function ApplicationDetails({ applicationId }: ApplicationDetailsProps) {
                     rel="noopener noreferrer"
                     className="inline-flex items-center space-x-1 text-blue-600 hover:text-blue-800 text-sm mt-2"
                   >
-                    <FaDownload className="h-4 w-4" />
+                    <Download className="h-4 w-4" />
                     <span>Download PDF</span>
                   </a>
                 )}
@@ -892,9 +876,9 @@ export function ApplicationDetails({ applicationId }: ApplicationDetailsProps) {
                 <h4 className="text-md font-medium text-gray-900 mb-2">Drug & Alcohol Policy</h4>
                 <div className="flex items-center space-x-2 mb-2">
                   {application.drug_alcohol_signed ? (
-                    <FaCheckCircle className="h-5 w-5 text-green-500" />
+                    <CircleCheck className="h-5 w-5 text-green-500" />
                   ) : (
-                    <FaTimesCircle className="h-5 w-5 text-red-500" />
+                    <CircleX className="h-5 w-5 text-red-500" />
                   )}
                   <span className="text-sm text-gray-600">
                     {application.drug_alcohol_signed ? "Signed" : "Not signed"}
@@ -910,7 +894,7 @@ export function ApplicationDetails({ applicationId }: ApplicationDetailsProps) {
                     rel="noopener noreferrer"
                     className="inline-flex items-center space-x-1 text-blue-600 hover:text-blue-800 text-sm mt-2"
                   >
-                    <FaDownload className="h-4 w-4" />
+                    <Download className="h-4 w-4" />
                     <span>Download PDF</span>
                   </a>
                 )}
@@ -921,9 +905,9 @@ export function ApplicationDetails({ applicationId }: ApplicationDetailsProps) {
                 <h4 className="text-md font-medium text-gray-900 mb-2">Non-Compete Clause</h4>
                 <div className="flex items-center space-x-2 mb-2">
                   {application.non_compete_signed ? (
-                    <FaCheckCircle className="h-5 w-5 text-green-500" />
+                    <CircleCheck className="h-5 w-5 text-green-500" />
                   ) : (
-                    <FaTimesCircle className="h-5 w-5 text-red-500" />
+                    <CircleX className="h-5 w-5 text-red-500" />
                   )}
                   <span className="text-sm text-gray-600">
                     {application.non_compete_signed ? "Signed" : "Not signed"}
@@ -939,7 +923,7 @@ export function ApplicationDetails({ applicationId }: ApplicationDetailsProps) {
                     rel="noopener noreferrer"
                     className="inline-flex items-center space-x-1 text-blue-600 hover:text-blue-800 text-sm mt-2"
                   >
-                    <FaDownload className="h-4 w-4" />
+                    <Download className="h-4 w-4" />
                     <span>Download PDF</span>
                   </a>
                 )}
