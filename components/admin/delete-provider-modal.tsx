@@ -13,6 +13,7 @@ import {
   FaExclamationTriangle,
   FaBuilding,
 } from "react-icons/fa"
+import { X, Trash, LoaderCircle, User, Mail, Phone, IdCard, Calendar, TriangleAlert, Building } from "lucide-react"
 
 interface Provider {
   id: number
@@ -135,7 +136,7 @@ export function DeleteProviderModal({ isOpen, onClose, provider, onSuccess }: De
         {/* Fixed Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200 flex-shrink-0">
           <h3 className="text-lg font-medium text-gray-900 flex items-center">
-            <FaTrash className="h-5 w-5 mr-2 text-red-600" />
+            <Trash className="h-5 w-5 mr-2 text-red-600" />
             Delete Provider
           </h3>
           <button
@@ -143,7 +144,7 @@ export function DeleteProviderModal({ isOpen, onClose, provider, onSuccess }: De
             className="text-gray-400 hover:text-gray-600 transition-colors"
             disabled={loading}
           >
-            <FaTimes className="h-5 w-5" />
+            <X className="size-5" />
           </button>
         </div>
 
@@ -159,20 +160,20 @@ export function DeleteProviderModal({ isOpen, onClose, provider, onSuccess }: De
 
             <div className="space-y-3">
               <div className="flex items-center text-gray-700">
-                <FaUser className="h-4 w-4 mr-3 text-gray-400" />
+                <User className="h-4 w-4 mr-3 text-gray-400" />
                 <span className="font-medium">Name:</span>
                 <span className="ml-2">{provider.name}</span>
               </div>
 
               <div className="flex items-center text-gray-700">
-                <FaEnvelope className="h-4 w-4 mr-3 text-gray-400" />
+                <Mail className="h-4 w-4 mr-3 text-gray-400" />
                 <span className="font-medium">Email:</span>
                 <span className="ml-2">{provider.email}</span>
               </div>
 
               {provider.phone && (
                 <div className="flex items-center text-gray-700">
-                  <FaPhone className="h-4 w-4 mr-3 text-gray-400" />
+                  <Phone className="h-4 w-4 mr-3 text-gray-400" />
                   <span className="font-medium">Phone:</span>
                   <span className="ml-2">{provider.phone}</span>
                 </div>
@@ -185,7 +186,7 @@ export function DeleteProviderModal({ isOpen, onClose, provider, onSuccess }: De
 
               {provider.license_number && (
                 <div className="flex items-center text-gray-700">
-                  <FaIdCard className="h-4 w-4 mr-3 text-gray-400" />
+                  <IdCard className="h-4 w-4 mr-3 text-gray-400" />
                   <span className="font-medium">License:</span>
                   <span className="ml-2">
                     {provider.license_type} - {provider.license_number}
@@ -195,7 +196,7 @@ export function DeleteProviderModal({ isOpen, onClose, provider, onSuccess }: De
 
               {provider.practice_name && (
                 <div className="flex items-center text-gray-700">
-                  <FaBuilding className="h-4 w-4 mr-3 text-gray-400" />
+                  <Building className="h-4 w-4 mr-3 text-gray-400" />
                   <span className="font-medium">Practice:</span>
                   <span className="ml-2">{provider.practice_name}</span>
                 </div>
@@ -209,14 +210,14 @@ export function DeleteProviderModal({ isOpen, onClose, provider, onSuccess }: De
               </div>
 
               <div className="flex items-center text-gray-700">
-                <FaCalendar className="h-4 w-4 mr-3 text-gray-400" />
+                <Calendar className="h-4 w-4 mr-3 text-gray-400" />
                 <span className="font-medium">Joined:</span>
                 <span className="ml-2">{formatDate(provider.created_at)}</span>
               </div>
 
               {provider.updated_at && (
                 <div className="flex items-center text-gray-700">
-                  <FaCalendar className="h-4 w-4 mr-3 text-gray-400" />
+                  <Calendar className="h-4 w-4 mr-3 text-gray-400" />
                   <span className="font-medium">Last Updated:</span>
                   <span className="ml-2">{formatDate(provider.updated_at)}</span>
                 </div>
@@ -227,7 +228,7 @@ export function DeleteProviderModal({ isOpen, onClose, provider, onSuccess }: De
           {/* Warning Section */}
           <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
             <div className="flex items-start">
-              <FaExclamationTriangle className="h-5 w-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" />
+              <TriangleAlert className="h-5 w-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" />
               <div className="flex-1">
                 <h4 className="text-red-800 font-medium mb-2">Warning: Permanent Deletion</h4>
                 <p className="text-red-700 mb-3">This action will permanently delete:</p>
@@ -296,12 +297,12 @@ export function DeleteProviderModal({ isOpen, onClose, provider, onSuccess }: De
           >
             {loading ? (
               <>
-                <FaSpinner className="animate-spin h-4 w-4 mr-2" />
+                <LoaderCircle className="animate-spin h-4 w-4 mr-2" />
                 Deleting...
               </>
             ) : (
               <>
-                <FaTrash className="h-4 w-4 mr-2" />
+                <Trash className="h-4 w-4 mr-2" />
                 Delete Provider
               </>
             )}
