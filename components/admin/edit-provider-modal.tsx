@@ -1,8 +1,10 @@
+// components/admin/edit-provider-modal.tsx
+
 "use client"
 
 import type React from "react"
 import { useState, useEffect } from "react"
-import { FaTimes, FaSave, FaSpinner, FaUser, FaBuilding, FaIdCard } from "react-icons/fa"
+import { X, Save, LoaderCircle, User, Building, IdCard } from "lucide-react"
 
 interface Provider {
   id: number
@@ -12,7 +14,7 @@ interface Provider {
   specialty: string
   status: string
   created_at: string
-  updated_at?: string // Add this field
+  updated_at?: string
   license_number?: string
   license_type?: string
   license_state?: string
@@ -173,7 +175,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
           <h3 className="text-lg font-medium text-gray-900">Edit Provider - {provider.name}</h3>
           <button onClick={onClose} className="text-gray-400 hover:text-gray-600 transition-colors" disabled={loading}>
-            <FaTimes className="h-5 w-5" />
+            <X className="h-5 w-5" />
           </button>
         </div>
 
@@ -186,7 +188,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
             {/* Personal Information */}
             <div className="space-y-4">
               <h4 className="text-md font-medium text-gray-900 border-b pb-2 flex items-center">
-                <FaUser className="h-4 w-4 mr-2" />
+                <User className="h-4 w-4 mr-2" />
                 Personal Information
               </h4>
 
@@ -291,7 +293,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
             {/* Professional Information */}
             <div className="space-y-4">
               <h4 className="text-md font-medium text-gray-900 border-b pb-2 flex items-center">
-                <FaIdCard className="h-4 w-4 mr-2" />
+                <IdCard className="h-4 w-4 mr-2" />
                 Professional Information
               </h4>
 
@@ -382,7 +384,7 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
           {/* Practice Information */}
           <div className="mt-6 space-y-4">
             <h4 className="text-md font-medium text-gray-900 border-b pb-2 flex items-center">
-              <FaBuilding className="h-4 w-4 mr-2" />
+              <Building className="h-4 w-4 mr-2" />
               Practice Information
             </h4>
 
@@ -556,12 +558,12 @@ export function EditProviderModal({ isOpen, onClose, provider, onSuccess }: Edit
             >
               {loading ? (
                 <>
-                  <FaSpinner className="animate-spin h-4 w-4 mr-2" />
+                  <LoaderCircle className="animate-spin h-4 w-4 mr-2" />
                   Saving...
                 </>
               ) : (
                 <>
-                  <FaSave className="h-4 w-4 mr-2" />
+                  <Save className="h-4 w-4 mr-2" />
                   Save Changes
                 </>
               )}
